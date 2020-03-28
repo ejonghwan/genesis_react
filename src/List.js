@@ -1,13 +1,16 @@
 import React from 'react';
 
-const List = ( {todos, loadings} ) => {
-    let list = <div>loadings...</div>;
-    if(!loadings) return todos.map( data => <li key={data.id}>{data.id}  - {data.title}</li>)
+const List = ( {todos, loading} ) => {
+
+let list = <div>loading.......</div>    
+if(!loading) return todos.map( d => <li>{d.id} - {d.title}</li> )
+
     return (
         <ul>
-           {list}
+            {list}
         </ul>
     )
-} 
+}
+
 
 export default List;

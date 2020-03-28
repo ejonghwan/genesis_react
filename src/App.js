@@ -3,46 +3,54 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import List from './List.js'
 
-function App() {
-const [todo, setTodo] = useState(['start']);
-const [inputValue, setInputValue] = useState();
-const [loading, setLoading] = useState(false);
 
-const handleChange = (e) => {
-  setInputValue(e.target.value);
-}
+const useFetcingData = (target, url) => {
+  const [loading, setLoading] = useState(false)
+  const handleData = async () => {
+    setLoading(true)
+    const response = await fetch(url);
+    const dating = await response.json()
+    target(dating)
+    setLoading(false)
+  }
 
-const createData = (e) => { //넣어주는애
-  e.preventDefault();
-  setTodo([...todo, {title:inputValue, id:todo.length}])
-}
+  useEffect( () => {
+    handleData()
+  }, [] )
 
-const handleData = async () => { //받아온 패칭데이터를 지금 존재하는 todo 데이터에 넣음 
-  setLoading(true)
-  const data = await fetch('http://jsonplaceholder.typicode.com/todos')
-  const dataJson = await data.json();
-  setTodo(dataJson)
-  console.log(dataJson)
-  setLoading(false)
+  return loading
+
+
 }
 
 
-useEffect( () => {
-  console.log('new render')
-}, [todo] )
 
-useEffect( () => {
-  handleData()
-}, [] )
+const App = () => {
+
+  const [todo, setTodo] = useState(['first data'])
+  const [inputData, setInputData] = useState('')
+  
+
+  const handleChange = (e) => {
+    setInputData(e.target.value)
+    console.log(e.target.value)
+  }
+
+  const updata = (e) => {
+    e.preventDefault()
+    setTodo([ ...todo, {title:inputData, id:todo.length+1} ])
+    setInputData('')
+  }
+
+  const aa = useFetcingData(setTodo, 'http://jsonplaceholder.typicode.com/todos')
+
 
 
   return (
     <div>
-       <form>
-          <input onChange={handleChange} />
-          <button onClick={createData}>create</button>
-        </form>
-     <List todos={todo} loadings={loading} />
+      <input onChange={handleChange} value={inputData}/>
+      <button onClick={updata}>click me</button>
+      <List todos={todo} loading={aa} />
     </div>
   );
 }
