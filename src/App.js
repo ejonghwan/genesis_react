@@ -24,7 +24,6 @@ const handleData = async () => { //받아온 패칭데이터를 지금 존재하
   setTodo(dataJson)
   console.log(dataJson)
   setLoading(false)
-  asdasdasd
 }
 
 
