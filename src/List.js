@@ -1,14 +1,20 @@
 import React from 'react';
+import './Info.css'
+import Info from './Info'
 
-const List = ( {todos, loading} ) => {
+const List = ({ todos, loading, onClear }) => {
 
-let list = <div>loading.......</div>    
-if(!loading) return todos.map( d => <li>{d.id} - {d.title}</li> )
+
+    
+    let list = <div>loading.......</div> ;   
+    if(!loading) list = todos.map( d => <Info onClear={onClear} key={d.id} todos={d} /> )
+
+
 
     return (
-        <ul>
-            {list}
-        </ul>
+            <div className="box">
+                {list}
+            </div>
     )
 }
 
