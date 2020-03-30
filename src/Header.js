@@ -1,21 +1,9 @@
-import React from 'react';
-import './Info.css'
+import React from 'react'
 
 
-const Header = ({ todos }) => {
-
-    const headerStyle = {
-        padding: '20px 5px'
-    }
-
+const Header = ({ info }) => {
     return (
-        <div style={headerStyle}>
-            목록 
-            {
-                todos.filter( v => v.completed === true).length
-            } 
-            개가 남았습니다
-        </div>
+    <div>체크안된 항목 : {info.filter( d => d.completed === true).length}</div>
     )
 }
 

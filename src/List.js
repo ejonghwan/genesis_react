@@ -1,22 +1,17 @@
-import React from 'react';
-import './Info.css'
+import React from 'react'
 import Info from './Info'
+import './Info.css'
 
-const List = ({ todos, loading, onClear }) => {
+const List = ({ info, bool, toggle }) => {
 
-
-    
-    let list = <div>loading.......</div> ;   
-    if(!loading) list = todos.map( d => <Info onClear={onClear} key={d.id} todos={d} /> )
-
-
+    let list = <div>loading ....</div>
+    if(!bool) list = info.map( data => <Info key={data.id} info={data} toggle={toggle} /> )
 
     return (
-            <div className="box">
-                {list}
-            </div>
+        <ul className="box">
+            {list}
+        </ul>
     )
 }
-
 
 export default List;

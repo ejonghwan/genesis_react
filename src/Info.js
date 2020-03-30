@@ -1,20 +1,16 @@
-import React from 'react';
-import './Info.css'
+import React from 'react'
 
-const Info = ({ todos, onClear }) => {
+const Info = ({ info, toggle }) => {
 
     const handleToggle = () => {
-        onClear(todos.id)
-        console.log(todos)
+        toggle(info.id)
     }
 
-    const inClass = !todos.completed ? 'line' : null
+    const inClass = info.completed === true ? null : 'line'
 
     return (
-        <li onClick={handleToggle} className={inClass}>
-            {todos.id} - {todos.title}
-        </li>
+        <li onClick={handleToggle} className={inClass} >{info.id} - {info.title} <button>change</button></li>
     )
 }
 
-export default Info;
+export default Info
