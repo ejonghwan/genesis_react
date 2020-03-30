@@ -32,6 +32,18 @@ const App = () => {
     console.log(information)
   }
 
+  const reChange = (id, data) => {
+    const updating = information.map( d => {
+      if(d.id === id) {
+        setInformation(data)
+      }
+      console.log(data)
+      return d
+    })
+    setInformation(updating)
+    // console.log(updating)
+  }
+
   const fetch = useFetcingData(setInformation, 'http://jsonplaceholder.typicode.com/todos')
   
 
@@ -47,7 +59,7 @@ const App = () => {
         <Header info={information} />
         <input onChange={handleChange} value={inputData} />
         <button onClick={onCreate}>create</button>
-        <List info={information} bool={fetch} toggle={handleToggle} />
+        <List info={information} bool={fetch} toggle={handleToggle} reChange={reChange} />
       </div>
     </div>
   );
