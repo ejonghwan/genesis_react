@@ -11,24 +11,24 @@ const Info = ({ info, toggle, reChange }) => {
     }
 
     const reChnage = () => {
+        console.log(info.title)
+        // if(newInput.title !== info.title) return null;
         if(!bool){ setBool(true) } else { setBool(false) }
+        console.log(bool)
         setNewInput(info.title)
         reChange(info.id, input)
-        // console.log(input)
         
     }
 
     const inputChnage = (e) => {
         setNewInput(e.target.value)
-        setInput([{'title':newInput, 'id': info.id, 'completed': info.completed}])
-        // console.log(input)
+        setInput({'title':newInput, 'id': info.id, 'completed': info.completed})
     }
 
     const inClass = info.completed === true ? null : 'line'
 
     return (
         <li className={inClass}>
-            {newInput}
                 {
                     !bool ? (
                         <div><input 

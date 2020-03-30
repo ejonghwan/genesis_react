@@ -29,19 +29,23 @@ const App = () => {
       return d
     })
     setInformation(changeData)
-    console.log(information)
+    // console.log(information)
   }
 
   const reChange = (id, data) => {
+    // debugger
     const updating = information.map( d => {
       if(d.id === id) {
-        setInformation(data)
+        d.title = data.title;
+        d.id = data.id;
+        d.completed = data.completed
       }
-      console.log(data)
+      // console.log(data)
       return d
     })
+    
+    console.log(updating)
     setInformation(updating)
-    // console.log(updating)asdasd
   }
 
   const fetch = useFetcingData(setInformation, 'http://jsonplaceholder.typicode.com/todos')
