@@ -41,7 +41,7 @@ const App = () => {
       return d
     })
     setInformation(updating)
-    // console.log(updating)
+    // console.log(updating)asdasd
   }
 
   const fetch = useFetcingData(setInformation, 'http://jsonplaceholder.typicode.com/todos')
