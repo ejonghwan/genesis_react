@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Pics = () => {
+const SubVisual = () => {
     return (
         <div>
-            Pics
+            subV
         </div>
     );
 };
 
-export default Pics;
+export default SubVisual;

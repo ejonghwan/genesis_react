@@ -4,23 +4,20 @@ import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
-import Visual from './components/main/Visual';
-import Community from './components/sub/Community';
-import Contact from './components/sub/Contact';
-import Department from './components/sub/Department';
-import Gallery from './components/sub/Gallery';
-import Member from './components/sub/Member';
-import Youtube from './components/sub/Youtube';
+// import Visual from './components/main/Visual';
+// import Community from './components/sub/Community';
+// import Contact from './components/sub/Contact';
+// import Department from './components/sub/Department';
+// import Gallery from './components/sub/Gallery';
+// import Member from './components/sub/Member';
+// import Youtube from './components/sub/Youtube';
 
 
-import Pics from './components/main/Pics';
-import Vids from './components/main/Vids';
-import Banner from './components/main/Banner';
+import MainVisual from './components/main/MainVisual';
+import SubVisual from './components/main/SubVisual';
+
 
 import './scss/style.scss';
-
-import Test from './Test'
-import Test2T from './Test2T'
 
 function App() {
 	return (
@@ -29,10 +26,8 @@ function App() {
 				{/* Swich로 exact로 위에있는것을 제외 하고 모드 아래꺼로 적용 */}
 				<Route exact path="/">
 					<Header type={'main'}/>
-					<Visual />
-					<Pics />
-					<Vids />
-					<Banner />
+					<MainVisual />
+					<SubVisual />
 				</Route>
 
 				<Route path="/">
@@ -40,10 +35,10 @@ function App() {
 				</Route>
 			</Switch>
 
-			<Route path="/department">
-					<Department />
-				</Route>
-			<Route path="/gallery">
+			{/* <Route path="/department">
+				<Department />
+			</Route> */}
+			{/* <Route path="/gallery">
 				<Gallery />
 			</Route>
 			<Route path="/youtube">
@@ -57,17 +52,12 @@ function App() {
 			</Route>
 			<Route path="/community">
 				<Community />
-			</Route>
+			</Route> */}
 			
 		
 
 			<Footer />
-
-
-			<br /><br /><br /><br /><br /><br />
 			
-			{/* <Test /> */}
-			{/* <Test2T /> */}
 		</Fragment>
 	);
 }
