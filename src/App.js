@@ -1,72 +1,75 @@
-import React, { useState, useEffect } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import List from './List'
-import useFetcingData from './useFetcingData'
-import Header from './Header';
-
-const App = () => {
-  
-  const [information, setInformation] = useState(['초기데이터'])
-  const [inputData, setInputData] = useState('')
+import React, { Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-  const handleChange = (e) => {
-    setInputData(e.target.value)
-  }
+import Footer from './components/common/Footer';
+import Header from './components/common/Header';
+import Visual from './components/main/Visual';
+import Community from './components/sub/Community';
+import Contact from './components/sub/Contact';
+import Department from './components/sub/Department';
+import Gallery from './components/sub/Gallery';
+import Member from './components/sub/Member';
+import Youtube from './components/sub/Youtube';
 
-  const onCreate = (e) => {
-    e.preventDefault();
-    setInformation([ ...information, {'title':inputData, 'id': information.length+1, 'completed': true} ])
-    setInputData('')
-  }
 
-  const handleToggle = (id) => {
-    const changeData = information.map( d => {
-      if(d.id === id) {
-        d.completed ? d.completed = false : d.completed = true
-      }
-      return d
-    })
-    setInformation(changeData)
-    // console.log(information)
-  }
+import Pics from './components/main/Pics';
+import Vids from './components/main/Vids';
+import Banner from './components/main/Banner';
 
-  const reChange = (id, data) => {
-    // debugger
-    const updating = information.map( d => {
-      if(d.id === id) {
-        d.title = data.title;
-        d.id = data.id;
-        d.completed = data.completed
-      }
-      // console.log(data)
-      return d
-    })
-    
-    console.log(updating)
-    setInformation(updating)
-  }
+import './scss/style.scss';
 
-  const fetch = useFetcingData(setInformation, 'http://jsonplaceholder.typicode.com/todos')
-  
+import Test from './Test'
+import Test2T from './Test2T'
 
-  return (
-    <div className="App">
-      <div>
-        요구조건<br />
-        1. http://jsonplaceholder.typicode.com/todos에서 api 데이터를 받아와서 출력<br />
-        2. 할일 추가 / 삭제 / 수정 <br />
-        3. 할일이 몇개나 남았는지 출력
-        4. 데이터 로드시 로딩화면
-        <br /><br />
-        <Header info={information} />
-        <input onChange={handleChange} value={inputData} />
-        <button onClick={onCreate}>create</button>
-        <List info={information} bool={fetch} toggle={handleToggle} reChange={reChange} />
-      </div>
-    </div>
-  );
+function App() {
+	return (
+		<Fragment>
+			<Switch>
+				{/* Swich로 exact로 위에있는것을 제외 하고 모드 아래꺼로 적용 */}
+				<Route exact path="/">
+					<Header type={'main'}/>
+					<Visual />
+					<Pics />
+					<Vids />
+					<Banner />
+				</Route>
+
+				<Route path="/">
+					<Header type={'sub'}/>
+				</Route>
+			</Switch>
+
+			<Route path="/department">
+					<Department />
+				</Route>
+			<Route path="/gallery">
+				<Gallery />
+			</Route>
+			<Route path="/youtube">
+				<Youtube />
+			</Route>
+			<Route path="/contact">
+				<Contact />
+			</Route>
+			<Route path="/member">
+				<Member />
+			</Route>
+			<Route path="/community">
+				<Community />
+			</Route>
+			
+		
+
+			<Footer />
+
+
+			<br /><br /><br /><br /><br /><br />
+			
+			{/* <Test /> */}
+			{/* <Test2T /> */}
+		</Fragment>
+	);
 }
 
 export default App;
