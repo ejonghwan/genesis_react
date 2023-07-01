@@ -1,4 +1,3 @@
-
 $pc: 1200px;
 $tablet: 1100px;
 $mobile: 760px;
@@ -10,6 +9,7 @@ $gray: #ddd;
 $dark_gray: #666;
 $light_gray: #efefef;
 $point: rgb(217, 24, 24);
+$point2:rgb(251, 95, 33);
 $btn_radius: 56px;
 
 
@@ -19,7 +19,6 @@ $tit_2: #444;
 $con_1: #555;
 $con_2: #666;
 $disabled: #999;
-
 
 
 
@@ -45,22 +44,34 @@ $disabled: #999;
 
 
 
+//common
+@import "common/reset";
+@import "common/common";
+@import "common/fonts";
+@import "common/header";
+@import "common/footer";
+@import "common/loading";
+@import "common/popup";
+@import "common/tab";
+@import "common/button";
+@import "common/input";
+@import "common/bullet";
 
-@import 'common/reset';
-@import 'common/common';
-@import 'common/header';
-@import 'common/footer';
+//main
+@import "main/main_visual";
+@import "main/main_sub_visual";
+@import "main/main_evt_banner";
+@import "main/main_load_banner";
+@import "main/main_content";
 
-@import 'main/banner';
-@import 'main/pics';
-@import 'main/vids';
-@import 'main/visual';
+// sub
+@import "sub/sub_visual";
+@import "sub/pages/sub";
+@import "sub/pages/youtube";
+@import "sub/pages/gallery";
+@import "sub/pages/members";
+@import "sub/pages/location";
 
-@import 'sub/communuty';
-@import 'sub/contact';
-@import 'sub/department';
-@import 'sub/gallery';
-@import 'sub/member';
-@import 'sub/youtube';
+
 
 

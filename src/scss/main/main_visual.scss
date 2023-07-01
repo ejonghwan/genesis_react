@@ -1,0 +1,708 @@
+
+$initPos: 60%;
+$topPos: 30%;
+$wid: 15vw;
+$height: 35vh;
+
+// $initPos: 80%;
+// $topPos: 20%;
+// $wid: 15vw;
+// $height: 25vh;
+
+
+.main_visual {
+	width: 100%;
+	height: 100vh;
+	background: #111;
+	position: relative;
+	overflow: hidden;
+    // color: red;
+
+    figure::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background: rgb(12, 13, 26);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+
+
+	.list {
+		li {
+			width: $wid;
+			height: $height;
+			position: absolute;
+			top: $topPos;
+			left: $initPos;
+			z-index: 3;
+			border-radius: 12px;
+			transition: .5s cubic-bezier(.69,.04,.41,.98);
+        
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                // backdrop-filter: blur(2px);
+                z-index: 5;
+				opacity: 0.7;
+				background: linear-gradient(360deg, black, transparent);
+				border-radius: 12px;
+            }
+
+			&::after {
+				//잠시없앰
+				// content: "";
+				display: block;
+				width: 91%;
+				height: 101%;
+				position: absolute;
+				top: 20px;
+				left: 12px;
+				background-color: black;
+				opacity: 1;
+				z-index: -1;
+				filter: blur(20px);
+			}
+
+			.inner {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				transition: .5s;
+				border-radius: 12px;
+
+                .main_visual_txt {
+                    z-index: 10;
+                    height: 100%;
+                    width: 100%;
+                    color: #fff;
+                    position: absolute;
+                    left: 0;
+
+                    p, strong {
+                        font-size: 1.3rem;
+                        font-weight: 200; 
+                    }
+
+                    .thum {
+                        // display: block;
+                        position: absolute;
+                        top: 73%;
+                        left: 70px;
+                        transform: translate(-50%, -50%);
+                        font-size: 3.2rem;
+
+                        & > span {
+                            font-size: 1.3rem;
+                            width: 100px;
+                            display: block;
+                            opacity: .7;
+                            margin-top: 10px;
+							font-weight: 300;
+                        }
+                    }
+                }
+
+				h2 {
+					font: bold 20px/1 'teko';
+					color: #888;
+					letter-spacing: 1px;
+					transition: .5s 0.5s;
+                    opacity: 0;
+                    font-size: 8rem;
+                    transform: translateY(10px);
+				
+				}
+
+                .pos_txt {
+					// display: none;
+                    width: 1px;
+                    height: 1px;
+                    position: absolute;
+                    top: 30%;
+                    left: 80px;
+
+
+                    .pos_txt_sub {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 1s .3s, transform 1s .3s ;
+                        width: 300px;
+                        margin-top: 20px;
+                        height: auto;
+                    }
+                }
+                .pos_btn {
+					display: none;
+                    position: absolute; 
+                    bottom: 80px; 
+                    font-weight: 200; 
+                    font-size: 1.3rem; 
+                    display: flex; 
+                    justify-content: space-between; 
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 1s .5s, transform 1s .5s ;
+                    left: 80px;
+
+                    a:first-child {
+                        display: block;
+                        margin-right: 40px;
+                    }
+                }
+               
+               
+			}
+		}
+
+
+
+
+		//순서별 li의 위치 및 크기
+		//첫번째 패널 : 기존의 활성화되었다가 사라질 패널
+		li:nth-of-type(1) {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			opacity: 0;
+			z-index: 1;
+			transform: scale(2);
+
+            &::before {
+                content: none;
+            }
+
+            .inner {
+                .thum {
+                    display: none;
+                }
+            }
+		}
+
+		//두번째 패널 : 리스트에서 활성화되는 패널
+		li:nth-of-type(2) {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			z-index: 2;
+			transform: scale(1);
+
+            &::before {
+                content: none;
+            }
+
+
+			.inner {
+				
+				box-shadow: none;
+				border-radius: 0px;
+				padding: 5vw;
+
+                .thum {
+                    display: none;
+                }
+                .pos_txt {
+                   display: block;
+                    .pos_txt_sub {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .pos_btn {
+					// display: block;
+                    opacity: 1;
+                    transform: translateY(0);
+                    
+                }
+
+				.main_visual_slide_video video {
+					border-radius: 0;
+				}
+
+
+				h2 {
+					color: #fff;
+                    opacity: 1;
+                    font-size: 8rem;
+                    transform: translateY(0px);
+					&::before {
+						background: #fff;
+						height: 6px;
+						width: 6vw;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+
+
+		@for $i from 0 through 5 {
+			li:nth-of-type(#{$i + 3}) {
+				// top: calc($topPos + $wid * $i);
+				left: calc($initPos + $wid * $i);
+				transition-delay: 0.1s * $i;
+                border: 10px solid transparent;
+                // box-shadow: 10px 5px 5px rgb(0, 0, 0);;
+                border-radius: 12px;
+				// overflow: hidden;
+				// opacity: .9;
+				.main_visual_slide_video::before {
+					content: none;
+				}
+                
+			}
+		}
+
+		
+	}
+
+	.navi {
+        position: absolute;
+        top: calc($height - 100px);
+        left: 60%;
+        z-index: 3;
+        padding-left: 10px;
+
+		.prev, 
+		.next {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			// border-radius: 18px;
+			// border: 1px solid #bbb;
+			background-color: rgb(0, 0, 0, .3);
+			margin-right: 20px;
+			position: relative;
+
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 12px;
+				height: 2px;
+				background-color: #fff;
+				position: absolute;
+				top: 50%;
+			}
+			&::before {
+				transform: rotate(45deg) translate(0px);
+			}
+			&::after {
+				transform: rotate(-45deg) translateX(0px);
+			}
+
+			&.on {
+				animation: wrap 0.3s 1;
+			}
+		}
+
+		// 좌우 방향에 따른 스타일링
+		.prev {
+			&::before, 
+			&::after {
+				left: 20px;
+				transform-origin: left center;
+			}
+			span {
+				left: 20px;
+			}
+			&.on {
+				span {
+					animation: prevArrow 0.5s 1;
+				}
+			}
+		}
+		.next {
+			&::before, 
+			&::after {
+				left: 20px;
+				transform-origin: right center;
+			}
+			span {
+				right: 20px;
+			}
+			&.on {
+				span {
+					animation: nextArrow 0.5s 1;
+				}
+			}
+		}
+
+		// span {
+		// 	width: 29px;
+		// 	height: 2px;
+		// 	background-color: #fff;
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	opacity: 1;
+		// }
+
+	
+	}
+
+
+    
+    
+
+    
+
+}
+
+
+@keyframes wrap {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	50% {opacity: 0;
+		transform: scale(1.5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+}
+
+@keyframes prevArrow {
+	0% {
+		left: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+	70% {
+		left: -130px;
+		width: 100px;
+		opacity: 0;
+	}
+	80% {
+		left: 100px;
+		width: 120px;
+		opacity: 0;
+	}
+
+	100% {
+		left: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+}
+
+
+@keyframes nextArrow {
+	0% {
+		right: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+	70% {
+		right: -130px;
+		width: 100px;
+		opacity: 0;
+	}
+	80% {
+		right: 100px;
+		width: 120px;
+		opacity: 0;
+	}
+
+	100% {
+		right: 25px;
+		width: 20px;
+		opacity: 1;
+	}
+
+}
+
+
+
+
+
+
+
+
+.main_visual_slide_video {
+    // position: relative;
+    // width: 100%;
+    // height: 500px;
+    video {
+		border-radius: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // opacity: .3;
+        opacity: 1;
+    }
+}
+
+.main_visual_slide.type2 {
+    display: block;
+    // margin-top: 85vh;
+    position: absolute;
+    bottom: 80px;
+    // left: 100px;
+    right: 60px;
+    // top: 170px;
+    z-index: 10;
+    ul {
+        display: flex;
+        margin-bottom: 0px;
+        width: 100%;
+        li {
+            color: #fff;
+            strong {
+                font-size: 1.3rem;
+                font-weight: 300;
+                opacity: .8;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            p {
+                
+                display: inline-block;
+            }
+            p.last {
+                font-size: 1.2rem;
+            }
+        }
+
+        li + li {margin-left: 40px;}
+    }
+}
+
+
+
+
+
+@include tablet {
+
+
+	// 변수만 바꾸는게 아니라 변수값이 들어가는 엘리먼트도 같이 넣어줘야됨
+	$initPos: 65%;
+	$topPos: 30%;
+	$wid: 20vw;
+	$height: 35vh;
+
+
+	.main_visual {
+		.list {
+			li {
+				width: $wid;
+				height: $height;
+				top: $topPos;
+				left: $initPos;
+			}
+
+			@for $i from 0 through 5 {
+				li:nth-of-type(#{$i + 3}) {
+					left: calc($initPos + $wid * $i);
+					transition-delay: 0.1s * $i;
+					border: 10px solid transparent;
+					// box-shadow: 10px 5px 5px rgb(0, 0, 0);;
+					border-radius: 12px;
+					// overflow: hidden;
+					// opacity: .9;
+				}
+			}
+		}
+
+		.navi {
+			left: $initPos;
+		}
+
+		
+	}
+	
+
+
+    .main_visual_title {
+        padding-left: 20px;
+        width: 32vw;
+        .pos_txt {
+            padding-right: 20px;
+        }
+        .pos_btn {
+            right: 20px;
+        }
+
+        h2 {
+            font-size: 6rem;
+            margin-top: 130px;
+        }
+    }
+
+    .main_visual_slide.type2 {
+		display: none;
+        ul {
+            flex-wrap: wrap;
+            padding: 0;
+            li {
+                width: 100%;
+            } 
+            li + li {
+                margin-left: 0;
+            }
+        }
+    }
+
+
+
+
+   
+}
+
+
+
+@include mobile {
+
+	$initPos: 20%;
+	$topPos: 60%;
+	$wid: 32vw;
+	$height: 25vh;
+
+
+
+
+
+	.main_visual {
+		.list {
+			li {
+				width: $wid;
+				left: $initPos;
+				top: $topPos;
+				height: 150px;
+
+				.inner {
+					.pos_txt {
+						h2 {font-size: 5rem;}
+						padding:0;
+						top: 100px;
+						left: 20px;
+	
+						.pos_txt_outer {display: none;}
+						.pos_txt_inner {display: none;}
+						.pos_txt_sub {
+							width: 160px;
+							margin-left: 0;
+							font-weight: 400;
+							margin-top: 10px;
+							font-size: 1.4rem;
+						}
+					}
+
+					.pos_btn {
+						bottom: auto;
+						right: auto;
+						top: 330px;
+						left: 20px;
+						display: block;
+						font-size: 1.2rem;
+						a {
+							display: inline-block;
+							margin-bottom: 10px;
+							font-size: 1.5rem;
+							font-weight: 400;
+						}
+					}
+
+					.main_visual_txt {
+						.thum {
+							font-size: 2.6rem;
+							top: auto;
+							bottom: 10px;
+							left: 10px;
+							transform: none;
+							> span {
+								font-size: 1.3rem;
+								margin-top: 0;
+							}
+						}
+					}
+
+				} 
+
+			}
+
+			//목록 순서별 위치 설정
+			@for $i from 0 through 5 {
+				li:nth-of-type(#{$i + 3}) {
+					left: calc($initPos + $wid * $i);
+					transition-delay: 0.1s * $i;
+					border: 5px solid transparent;
+				}
+			}
+			
+		}
+
+		.navi {
+			left: $initPos;
+			top: 83%;
+		}
+	}
+
+
+
+	.main_visual_slide_video {
+		// position: relative;
+		// width: 100%;
+		// height: 500px;
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			// opacity: .3;
+			opacity: 1;
+		}
+	}
+		
+
+
+		
+       
+
+    .main_visual_slide.type2 {
+        bottom: 20px;
+        ul {
+            li {
+                p, strong {
+                   font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

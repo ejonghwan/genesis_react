@@ -1,12 +1,22 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 
-const Layout = ({ children, name }) => {
-    return (
-        <section className={name}>
-            <h2>{name}</h2>
-            {children}
-        </section>
-    );
-};
+function Layout({ name, children }) {
+	const frame = useRef(null);
+
+	useEffect(() => {
+		frame.current.classList.add('on');
+	}, []);
+
+	return (
+		<section className={`content ${name}`} ref={frame}>
+			<figure></figure>
+
+			<div className='inner'>
+				<h1>{name}</h1>
+				{children}
+			</div>
+		</section>
+	);
+}
 
 export default Layout;
