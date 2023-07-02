@@ -17,22 +17,22 @@ function Header({ type }) {
                 </h1>
                 <ul className="header_nav">
 					<li>
-						<NavLink to='/Gallery' activeClassName={active}>
+						<NavLink to='/gallery' activeClassName={active}>
 							Gallery
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/Contact' activeClassName={active}>
+						<NavLink to='/contact' activeClassName={active}>
 							Contact
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/Youtube' activeClassName={active}>
+						<NavLink to='/youtube' activeClassName={active}>
 							Youtube
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/Members' activeClassName={active}>
+						<NavLink to='/member' activeClassName={active}>
 							Members
 						</NavLink>
 					</li>

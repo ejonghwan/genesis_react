@@ -12,7 +12,7 @@ function Layout({ name, children }) {
 			<figure></figure>
 
 			<div className='inner'>
-				<h1>{name}</h1>
+				{/* <h1>{name}</h1> */}
 				{children}
 			</div>
 		</section>

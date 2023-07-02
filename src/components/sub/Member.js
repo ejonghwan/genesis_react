@@ -1,7 +1,16 @@
+import { Fragment } from 'react';
 import Layout from '../common/Layout';
+import Visual from './Visual';
 
-function Member() {
-	return <Layout name={'Member'}>Member</Layout>;
+const Member = () => {
+	return (
+		<Fragment>
+			<Visual name={'Member'} />
+			<Layout name={'Member'}>
+				Member
+			</Layout>
+		</Fragment>
+	)
 }
 
 export default Member;

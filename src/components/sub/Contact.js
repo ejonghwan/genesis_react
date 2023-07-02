@@ -1,6 +1,9 @@
+import React, { Fragment } from 'react';
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Visual from './Visual';
+
 
 
 function Contact() {
@@ -90,37 +93,40 @@ function Contact() {
   };
 
 	return (
-		<Layout name={'Contact'}>
-			<div id='map' ref={container} style={{ width: "100%", height: "500px" }}></div>
-			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
+		<Fragment>
+			<Visual name={'Contact'} />
+			<Layout name={'Contact'}>
+				<div id='map' ref={container} style={{ width: "100%", height: "500px" }}></div>
+				<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
 
-			{/* 배열정보값을 토대로 동적으로 li지점버튼 생성하고 해당 버튼 클릭할때 순서값 State를 변경하면서 지도화면이 갱신되도록 수정 */}
-			<ul className='branch'>
-				{info.map((el, idx) => {
-					return (
-						<li key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
-							{el.title}
-						</li>
-					);
-				})}
-			</ul>
+				{/* 배열정보값을 토대로 동적으로 li지점버튼 생성하고 해당 버튼 클릭할때 순서값 State를 변경하면서 지도화면이 갱신되도록 수정 */}
+				<ul className='branch'>
+					{info.map((el, idx) => {
+						return (
+							<li key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
+								{el.title}
+							</li>
+						);
+					})}
+				</ul>
 
 
 
-			<div className='form'>
-				<form ref={form} onSubmit={sendEmail}>
-					<label>Name</label>
-					<input type="text" name="name" />
-					<label>Email</label>
-					<input type="email" name="email" />
-					<label>Message</label>
-					<textarea name="message" />
-					<input type="submit" value="Send" />
-				</form>
-				{Success ? <p style={{ color: "blue" }}>성공적으로 전송</p> : <p style={{ color: "red" }}>전송에 실패했습니다</p>}
-			</div>
-			
-		</Layout>
+				<div className='form'>
+					<form ref={form} onSubmit={sendEmail}>
+						<label>Name</label>
+						<input type="text" name="name" />
+						<label>Email</label>
+						<input type="email" name="email" />
+						<label>Message</label>
+						<textarea name="message" />
+						<input type="submit" value="Send" />
+					</form>
+					{Success ? <p style={{ color: "blue" }}>성공적으로 전송</p> : <p style={{ color: "red" }}>전송에 실패했습니다</p>}
+				</div>
+				
+			</Layout>
+		</Fragment>
 	);
 }
 
