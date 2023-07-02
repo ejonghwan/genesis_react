@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import Anime from '../../asset/anime';
+import Anime from '../../ui/anime';
 
 function Btns({ setScrolled, setPos }) {
 	const btnRef = useRef(null);

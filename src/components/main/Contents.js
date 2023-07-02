@@ -1,6 +1,6 @@
 import img01 from '../../assets/images/main/genesis-kr-busan-motor-show-genesisbusan-12-desktop-mobile-1220x600-ko.jpg'
-import img02 from '../../assets/images/main/genesis-kr-busan-motor-show-genesisbusan-12-desktop-mobile-1220x600-ko.jpg'
-import img03 from '../../assets/images/main/genesis-kr-busan-motor-show-genesisbusan-12-desktop-mobile-1220x600-ko.jpg'
+import img02 from '../../assets/images/main/genesis-related-contents-banner-digital-service-desktop-630x404-kr.webp'
+import img03 from '../../assets/images/main/genesis-related-contents-banner-members-desktop-630x404-kr.webp'
 
 
 const Contents = () => {

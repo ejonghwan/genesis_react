@@ -1,10 +1,21 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, NavLink } from 'react-router-dom';
+import Popup from '../../ui/Popup'
+import { useEffect, useRef } from 'react';
+
+import AllMenu from './AllMenu'
+
 
 function Header({ type }) {
 	const active = 'on';
+	
+	const allMenu = useRef(null);
 
+	useEffect(() => {
+		console.log(allMenu)
+	}, [])
+	
 	
 	return (
 		
@@ -38,13 +49,13 @@ function Header({ type }) {
 					</li>
                 </ul>
                
-                <button className="popup_btn header_all_menu" type="button" >
+                <button className="popup_btn header_all_menu" type="button" ref={allMenu}>
                     <span className="line"></span>
                     <span className="blind">전체 메뉴 열기</span>
 					{/* <FontAwesomeIcon icon={faBars} /> */}
                 </button>
 
-				
+				<AllMenu target={allMenu} />
             </nav>
         </div>
     </header>

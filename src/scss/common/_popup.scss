@@ -13,16 +13,24 @@
     display: none;
 }
 
-.dimd.on {
+.dimd {
    display: block;
 }
 
 
-.popup.on.all_menu {
+.popup.all_menu {
     z-index: 101;
 }
 
 .popup {
+    display: block !important;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #090b0e;
+    z-index: 100;
     .footer_sec {
         background-color: transparent;
     }
@@ -43,17 +51,6 @@
     
 }
 
-
-.popup.on {
-    display: block !important;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #090b0e;
-    z-index: 100;
-}
 
 .popup.auto_height {
     height: auto;

@@ -5,57 +5,79 @@ import G80E from '../../assets/images/main/g80e.mp4'
 import G80 from '../../assets/images/main/g80.mp4'
 import GV70 from '../../assets/images/main/gv70.mp4'
 import GV60 from '../../assets/images/main/gv60.mp4'
+import { useEffect, useRef } from 'react'
 
 
 
 const Visual = () => {
 
+	const wrapRef = useRef(null)
+	const prevRef = useRef(null)
+	const nextRef = useRef(null)
 
-	// const wrap = document.querySelector('.main_visual .list')
-	// const items = wrap.querySelectorAll('.main_visual .list li')
-	// const prev = document.querySelector('.main_visual .prev')
-	// const next = document.querySelector('.main_visual .next')
+
+	const init = (items) => {
+		console.log(items)
+
+		items[1].querySelector('video').play();
+		items[1].classList.add('active')
+	}
+
+	const handleNextClick = (items) => {
+		return () => {
+			wrapRef.current.append(wrapRef.current.firstElementChild)
+			nextRef.current.classList.add('on');
+
+			setTimeout(() => {
+				nextRef.current.classList.remove('on')
+			}, 600)
+			setTimeout(() => {
+				for(let i = 0; i < items.length; i++) {
+					items[i].querySelector('video').pause();
+					items[i].querySelector('video').currentTime = 0;
+					items[i].classList.remove('active')
+				}
+				wrapRef.current.querySelectorAll('.main_visual .list li')[1].classList.add('active')
+				wrapRef.current.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
+			}, 600)
+		}
+	}
+
+	const handlePrevClick = (items) => {
+		return () => {
+			wrapRef.current.prepend(wrapRef.current.lastElementChild)
+			prevRef.current.classList.add('on');
+			setTimeout(() => {
+				prevRef.current.classList.remove('on')
+			}, 600)
+			setTimeout(() => {
+				for(let i = 0; i < items.length; i++) {
+					items[i].querySelector('video').pause();
+					items[i].querySelector('video').currentTime = 0;
+					items[i].classList.remove('active')
+				}
+
+				wrapRef.current.querySelectorAll('.main_visual .list li')[1].classList.add('active')
+				wrapRef.current.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
+			}, 600)
+		}
+	}
+
+	useEffect(() => {
+		const items = wrapRef.current.querySelectorAll('li')
+		
+		window.addEventListener('load', init(items))
+		prevRef.current.addEventListener('click', handlePrevClick(items))
+		nextRef.current.addEventListener('click', handleNextClick(items))
+
+
+		return () => {
+			window.removeEventListener('load', init(items))
+			// prevRef.current.removeEventListener('click', handlePrevClick(items))
+			// nextRef.current.removeEventListener('click', handleNextClick(items))
+		}
+	}, [])
 	
-	// window.addEventListener('load', e => {
-	// 	items[1].querySelector('video').play();
-	// 	items[1].classList.add('active')
-	// })
-
-	// prev.addEventListener('click', e => {
-	// 	wrap.prepend(wrap.lastElementChild)
-
-	// 	prev.classList.add('on');
-	// 	setTimeout(() => {
-	// 		prev.classList.remove('on')
-	// 	}, 600)
-	// 	setTimeout(() => {
-	// 		for(let i = 0; i < items.length; i++) {
-	// 			items[i].querySelector('video').pause();
-	// 			items[i].querySelector('video').currentTime = 0;
-	// 			items[i].classList.remove('active')
-	// 		}
-
-	// 		wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
-	// 		wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
-	// 	}, 600)
-	// })
-	// next.addEventListener('click', e => {
-	// 	wrap.append(wrap.firstElementChild)
-	// 	next.classList.add('on');
-
-	// 	setTimeout(() => {
-	// 		next.classList.remove('on')
-	// 	}, 600)
-	// 	setTimeout(() => {
-	// 		for(let i = 0; i < items.length; i++) {
-	// 			items[i].querySelector('video').pause();
-	// 			items[i].querySelector('video').currentTime = 0;
-	// 			items[i].classList.remove('active')
-	// 		}
-	// 		wrap.querySelectorAll('.main_visual .list li')[1].classList.add('active')
-	// 		wrap.querySelectorAll('.main_visual .list li')[1].querySelector('video').play()
-	// 	}, 600)
-	// })
 
 	return (
 		// <figure id='visual' className='myScroll'>
@@ -63,8 +85,7 @@ const Visual = () => {
 		// </figure>
 
 		<div className="main_visual">
-			<ul className="list">
-			
+			<ul className="list" ref={wrapRef}>
 				<li>
 					<div className="inner">
 						<div className="main_visual_txt">
@@ -188,12 +209,12 @@ const Visual = () => {
 				</li>
 			</ul>
 			<nav className="navi">
-				<p className="prev">
+				<button className="prev" ref={prevRef}>
 					<span><span className="blind">이전 슬라이드</span></span>
-				</p>
-				<p className="next">
+				</button>
+				<button className="next" ref={nextRef}>
 					<span><span className="blind">다음 슬라이드</span></span>
-				</p>
+				</button>
 			</nav>
 
 

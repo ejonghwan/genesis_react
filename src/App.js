@@ -13,9 +13,12 @@ import Department from './components/sub/Department';
 import Gallery from './components/sub/Gallery';
 import Member from './components/sub/Member';
 import Youtube from './components/sub/Youtube';
+import Main from './components/main/Main';
+import AllMenu from './components/common/AllMenu';
+
 
 import './scss/style.scss';
-import Main from './components/main/Main';
+
 
 function App() {
 
