@@ -1,23 +1,10 @@
 import Accordion from "./accordion/Accordion";
+import { accData } from './menu/MenuData';
 
 const Footer = () => {
+  
 
-    const menuData = [
-        {
-            header: <strong class="tit">구매</strong>, 
-            body: [<li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90 LONG WHEEL BASE</a></li>,
-            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90</a></li>,
-            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90</a></li>,
-            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90</a></li>,
-            <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90</a></li>
-            ]
-        },
-        {header: "header b", body: ['body b']},
-        {header: "header c", body: ['body c']},
-        {header: "header d", body: ['body d']},
-        {header: "header e", body: ['body e']},
-    ]
-
+    console.log(accData)
 
 	return (
 		<footer id="footer">
@@ -83,69 +70,17 @@ const Footer = () => {
         </section> */}
         {/* //공지사항 */}
 
-        {/* 아코디언 테스트 */}
-        <Accordion 
-            data={menuData} 
-            type={"type1"}
-            device={"accordion_mo"}
-        />
 
 
         <section class="footer_sec all_menu">
-            <div class="g_inner accordion_mo type1">
-                {/* 모델 */}
-                <div class="item">
-                    <button type="button" class="acco_head"><strong class="tit">모델</strong></button>
-                    <ul class="acco_body">
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90 LONG WHEEL BASE</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G90</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G80</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/electrified-g80/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">ELECTRIFIED G80</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70.html" role="button" target="_blank" title="새창" rel="noreferrer">G70</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g70-shooting-brake/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">G70 SHOOTING BRAKE</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv80/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">GV80</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv70/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">GV70</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/electrified-gv70/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">ELECTRIFIED GV70</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/models/luxury-suv-genesis/gv60/highlights.html" role="button" target="_blank" title="새창" rel="noreferrer">GV60</a></li>
-                    </ul>
-                </div>
-                {/* //모델 */}
-                {/* 구매 */}
-                <div class="item">
-                    <button type="button" class="acco_head"><strong class="tit">구매</strong></button>
-                    <ul class="acco_body">
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/quote.html" role="button" target="_blank" title="새창" rel="noreferrer">견적내기</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/financial-program/program-overview.html" role="button" target="_blank" title="새창" rel="noreferrer">구매 프로그램</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/electric-vehicle-purchase-guide.html" role="button" target="_blank" title="새창" rel="noreferrer">전기차 구매가이드</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-purchase.html" role="button" target="_blank" title="새창" rel="noreferrer">구매 상담 신청</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-spectrum.html" role="button" target="_blank" title="새창" rel="noreferrer">제네시스 스펙트럼</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/shopping/genesis-car-specifications-check.html" role="button" target="_blank" title="새창" rel="noreferrer">사양 조회하기</a></li>
-                    </ul>
-                </div>
-                {/* //구매 */}
-                {/* 체험 */}
-                <div class="item">
-                    <button type="button" class="acco_head"><strong class="tit">체험</strong></button>
-                    <ul class="acco_body">
-                        <li><a href="https://www.genesis.com/kr/ko/experience/space/space-overview.html" role="button" target="_blank" title="새창" rel="noreferrer">스페이스</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/experience/genesis.html" role="button" target="_blank" title="새창" rel="noreferrer">시승 신청</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/experience/find-a-showroom.html" role="button" target="_blank" title="새창" rel="noreferrer">전시장 찾기</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/experience/genesis-driving-experience.html" role="button" target="_blank" title="새창" rel="noreferrer">제네시스 드라이빙 익스피리언스</a></li>
-                    </ul>
-                </div>
-                {/* //체험 */}
-                {/* 멤버스 */}
-                <div class="item">
-                    <button type="button" class="acco_head"><strong class="tit">멤버스</strong></button>
-                    <ul class="acco_body">
-                        <li><a href="https://www.genesis.com/kr/ko/members/genesis-membership/membership-overview/membership-information.html" role="button" target="_blank" title="새창" rel="noreferrer">제네시스 멤버십</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/members/my-genesis-app/overview.html" role="button" target="_blank" title="새창" rel="noreferrer">MY GENESIS 앱</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/members/technology/overview.html" role="button" target="_blank" title="새창" rel="noreferrer">테크놀로지</a></li>
-                        <li><a href="https://www.genesis.com/kr/ko/members/vehicle-management-service/genesis-service-network.html" role="button" target="_blank" title="새창" rel="noreferrer">차량관리 서비스</a></li>
-                    </ul>
-                </div>
-            </div>
+            <Accordion 
+                data={accData} 
+                className={"type1 g_inner"}
+                device={"accordion_mo"}
+            />
         </section>
+
+
         <section class="footer_sec sitemap mid">
             <div class="g_inner">
                 <ul class="item btw_line">

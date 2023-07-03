@@ -1,23 +1,38 @@
-import React, { Fragment } from 'react';
-import AccHeader from './AccHeader';
-import AccBody from './AccBody';
+import React, { useEffect, useState } from 'react';
 
 
-const Accordion = ({ data, type, device }) => {
+const Accordion = ({ data, className, device }) => {
 
     
-    
+    const [Active, setActive] = useState(false);
+    const [Data, setData] = useState(data);
+    const [Index, setIndex] = useState(false);
+    const handleClick = idx => e => {
+        // console.log(idx, Index, Active);
+        // idx === Index && e.target.classList.remove('on')
+        setIndex(idx);
+    };
+
+
+    useEffect(() => {
+        console.log('aco', Data)
+    }, [Index])
+
+
     return (
-        <div class={`g_inner ${type} ${device}`}>
+        <div class={`${className} ${device}`}>
             {data.map((item, idx) => {
                 return (
-                    <div key={idx}>
-                        <AccHeader>{item.header}</AccHeader>
-                        <AccBody key={`b_${idx}`}>{item.body}</AccBody>
+                    <div key={idx} className='aco_wrap'>
+                         <button type="button" class={`acco_head ${idx === Index && !data.done ? 'on' : ''}`} onClick={handleClick(idx)}>
+                            {item.header}
+                         </button>
+                         <div class={`acco_body ${idx === Index && !data.done && 'on'}`}>
+                            {item.body}
+                        </div>
                     </div>
                 )
             })}
-            
         </div>
     );
 };
