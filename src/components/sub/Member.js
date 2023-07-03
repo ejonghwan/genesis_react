@@ -3,29 +3,72 @@ import Layout from '../common/Layout';
 import Visual from './Visual';
 
 const Member = () => {
-
 	const initVal = {
 		userid: '',
 		pwd1: '',
 		pwd2: '',
 		email: '',
-	}
+	};
 
 	const [Val, setVal] = useState(initVal);
+	const [Err, setErr] = useState({});
+	const [Submit, setSubmit] = useState(false);
 
-	const handleChange = e => {
+	const handleChange = (e) => {
+		//현재 입력하고 있는 input요소의 name,value값을 비구조화할당으로 뽑아서 출력
 		const { name, value } = e.target;
-		setVal({...Val, [name]: value});
+		//기존 초기 Val State값을 deep copy해서 현재 입력하고 있는 항목의 name값과 value값으로 기존 State를 덮어쓰기 해서 변경 (불변성 유지)
+		setVal({ ...Val, [name]: value });
+	};
 
-		
-	}
+	const check = (value) => {
+		//인수로 현재 State값을 전달받아서 항목별로 에러메세지를 객체로 반환하는 함수
+		//반환되는 에러메세지가 있으면 인증 실패
+		//반환되는 에러메세지가 없으면 인증 성공
+		const errs = {};
+		const eng = /[a-zA-Z]/;
+		const num = /[0-9]/;
+		const spc = /[~!@#$%^&*()_+]/;
 
+		if (value.userid.length < 5) {
+			errs.userid = '아이디를 5글자 이상 입력하세요.';
+		}
+		if (value.pwd1.length < 5 || !eng.test(value.pwd1) || !num.test(value.pwd1) || !spc.test(value.pwd1)) {
+			errs.pwd1 = '비밀번호는 5글자 이상, 영문, 숫자, 특수문자를 모두 포함하세요.';
+		}
+		if (value.pwd1 !== value.pwd2 || !value.pwd2) {
+			errs.pwd2 = '두개의 비밀번호를 동일하게 입력하세요.';
+		}
+		if (value.email.length < 8 || !/@/.test(value.email)) {
+			errs.email = '이메일주소는 8글자 이상 @를 포함하세요.';
+		}
+		return errs;
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log('현재 스테이트값', Val);
+		//check가 반환하는 인증 메세지가 있으면 해당 메세지를 화면에 출력하고 전송중지
+		//그렇지 않으면 인증 성공
+		console.log(check(Val));
+		setErr(check(Val));
+		setSubmit(true);
+	};
+
+	useEffect(() => {
+		//객체의 키값을 배열로 반환한다음 해당 배열의 갯수를 저장
+		//len값이 0이면 Err객체에 에러메시지가 하나도 없어서 인증통과 처리
+		const len = Object.keys(Err).length;
+		if (len === 0 && Submit) {
+			alert('모든 인증을 통과했습니다.');
+		}
+	}, [Err]);
 
 	return (
 		<Fragment>
 			<Visual name={'Member'} />
 			<Layout name={'Member'}>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
 						<table>

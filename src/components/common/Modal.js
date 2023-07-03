@@ -4,32 +4,46 @@ const Modal = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
 
 	useImperativeHandle(ref, () => {
-		return { open: () => setOpen(true) };
+		return { 
+			open: (target) => () => { 
+				if(target.classList.contains('on')) {
+					target.classList.remove('on'); 
+					setOpen(false);
+				} else {
+					target.classList.add('on'); 
+					setOpen(true);
+				}
+			 } 
+		};
 	});
+
+	const popClose = e => {
+		document.body.style.overflow = 'unset';
+		document.body.classList.remove('popop_active');
+		document.body.classList.remove(props.type);
+		setOpen(!Open)
+	}
 
 	useEffect(() => {
 		if(Open) {
 			document.body.style.overflow = 'hidden';
 			document.body.classList.add('popop_active');
 		}
-
 		if(Open && props.type === 'allmenu') {
 			document.body.classList.add(props.type);
 		}
 
 		return () => {
-			document.body.style.overflow = 'unset';
-			document.body.classList.remove('popop_active');
-			document.body.classList.remove(props.type);
+			popClose();
 		}
 	}, [Open])
 
 	return (
 		<>
 			{Open && (
-				<aside className='modal' ref={ref}>
+				<aside className={`modal ${props.type}`} ref={ref}>
 					<div className='con'>{props.children}</div>
-					<span className='close' onClick={() => setOpen(false)}>
+					<span className='close' onClick={popClose}>
 						close
 					</span>
 				</aside>

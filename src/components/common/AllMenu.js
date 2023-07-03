@@ -6,7 +6,7 @@ const AllMenu = ({ target }) => {
     const modal = useRef(null);
 
     useEffect(() => {
-        target.current.addEventListener('click', modal.current.open)
+        target.current.addEventListener('click', modal.current.open(target.current))
       
         return () => {
         }
