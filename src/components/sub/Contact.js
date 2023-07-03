@@ -61,6 +61,7 @@ function Contact() {
 		mapInstance.addControl(new kakao.maps.MapTypeControl(), kakao.maps.ControlPosition.TOPRIGHT);
 		mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 		
+		mapInstance.setZoomable(false);
 
 		setLocation(mapInstance);
 		window.addEventListener('resize', handleResize(mapInstance, Index))
