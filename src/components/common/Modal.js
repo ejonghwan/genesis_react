@@ -32,7 +32,6 @@ const Modal = forwardRef((props, ref) => {
 		if(Open && props.type === 'allmenu') {
 			document.body.classList.add(props.type);
 		}
-
 		return () => {
 			popClose();
 		}

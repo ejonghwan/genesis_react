@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import Popup from '../../ui/Popup.js'
 import Modal from '../common/Modal.js'
 
 const AllMenu = ({ target }) => {

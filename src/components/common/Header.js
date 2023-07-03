@@ -1,7 +1,6 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, NavLink } from 'react-router-dom';
-import Popup from '../../ui/Popup'
 import { useEffect, useRef } from 'react';
 
 import AllMenu from './AllMenu'
@@ -9,7 +8,6 @@ import AllMenu from './AllMenu'
 
 function Header({ type }) {
 	const active = 'on';
-	
 	const allMenu = useRef(null);
 
 	useEffect(() => {

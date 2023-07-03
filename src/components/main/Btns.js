@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import Anime from '../../ui/anime';
+import Anime from '../../utils/anime';
 
 function Btns({ setScrolled, setPos }) {
 	const btnRef = useRef(null);
@@ -40,7 +40,8 @@ function Btns({ setScrolled, setPos }) {
 		return () => {
 			window.removeEventListener('resize', getPos);
 			window.removeEventListener('scroll', activation);
-			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+			// window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+			window.scrollTo({ top: 0, left: 0 });
 		};
 	}, []);
 
