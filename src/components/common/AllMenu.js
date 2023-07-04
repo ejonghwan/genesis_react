@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Modal from '../common/Modal.js'
 import Accordion from './accordion/Accordion.js';
-import { accData } from './menu/MenuData';
+import { accData } from './data/MenuData.js';
 
 const AllMenu = ({ target }) => {
     const modal = useRef(null);

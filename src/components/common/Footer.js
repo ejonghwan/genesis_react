@@ -1,5 +1,5 @@
 import Accordion from "./accordion/Accordion";
-import { accData } from './menu/MenuData';
+import { accData } from './data/MenuData';
 
 const Footer = () => {
   
