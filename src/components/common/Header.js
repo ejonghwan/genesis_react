@@ -45,6 +45,11 @@ function Header({ type }) {
 							Members
 						</NavLink>
 					</li>
+					<li>
+						<NavLink to='/community' activeClassName={active}>
+							Community
+						</NavLink>
+					</li>
                 </ul>
                
                 <button className="popup_btn header_all_menu" type="button" ref={allMenu}>

@@ -14,7 +14,6 @@ import Gallery from './components/sub/Gallery';
 import Member from './components/sub/Member';
 import Youtube from './components/sub/Youtube';
 import Main from './components/main/Main';
-import AllMenu from './components/common/AllMenu';
 
 
 import './scss/style.scss';
@@ -31,11 +30,11 @@ function App() {
 			</Switch>
 
 			<Route path='/department' component={Department} />
-			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/contact' component={Contact} />
 			<Route path='/member' component={Member} />
+			<Route path='/community' component={Community} />
 			<Footer />
 		</>
 	);
