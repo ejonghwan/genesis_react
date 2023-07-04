@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.c91ef48c.css",
-    "main.js": "/genesis_react/static/js/main.76ee14f5.js",
+    "main.js": "/genesis_react/static/js/main.1129e343.js",
     "static/media/g70.mp4": "/genesis_react/static/media/g70.4fe29c37e8d76aaf9480.mp4",
     "static/media/g80.mp4": "/genesis_react/static/media/g80.487f5f99e24a25085fb4.mp4",
     "static/media/yout.mp4": "/genesis_react/static/media/yout.26399237db6a6befd11e.mp4",
@@ -45,10 +45,10 @@
     "static/media/genesis-related-contents-banner-digital-service-desktop-630x404-kr.webp": "/genesis_react/static/media/genesis-related-contents-banner-digital-service-desktop-630x404-kr.bf74d2488e9f406eb11a.webp",
     "index.html": "/genesis_react/index.html",
     "main.c91ef48c.css.map": "/genesis_react/static/css/main.c91ef48c.css.map",
-    "main.76ee14f5.js.map": "/genesis_react/static/js/main.76ee14f5.js.map"
+    "main.1129e343.js.map": "/genesis_react/static/js/main.1129e343.js.map"
   },
   "entrypoints": [
     "static/css/main.c91ef48c.css",
-    "static/js/main.76ee14f5.js"
+    "static/js/main.1129e343.js"
   ]
 }
