@@ -52,12 +52,8 @@ const Community = () => {
 		return () => {
 			if(Modify) return;
 			const update = Posts.map(item => id === item.id ? {...item, modify: true} : item);
-			setModiValue(prev => {
-				return { ...prev, title: Posts.filter(item => item.id === id )[0].title };
-			});
-			setModiValue(prev => {
-				return { ...prev, content: Posts.filter(item => item.id === id )[0].content };
-			});
+			setModiValue(prev => ({ ...prev, title: Posts.filter(item => item.id === id )[0].title}) );
+			setModiValue(prev => ({ ...prev, content: Posts.filter(item => item.id === id )[0].content }) );
 			setPosts(update)
 			setModify(true)
 		}
@@ -73,6 +69,9 @@ const Community = () => {
 
 	const updatePost = id => {
 		return () => {
+			const update = Posts.map(item => id === item.id ? {...item, title: ModiValue.title, content: ModiValue.content, modify: false} : item);
+			setPosts(update)
+			// console.log('????', Posts)
 			setModify(false)
 		}
 	}
@@ -88,8 +87,13 @@ const Community = () => {
 
 	const handleChange = e => {
 		const { name, value } = e.target;
-		setModiValue({[name]: value})
+		setModiValue({...ModiValue, [name]: value})
 	}
+
+	useEffect(() => {
+		console.log('Modi', ModiValue)
+		console.log('Posts', Posts)
+	}, [Posts])
 
 	return (
 		<Fragment>
