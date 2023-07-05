@@ -9,6 +9,8 @@ const Tab = ({ tabHead, tabBody, data, className }) => {
     const [Data, setData] = useState(data)
     const [Index, setIndex] = useState(0);
 
+    console.log('tab?', Index)
+
     
 
     useEffect(() => {
@@ -19,8 +21,8 @@ const Tab = ({ tabHead, tabBody, data, className }) => {
     return (
         <article className={className}>
             <div className="tab_wrap">
-                <TabHead heads={tabHead} />
-                <TabBody data={data} >
+                <TabHead heads={tabHead} setIndex={setIndex}/>
+                <TabBody data={data} Index={Index}>
                     {tabBody}
                 </TabBody>
             </div>

@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 
 
-const TabBody = ({ children }) => {
+const TabBody = ({ children, Index }) => {
 
+    console.log('tab body', Index)
 
     return (
         <ul className="tab_body">
