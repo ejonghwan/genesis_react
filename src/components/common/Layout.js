@@ -11,10 +11,8 @@ function Layout({ name, children }) {
 		<section className={`content ${name}`} ref={frame}>
 			<figure></figure>
 
-			<div className='inner'>
-				{/* <h1>{name}</h1> */}
-				{children}
-			</div>
+			{/* <h1>{name}</h1> */}
+			{children}
 		</section>
 	);
 }
