@@ -35,6 +35,7 @@ function Main() {
 			<SpaceRoad />
 			<Contents />
 
+
 			<News />
 			<Pics Scrolled={Scrolled} Pos={Pos}/>
 			<Vids />

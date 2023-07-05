@@ -1,8 +1,12 @@
+import React from 'react';
+
+
 import Tab from '../../common/tab/Tab';
 import All from './All';
 import Sedan from './Sedan';
 import Suv from './Suv';
 import { CarData } from '../../common/data/CarData';
+
 
 
 
@@ -17,10 +21,9 @@ const CarVisual = () => {
                 
                     {/* tab */}
                     <Tab 
-                        data={CarData} 
                         className={"tab_type1"} 
                         tabHead={["ALL", "SEDAN", "SUV"]} 
-                        tabBody={[<All />, <Sedan />, <Suv />]}
+                        tabBody={[<All  data={CarData} />, <Sedan  data={CarData} />, <Suv  data={CarData} />]}
                     />
 
                     <article class="tab_type1">

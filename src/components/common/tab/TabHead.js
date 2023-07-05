@@ -1,11 +1,9 @@
-import { useState, useEffect, useRef } from "react";
-
-
+import { useRef } from "react";
 
 const TabHead = ({ heads, setIndex, Index }) => {
 
     const tabHeaderRef = useRef(null);
-    const handleTabClick = idx =>  e => setIndex(idx)
+    const handleTabClick = idx => e => setIndex(idx)
 
     return (
         <ul class="tab_header" aria-labelledby="tab_type1_tit" role="tablist" ref={tabHeaderRef}>

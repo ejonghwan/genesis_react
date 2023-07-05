@@ -9,8 +9,6 @@ function Layout({ name, children }) {
 
 	return (
 		<section className={`content ${name}`} ref={frame}>
-			<figure></figure>
-
 			{/* <h1>{name}</h1> */}
 			{children}
 		</section>
