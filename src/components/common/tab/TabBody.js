@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 
 
 
-const TabBody = ({ }) => {
+const TabBody = ({ children }) => {
 
 
     return (
-        <article >
-            tabbody
-        </article>
+        <ul className="tab_body">
+            {children.map(item => <li className="tab_body_item">{item}</li>)}
+        </ul>
     )
 }
 

@@ -13,9 +13,9 @@ const Member = () => {
 		pwd1: '',
 		pwd2: '',
 		email: '',
-		gender: false,
-		interests: false,
-		edu: null,
+		gender: '',
+		interests: [],
+		edu: '',
 		comments: '',
 	};
 
@@ -31,19 +31,21 @@ const Member = () => {
 	};
 
 	const handleRadio = (e) => {
-		const { name, checked } = e.target;
-		console.log(e.target.value);
-		setVal({ ...Val, [name]: checked });
+		const { name, value } = e.target;
+
+		setVal({ ...Val, [name]: value });
 	};
 
 	const handleCheck = (e) => {
 		const { name } = e.target;
-		let isChecked = false;
 		const inputs = e.target.parentElement.querySelectorAll('input');
 
 		//모든 체크박스를 반복돌면서 하나라도 체크되어 있는게 있으면 true값 반환
-		inputs.forEach((el) => el.checked && (isChecked = true));
-		setVal({ ...Val, [name]: isChecked });
+		let checkArr = [];
+		inputs.forEach((el) => {
+			if (el.checked) checkArr.push(el.value);
+		});
+		setVal({ ...Val, [name]: checkArr });
 	};
 
 	const handleSelect = (e) => {
@@ -62,9 +64,6 @@ const Member = () => {
 	};
 
 	const check = (value) => {
-		//인수로 현재 State값을 전달받아서 항목별로 에러메세지를 객체로 반환하는 함수
-		//반환되는 에러메세지가 있으면 인증 실패
-		//반환되는 에러메세지가 없으면 인증 성공
 		const errs = {};
 		const eng = /[a-zA-Z]/;
 		const num = /[0-9]/;
@@ -82,10 +81,10 @@ const Member = () => {
 		if (value.email.length < 8 || !/@/.test(value.email)) {
 			errs.email = '이메일주소는 8글자 이상 @를 포함하세요.';
 		}
-		if (!value.gender) {
+		if (value.gender === '') {
 			errs.gender = '성별을 체크해주세요.';
 		}
-		if (!value.interests) {
+		if (value.interests.length === 0) {
 			errs.interests = '관심사를 하나 이상 체크하세요.';
 		}
 		if (value.edu === '') {
@@ -108,8 +107,6 @@ const Member = () => {
 	};
 
 	useEffect(() => {
-		//객체의 키값을 배열로 반환한다음 해당 배열의 갯수를 저장
-		//len값이 0이면 Err객체에 에러메시지가 하나도 없어서 인증통과 처리
 		const len = Object.keys(Err).length;
 		if (len === 0 && Submit) {
 			alert('모든 인증을 통과했습니다.');
@@ -117,6 +114,11 @@ const Member = () => {
 			resetForm();
 		}
 	}, [Err]);
+
+	useEffect(() => {
+		console.log(Val);
+	}, [Val]);
+
 
 	return (
 		<Fragment>
@@ -267,6 +269,7 @@ const Member = () => {
 										rows='3'
 										value={Val.comments}
 										onChange={handleChange}
+										placeholder='남기는 말을 입력하세요.'
 									></textarea>
 									<br />
 									{Err.comments && <p>{Err.comments}</p>}

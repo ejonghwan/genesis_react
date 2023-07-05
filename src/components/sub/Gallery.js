@@ -1,9 +1,13 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect } from 'react';
+import axios from 'axios';
 import Layout from '../common/Layout';
 import Visual from './Visual';
 
 
 const Gallery = () => {
+
+	
+
 	return (
 		<Fragment>
 			<Visual name={'Gallery'} />

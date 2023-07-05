@@ -4,6 +4,11 @@ import Visual from './Visual';
 
 const Community = () => {
 
+	const getLocalData = () => {
+		const data = localStorage.getItem('post');
+		return data ? JSON.parse(data) : initalPosts;
+	}
+
 	const randomId = e => Math.floor(Math.random() * 10000);
 	const initalPosts = [
 		{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
@@ -13,7 +18,7 @@ const Community = () => {
 		{ id: randomId(), title: 'a4', content: 'b4', done: false, modify: false },
 		{ id: randomId(), title: 'a5', content: 'b5', done: false, modify: false },
 	]
-	const [Posts, setPosts] = useState(initalPosts);
+	const [Posts, setPosts] = useState(getLocalData());
 	const [Modify, setModify] = useState(false);
 	const [ModiValue, setModiValue] = useState({ title: '', content: '' });
 
@@ -21,11 +26,7 @@ const Community = () => {
 	const inputRef = useRef(null);
 	const textareaRef = useRef(null)
 
-	// useEffect(() => {
-
-		// 	console.log('r', randomId())
-	// }, [])
-
+	
 	const resetForm = () => {
 		inputRef.current.value = '';
 		textareaRef.current.value = '';
@@ -34,7 +35,6 @@ const Community = () => {
 	const statePost = id => {
 		return () => {
 			const stateChange = Posts.map(item => id === item.id ? { ...item, done: !item.done } : item)
-			console.log(stateChange)
 			setPosts(stateChange)
 		}
 	}
@@ -45,7 +45,7 @@ const Community = () => {
 		}
 		setPosts([{ id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, }, ...Posts]);
 		resetForm();
-		console.log('Posts', Posts)
+		
 	}
 
 	const enablePost = id => {
@@ -71,7 +71,6 @@ const Community = () => {
 		return () => {
 			const update = Posts.map(item => id === item.id ? {...item, title: ModiValue.title, content: ModiValue.content, modify: false} : item);
 			setPosts(update)
-			// console.log('????', Posts)
 			setModify(false)
 		}
 	}
@@ -91,8 +90,8 @@ const Community = () => {
 	}
 
 	useEffect(() => {
-		console.log('Modi', ModiValue)
-		console.log('Posts', Posts)
+		localStorage.setItem('post', JSON.stringify(Posts))
+		
 	}, [Posts])
 
 	return (

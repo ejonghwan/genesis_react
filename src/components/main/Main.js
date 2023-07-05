@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../common/Header';
 import Visual from './Visual';
-import CarVisual from './CarVisual';
+import CarVisual from './carVisual/CarVisual';
 import OuterDesign from './OuterDesign';
 import Awards from './Awards';
 import Events from './Events';

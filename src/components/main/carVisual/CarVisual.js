@@ -1,7 +1,8 @@
-
-
-import Tab from '../common/tab/Tab'
-import { CarData } from '../common/data/CarData'
+import Tab from '../../common/tab/Tab';
+import All from './All';
+import Sedan from './Sedan';
+import Suv from './Suv';
+import { CarData } from '../../common/data/CarData';
 
 
 
@@ -15,7 +16,12 @@ const CarVisual = () => {
                     </div>
                 
                     {/* tab */}
-                    <Tab data={CarData} className={"tab_type1"} tabHead={["ALL", "SEDAN", "SUV"]} />
+                    <Tab 
+                        data={CarData} 
+                        className={"tab_type1"} 
+                        tabHead={["ALL", "SEDAN", "SUV"]} 
+                        tabBody={[<All />, <Sedan />, <Suv />]}
+                    />
 
                     <article class="tab_type1">
                         <strong id="tab_type1_tit" class="blind">제네시스 종류 선택</strong>

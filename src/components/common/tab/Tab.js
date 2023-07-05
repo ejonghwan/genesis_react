@@ -4,14 +4,15 @@ import TabBody from './TabBody';
 
 
 
-const Tab = ({ tabHead, tabbody, data, className }) => {
+const Tab = ({ tabHead, tabBody, data, className }) => {
 
     const [Data, setData] = useState(data)
+    const [Index, setIndex] = useState(0);
 
-
+    
 
     useEffect(() => {
-        console.log(data)
+        // console.log(data)
     }, [])
     
 
@@ -19,7 +20,9 @@ const Tab = ({ tabHead, tabbody, data, className }) => {
         <article className={className}>
             <div className="tab_wrap">
                 <TabHead heads={tabHead} />
-                <TabBody data={data} />
+                <TabBody data={data} >
+                    {tabBody}
+                </TabBody>
             </div>
         </article>
     )
