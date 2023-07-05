@@ -11,7 +11,7 @@ const All = ({ data }) => {
 
     useEffect(() => {
         
-    console.log('dd?', data)
+        console.log('dd?', data)
     }, [])
 
     return (
