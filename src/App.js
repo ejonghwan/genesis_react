@@ -24,6 +24,8 @@ function App() {
 
 	return (
 		<>
+
+
 			<Switch>
 				<Route exact path='/' component={Main} />
 				<Route path='/' render={() => <Header type={'sub'} />} />

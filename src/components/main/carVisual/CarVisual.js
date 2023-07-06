@@ -12,7 +12,6 @@ import { CarData } from '../../common/data/CarData';
 
 const CarVisual = () => {
     
-
     return (
         <section className="sub_visual">
                 <article className="g_inner">
@@ -27,7 +26,7 @@ const CarVisual = () => {
                         tabBody={[
                             <All  data={CarData} />, 
                             <Sedan  data={CarData.filter(item => item.type === "SEDAN" )} />, 
-                            <Suv  data={CarData. filter(item => item.type === "SUV" )} />].map((item, idx) => <Fragment key={idx}>{item}</Fragment>
+                            <Suv  data={CarData.filter(item => item.type === "SUV" )} />].map((item, idx) => <Fragment key={idx}>{item}</Fragment>
                             )}
                     />
 

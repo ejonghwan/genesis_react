@@ -126,6 +126,15 @@ const Member = () => {
 			<Layout name={'Member'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
 
+
+			<div >
+					<input checked id="aa" class="aa" type="radio" name="abc"  />
+					<label for="aa" >User Gallery</label>
+					<input id="bb" class="bb" type="radio" name="abc"  />
+					<label for="bb" >Genesis Gallery</label>
+				</div>
+
+
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
