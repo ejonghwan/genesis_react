@@ -34,6 +34,7 @@ const Member = () => {
 		const { name, value } = e.target;
 
 		setVal({ ...Val, [name]: value });
+		console.log(Val)
 	};
 
 	const handleCheck = (e) => {
@@ -55,10 +56,10 @@ const Member = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('현재 스테이트값', Val);
+		// console.log('현재 스테이트값', Val);
 		//check가 반환하는 인증 메세지가 있으면 해당 메세지를 화면에 출력하고 전송중지
 		//그렇지 않으면 인증 성공
-		console.log(check(Val));
+		// console.log(check(Val));
 		setErr(check(Val));
 		setSubmit(true);
 	};
@@ -115,10 +116,13 @@ const Member = () => {
 		}
 	}, [Err]);
 
-	useEffect(() => {
-		console.log(Val);
-	}, [Val]);
 
+
+	const [Test, setTest] = useState(null)
+	const testC = e => {
+		console.log(e.target)
+		setTest(e.target)
+	}
 
 	return (
 		<Fragment>
@@ -128,9 +132,9 @@ const Member = () => {
 
 
 			<div >
-					<input checked id="aa" class="aa" type="radio" name="abc"  />
+					<input checked id="aa" class="aa" type="radio" name="abc" onChange={testC} />
 					<label for="aa" >User Gallery</label>
-					<input id="bb" class="bb" type="radio" name="abc"  />
+					<input id="bb" class="bb" type="radio" name="abc" onChange={testC}  />
 					<label for="bb" >Genesis Gallery</label>
 				</div>
 
