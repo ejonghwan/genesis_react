@@ -1,11 +1,38 @@
+import React, { useState, useEffect } from 'react';
 import Accordion from "./accordion/Accordion";
-import Notice from './notice/Notices';
+import SlideWrap from './slide/SlideWrap';
 import { accData } from './data/MenuData';
+import { NoticeData } from '../common/data/NoticeData';
 
 const Footer = () => {
   
 
-    console.log(accData)
+
+    // comm
+    const randomId = e => Math.floor(Math.random() * 10000);
+	const initalPosts = [
+		{ id: randomId(), title: '[커뮤니티] 글1', content: 'b0', done: false, modify: false },
+		{ id: randomId(), title: '[커뮤니티] 글2', content: 'b1', done: false, modify: false },
+		{ id: randomId(), title: '[커뮤니티] 글3', content: 'b2', done: false, modify: false },
+		{ id: randomId(), title: '[커뮤니티] 글4', content: 'b3', done: false, modify: false },
+		{ id: randomId(), title: '[커뮤니티] 글5', content: 'b4', done: false, modify: false },
+		{ id: randomId(), title: '[커뮤니티] 글6', content: 'b5', done: false, modify: false },
+	]
+
+	const [Posts, setPosts] = useState(initalPosts);
+	const getLocalData = () => {
+		const data = localStorage.getItem('post');
+		const obj = JSON.parse(data)
+		return data ? setPosts( obj ) : initalPosts
+	}
+
+	useEffect(() => {
+		getLocalData();
+		// console.log('pos?', Posts)
+	}, [])
+
+
+
 
 	return (
 		<footer id="footer">
@@ -31,18 +58,22 @@ const Footer = () => {
             </div>
         </section>
      
-        {/* 공지사항 */}
+        {/* 커뮤니티 */}
         <section class="footer_sec notice">
-            <Notice />
+            <SlideWrap data={Posts} defaultText={"[커뮤니티]"} />
         </section>
 
 
         <section class="footer_sec all_menu">
             <Accordion 
-                data={accData} 
+                data={accData.filter((_, idx) => idx < 4)} 
                 className={"type1 g_inner"}
                 device={"accordion_mo"}
             />
+        </section>
+        {/* 공지사항 */}
+        <section class="footer_sec notice">
+            <SlideWrap data={NoticeData} defaultText={"[공지사항]"} />
         </section>
 
 

@@ -118,25 +118,12 @@ const Member = () => {
 
 
 
-	const [Test, setTest] = useState(null)
-	const testC = e => {
-		console.log(e.target)
-		setTest(e.target)
-	}
-
 	return (
 		<Fragment>
 			<Visual name={'Member'} />
 			<Layout name={'Member'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
 
-
-			<div >
-					<input checked id="aa" class="aa" type="radio" name="abc" onChange={testC} />
-					<label for="aa" >User Gallery</label>
-					<input id="bb" class="bb" type="radio" name="abc" onChange={testC}  />
-					<label for="bb" >Genesis Gallery</label>
-				</div>
 
 
 			<form onSubmit={handleSubmit}>

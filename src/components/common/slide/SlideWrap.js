@@ -5,10 +5,9 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-import Notice from './Notice';
-import { NoticeData } from '../data/NoticeData';
+import Slide from './Slide';
 
-const Notices = () => {
+const SlideWrap = ({ data, defaultText }) => {
     // const swiper = useSwiper()
     const swiperRef = useRef(null)
     const [SwiperState, setSwiperState] = useState(false)
@@ -33,7 +32,7 @@ const Notices = () => {
                 autoplay={{ delay: 1500, disableOnInteraction: false }}
                 loop={true}
             >
-                {NoticeData.map((item, idx) => <SwiperSlide key={idx}><Notice item={item} /></SwiperSlide>)}
+                {data.map((item, idx) => <SwiperSlide key={idx}><Slide item={item} defaultText={defaultText} /></SwiperSlide>)}
                 <div class="swiper-state">
                     <button type="button" class={`stop ${!SwiperState && "on"}`} onClick={handleSwiperStop} aria-label="슬라이드 자동 이동 정지"></button>
                     <button type="button" class={`play ${SwiperState && "on"}`} onClick={handleSwiperPaly} aria-label="슬라이드 자동 이동 시작"></button>
@@ -43,4 +42,4 @@ const Notices = () => {
     );
 };
 
-export default Notices;
+export default SlideWrap;

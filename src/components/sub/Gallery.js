@@ -6,7 +6,6 @@ import Masonry from 'react-masonry-component';
 import Layout from '../common/Layout';
 import Visual from './Visual';
 import Loading from '../common/Loading';
-import Switch from '../common/btn/Switch';
 
 
 const Gallery = () => {
@@ -15,6 +14,7 @@ const Gallery = () => {
 	const [Items, setItems] = useState([]);
 	const [Loader, setLoader] = useState(true);
 	const [Search, setSearch] = useState('');
+	const [Gallery, setGallery] = useState({ select: 'user' })
 	const wrapRef = useRef(null);
 	const isUserRef = useRef(null);
 
@@ -62,6 +62,13 @@ const Gallery = () => {
 		})
 	}
 
+	
+	const handleCheck = (e) => {
+		const { name, value } = e.target;
+		setGallery({ [name]: value })
+	};
+
+
 	const handleSearch = e => {
 		if(Search === '') return alert('검색어를 입력해주세요')
 		getFlickr({ type: 'search', tags: Search }).then(() => {
@@ -75,21 +82,7 @@ const Gallery = () => {
 		setSearch(value)
 	}
 
-	const [Val, setVal] = useState();
 
-	const handleCheck = (e) => {
-		const { name } = e.target;
-		// const inputs = e.target.parentElement.querySelectorAll('input');
-
-		//모든 체크박스를 반복돌면서 하나라도 체크되어 있는게 있으면 true값 반환
-		// let checkArr = [];
-		// inputs.forEach((el) => {
-		// 	if (el.checked) checkArr.push(el.value);
-		// });
-		// setVal({ [name]: checkArr });
-
-		console.log(name)
-	};
 	
 
 	useEffect(() => {
@@ -99,17 +92,16 @@ const Gallery = () => {
 		});
 	}, [])
 
+	useEffect(() => {
+		console.log(Gallery)
+	}, [Gallery])
+
+
+
 
 	return (
 		<Fragment>
 			<Visual name={'gallery'} />
-
-				<div>
-					<input checked id="aa" class="aa" type="radio" name="abc" onChange={handleCheck} />
-					<label for="aa" >User Gallery</label>
-					<input id="bb" class="bb" type="radio" name="abc" onChange={handleCheck} />
-					<label for="bb" >Genesis Gallery</label>
-				</div>
 			<Layout name={'gallery'}>
 
 				
@@ -123,21 +115,12 @@ const Gallery = () => {
 						</button>
 					</div>
 
-					
-
-					{/* <div class="btnSet">
-						<fieldset>
-							<Switch className={"btnInterest"} name={"select"} type={"radio"} content={"User Gallery"} len={2} />
-						</fieldset>
-					</div> */}
-					
-					
 
 					<div class="btnSet">
 						<fieldset>
-							<input checked id="btnInterest" class="btnInterest" type="radio" name="select" />
+							<input id="btnInterest" class="btnInterest" value="user" type="radio" name="select" checked={Gallery["select"] === "user"} onChange={handleCheck} />
 							<label for="btnInterest" onClick={handleUserGall}>User Gallery</label>
-							<input id="btnMine" class="btnMine" type="radio" name="select" />
+							<input id="btnMine" class="btnMine" value="genesis" type="radio" name="select" checked={Gallery["select"] === "genesis"} onChange={handleCheck} />
 							<label for="btnMine" onClick={handleGeneGall}>Genesis Gallery</label>
 						</fieldset>
 					</div>

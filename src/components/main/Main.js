@@ -3,7 +3,6 @@ import Header from '../common/Header';
 import Visual from './Visual';
 import CarVisual from './carVisual/CarVisual';
 import OuterDesign from './OuterDesign';
-import Awards from './Awards';
 import Events from './Events';
 import InnerDesign from './InnerDesign';
 import SpaceRoad from './SpaceRoad';
@@ -29,18 +28,17 @@ function Main() {
 			<Visual />
 			<CarVisual />
 			<OuterDesign />
-			<Awards />
 			<Events />
 			<InnerDesign />
 			<SpaceRoad />
 			<Contents />
 
 
-			<News />
-			<Pics Scrolled={Scrolled} Pos={Pos}/>
-			<Vids />
-			<Banner />
-			<Btns setScrolled={setScrolled} setPos={setPos}/>
+			{/* <News /> */}
+			{/* <Pics Scrolled={Scrolled} Pos={Pos}/> */}
+			{/* <Vids /> */}
+			{/* <Banner /> */}
+			{/* <Btns setScrolled={setScrolled} setPos={setPos}/> */}
 		</main>
 	);
 }

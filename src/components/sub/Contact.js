@@ -4,6 +4,9 @@ import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Visual from './Visual';
 
+import Tab from '../common/tab/Tab';
+import Showroom from './showroom/Showroom';
+import { MapData } from '../common/data/MapData';
 
 
 function Contact() {
@@ -96,9 +99,39 @@ function Contact() {
 	return (
 		<Fragment>
 			<Visual name={'Contact'} />
-			<Layout name={'Contact'}>
-				<div id='map' ref={container} style={{ width: "100%", height: "500px" }}></div>
-				<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
+			<Layout name={'Contact sub_page'}>
+				<div className='g_inner'>
+					<h2 class="gl_title">전시관 찾기</h2>
+					<div className='center_wrap'>
+						<div className='region'>
+							<Tab 
+								tabHead={["서울", "경기", "인천", "광주", "충남", "대구"]} 
+								tabBody={[
+									<Showroom data={MapData.filter(map => map.region === "서울")} />, 
+									<Showroom data={MapData.filter(map => map.region === "경기")} />, 
+									<Showroom data={MapData.filter(map => map.region === "인천")} />, 
+									<Showroom data={MapData.filter(map => map.region === "광주")} />, 
+									<Showroom data={MapData.filter(map => map.region === "충남")} />, 
+									<Showroom data={MapData.filter(map => map.region === "대구")} />
+								]} 
+								id={"map_tab"}
+								className={"info_wrap tab_type3"} 
+							/>
+						</div>
+						<div className='map'>
+							<div id="map" ref={container}></div>
+							<div class="btn_traffic_wrap"> 
+							<button onClick={() => setTraffic(!Traffic)}>{Traffic ? '교통량 끄기' : '교통량 보기'}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		
+
+
+				
+				
 
 				{/* 배열정보값을 토대로 동적으로 li지점버튼 생성하고 해당 버튼 클릭할때 순서값 State를 변경하면서 지도화면이 갱신되도록 수정 */}
 				<ul className='branch'>
