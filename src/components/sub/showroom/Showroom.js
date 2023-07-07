@@ -4,7 +4,7 @@ const Showroom = ({ data }) => {
 
 
     useEffect(() => {
-         console.log(data)
+        //  console.log(data)
     }, [])
    
 
@@ -16,7 +16,6 @@ const Showroom = ({ data }) => {
                     <Fragment>
                         <strong class="info_gu">{item.name}</strong>
                         <div>
-                            {console.log(item)}
                             {item.info.map(info => {
                                 return (
                                     <Fragment>
