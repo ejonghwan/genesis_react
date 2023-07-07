@@ -2,12 +2,15 @@ import React, { useRef, useEffect } from 'react';
 import Modal from '../common/Modal.js'
 import Accordion from './accordion/Accordion.js';
 import { accData } from './data/MenuData.js';
+import Nav from './nav/Nav.js';
 
-const AllMenu = ({ target }) => {
+const AllMenu = ({ target, navRef }) => {
     const modal = useRef(null);
 
     useEffect(() => {
         target.current.addEventListener('click', modal.current.open(target.current))
+        navRef.current.addEventListener('click', modal.current.close(target.current))
+        // console.log(navRef)
     }, [])
 
     return (
@@ -17,12 +20,7 @@ const AllMenu = ({ target }) => {
                 <h2 className="all_menu_title">프로모션 메뉴</h2>
             </div>
 
-            <ul className="sub_menu pc_none">
-                <li><a href="./pages/gallery.html" role="button" className="arrow_btn">Gallery</a></li>
-                <li><a href="./pages/location.html" role="button" className="arrow_btn">Contact</a></li>
-                <li><a href="./pages/youtube.html" role="button" className="arrow_btn">Youtube</a></li>
-                <li><a href="./pages/members.html" role="button" className="arrow_btn">Members</a></li>
-            </ul>
+            <Nav className={"sub_menu pc_none"}/>
 
             <div className="pupup_type1_header g_inner">
                 <h2 className="all_menu_title">전체메뉴</h2>

@@ -133,7 +133,7 @@ const Gallery = () => {
 								return <li className='item' key={idx}>
 									<div>
 										<div class="img_box">        
-											<button type="button" onClick={handlePopOpen(idx)}>
+											<button type="button" className='img_box_btn' onClick={handlePopOpen(idx)}>
 												<img className='thumb' src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />  	
 											</button>   
 										</div>

@@ -22,10 +22,12 @@
             > a {
                 color: #fff;
                 display: block;
+                padding: 15px 0;
             }
-           & + li {
-            margin-top: 15px;
-           } 
+            &:first-child {
+                > a { padding-top: 0; }
+            }
+         
         }
     }
 
@@ -77,6 +79,7 @@
     background-color: #090b0e;
     z-index: 100;
 }
+
 
 
 .popup.auto_height {

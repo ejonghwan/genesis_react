@@ -19,6 +19,7 @@
 	overflow: hidden;
 	position: relative;
 
+
 	.btnSet {
 		text-align: right;
     	margin-bottom: 10px;
@@ -178,6 +179,12 @@
 				padding: 0 10px;
 				margin-top: -20px;
 				position: relative;
+			}
+
+			.img_box {
+				.img_box_btn {
+					width: 100%;
+				}
 			}
 
 			> div {

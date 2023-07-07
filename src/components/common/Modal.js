@@ -16,7 +16,16 @@ const Modal = forwardRef((props, ref) => {
 					setOpen(true);
 				}
 				setOpen(true);
-			 } 
+			 }, 
+			 close: (target) => () => {
+				if(target && target.classList.contains('on')) {
+					target.classList.remove('on'); 
+				}
+				document.body.style.overflow = 'unset';
+				document.body.classList.remove('popop_active');
+				document.body.classList.remove(props.type);
+				setOpen(false)
+			 },
 		};
 	});
 
