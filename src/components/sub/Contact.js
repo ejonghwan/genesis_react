@@ -81,21 +81,65 @@ function Contact() {
 	
 	const { kakao } = window;
 	const container = useRef(null);
-	const [Map, setMap] = useState([])
 
 
 	const createMap = () => {
-		// const map = new kakao.maps.Map(container, { center: new kakao.maps.LatLng(Map[0].letlong.lat, Map[0].letlong.long), level: 3 });
-		const map_info = []
-		// MapData.map(data => data.items.map(item => item.info.map(info => map_info.push(info))))
-		const ab = MapData.map(data => data.items.map(item => item.info.map(info => {
-			// console.log(info)
-			setMap([...Map, info])
-			return info
-		})))
 		
-		// console.log('?', Map[0][0][0])
-		console.log('?', Map)
+		const map_info = MapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
+		console.log('?', map_info[0].letlong.lat)
+		const map = new kakao.maps.Map(container.current, { center: new kakao.maps.LatLng(map_info[0].letlong.lat, map_info[0].letlong.long), level: 3 });
+
+		// 줌 컨트롤 붙이기
+		const zoomControl = new kakao.maps.ZoomControl();
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+		// 맵 타입 위성 붙이기
+		const mapTypeControl = new kakao.maps.MapTypeControl();
+		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+		//휠 줌 기능막기
+		map.setZoomable(false) 
+
+		map_info.forEach((info, idx) => {
+			const marker = new kakao.maps.Marker({ 
+			    position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
+			    image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.svg', new kakao.maps.Size(40, 60), 
+			    { offset: new kakao.maps.Point(20, 60) }) 
+			});
+			marker.setMap(map);
+
+			// 인포윈도우를 생성
+			const infowindow = new kakao.maps.InfoWindow({
+				position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
+				content : ` 
+				    <div class="map_inner_info" style="min-height: 140px; padding: 10px 10px;  border-radius: 10px;">
+				        <div class="info_type">${info.type}</div>
+				        <span class="map_move">${info.point}</span>
+				        <div class="info_add">${info.address}</div>
+				        <div class="info_tel"><a href="tel:${info.tel}" title="매장 전화걸기">${info.tel}</a></div>
+				        <ul class="cars">
+				            ${info.car.map(car => `
+				                <li>${car}</li>
+				            `).join('')}
+				        </ul>
+				    </div>
+				`,
+				removable : true,
+			});
+			
+			// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+			infowindow.open(map, marker); 
+
+
+			// map_move[idx].addEventListener('click', e => {
+			//     map.panTo( new kakao.maps.LatLng(region_info[idx].letlong.lat, region_info[idx].letlong.long) );
+			//     map_idx = idx;
+			//     // console.log(idx)
+			// });
+		
+		})
+
+	
 	}
 	
 
