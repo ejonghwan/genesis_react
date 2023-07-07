@@ -104,10 +104,8 @@ const Gallery = () => {
 	return (
 		<Fragment>
 			<Visual name={'gallery'} />
-			<Layout name={'gallery'}>
+			<Layout name={'gallery sub_page'}>
 
-				
-				
 				<div className="g_inner">
 					<div class="searchBox">
 						<input type="text" id="search" placeholder="제네시스를 입력해보세요" onChange={handleSearchChange} onKeyPress={e => e.key === 'Enter' && handleSearch()}/>
@@ -116,7 +114,6 @@ const Gallery = () => {
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
-
 
 					<div class="btnSet">
 						<fieldset>

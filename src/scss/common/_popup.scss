@@ -1,43 +1,6 @@
 
 // popup 
 
-.popup_close {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.dimd {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
-    height: 100%;
-    z-index: 99;
-    opacity: .6;
-    display: none;
-}
-
-.dimd {
-   display: block;
-}
-
-
-.popup.all_menu {
-    z-index: 101;
-}
-
-.popup_full {
-    width: 100vw;
-    height: 100vh;
-    display: block !important;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    background-color: #090b0e;
-    z-index: 100;
-}
 
 .popup {
     display: block !important;
@@ -69,7 +32,50 @@
     .aco_wrap {
         margin-top: 0;
     }
+
+    .popup_close {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     
+}
+
+
+.dimd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 99;
+    opacity: .6;
+    display: none;
+}
+
+.dimd {
+   display: block;
+}
+
+
+.popup.allmenu {
+    z-index: 101;
+
+    .popup_close {
+        display: none;
+    }
+}
+
+.popup.popup_full {
+    width: 100vw;
+    height: 100vh;
+    display: block !important;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    background-color: #090b0e;
+    z-index: 100;
 }
 
 
@@ -78,12 +84,5 @@
     .pupup_type1_body {
         height: auto;
         max-height: calc(100vh - 80px);
-    }
-}
-
-
-.modal.allmenu {
-    .close { 
-        display: none;
     }
 }

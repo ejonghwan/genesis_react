@@ -96,8 +96,8 @@ const Community = () => {
 
 	return (
 		<Fragment>
-			<Visual name={'Community'} />
-			<Layout name={'Community'}>
+			<Visual name={'community'} />
+			<Layout name={'community sub_page'}>
 				<div className='g_inner'>
 					<div className='inputBox'>
 

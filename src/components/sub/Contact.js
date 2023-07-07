@@ -98,8 +98,8 @@ function Contact() {
 
 	return (
 		<Fragment>
-			<Visual name={'Contact'} />
-			<Layout name={'Contact sub_page'}>
+			<Visual name={'contact'} />
+			<Layout name={'contact sub_page'}>
 				<div className='g_inner'>
 					<h2 class="gl_title">전시관 찾기</h2>
 					<div className='center_wrap'>

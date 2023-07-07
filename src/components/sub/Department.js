@@ -15,8 +15,8 @@ function Department() {
 
 	return (
 		<Fragment>
-			<Visual name={'Department'} />
-			<Layout name={'Department'}>
+			<Visual name={'department'} />
+			<Layout name={'department sub_page'}>
 				{Members.map((member, idx) => {
 					return (
 						<article key={idx}>

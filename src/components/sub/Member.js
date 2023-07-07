@@ -120,8 +120,8 @@ const Member = () => {
 
 	return (
 		<Fragment>
-			<Visual name={'Member'} />
-			<Layout name={'Member'}>
+			<Visual name={'member'} />
+			<Layout name={'member sub_page'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
 
 

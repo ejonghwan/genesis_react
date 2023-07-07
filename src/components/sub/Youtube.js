@@ -1,13 +1,19 @@
-import Layout from '../common/Layout';
-import axios from 'axios';
 import { useEffect, useState, useRef, Fragment } from 'react';
+import axios from 'axios';
+
+
+import Layout from '../common/Layout';
 import Modal from '../common/Modal';
 import Visual from './Visual';
+import Loading from '../common/loading/Loading';
+
+
 
 function Youtube() {
 	const modal = useRef(null);
 	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
+	const [Loader, setLoader] = useState(true)
 
 	const fetchYoutube = async () => {
 		const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
@@ -16,6 +22,7 @@ function Youtube() {
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
 		const result = await axios.get(url);
 		setVids(result.data.items);
+		setLoader(false)
 	};
 
 	const handlePopOpen = idx => e => {
@@ -27,10 +34,12 @@ function Youtube() {
 
 	return (
 		<Fragment>
-			<Visual name={'Youtube'} />
-			<Layout name={'Youtube'} >
+			<Visual name={'youtube'} />
+			<Layout name={'youtube sub_page'} >
 
-
+			{Loader ? (
+				<Loading />
+			) : (
 				<div class="g_inner">
 					<article class="you_wrap">
 						<section class="you_head">
@@ -69,6 +78,8 @@ function Youtube() {
 						</section>
 					</article>
 				</div>
+			)}
+				
 
 			</Layout>
 

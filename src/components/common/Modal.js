@@ -46,10 +46,10 @@ const Modal = forwardRef((props, ref) => {
 		<AnimatePresence>
 			{Open && (
 				<motion.aaside 
-					className={`modal ${props.type}`} 
-					initial={{ opacity: 0 }} 
-					animate={{opacity: 1, transition: { duration: 0.5 } }} 
-					exit={{ opacity: 0 }}
+					className={`popup ${props.type}`} 
+					initial={{ opacity: 0, transform: "translateY(-300px)" }} 
+					animate={{opacity: 1, transition: { duration: 0.2, }, transform: "translateY(0px)", }} 
+					exit={{ opacity: 0, transition: { delay: 0 }, transform: "translateY(-300px)" }}
 				>
 					{props.children}
 					<button className='popup_close' onClick={popClose}>
