@@ -5,18 +5,27 @@ import Masonry from 'react-masonry-component';
 
 import Layout from '../common/Layout';
 import Visual from './Visual';
-import Loading from '../common/Loading';
+import Loading from '../common/loading/Loading';
+import Modal from '../common/Modal';
 
 
 const Gallery = () => {
 
-	
+	const modal = useRef('asdasdasd');
+
+
 	const [Items, setItems] = useState([]);
 	const [Loader, setLoader] = useState(true);
 	const [Search, setSearch] = useState('');
 	const [Gallery, setGallery] = useState({ select: 'user' })
+	const [ImgIndex, setImgIndex] = useState(0)
 	const wrapRef = useRef(null);
 	const isUserRef = useRef(null);
+
+	const handlePopOpen = idx => e => {
+		setImgIndex(idx)
+		modal.current?.open()()
+	}
 
 	const getFlickr = async (opt) => {
 		setLoader(true)
@@ -82,19 +91,12 @@ const Gallery = () => {
 		setSearch(value)
 	}
 
-
-	
-
 	useEffect(() => {
 		getFlickr({ type: 'interest' }).then(() => {
 			setLoader(false)
 			wrapRef.current.classList.add('on');
 		});
 	}, [])
-
-	useEffect(() => {
-		console.log(Gallery)
-	}, [Gallery])
 
 
 
@@ -134,12 +136,13 @@ const Gallery = () => {
 								return <li className='item' key={idx}>
 									<div>
 										<div class="img_box">        
-											<img className='thumb' src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />     
+											<button type="button" onClick={handlePopOpen(idx)}>
+												<img className='thumb' src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />  	
+											</button>   
 										</div>
 										<div class="txt_box">
 											<article class="profile">	
-												<img 
-													src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`} onError={ e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif') } />				
+												<img src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`} onError={ e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif') } />				
 												<button type="button" class="userid" onClick={handleSelectUser(item.owner)}>{item.owner}</button>
 											</article>
 											<p>{item.title}</p>
@@ -152,6 +155,11 @@ const Gallery = () => {
 					)}
 				</div>
 			</Layout>
+			<Modal ref={modal} type={"popup_full"}>
+				<div className='gallery_pop_img'>
+					<img className='thumb' src={`https://live.staticflickr.com/${Items[ImgIndex]?.server}/${Items[ImgIndex]?.id}_${Items[ImgIndex]?.secret}_m.jpg`} alt={Items[ImgIndex]?.title} /> 
+				</div> 	
+			</Modal>
 		</Fragment>
 	)
 }

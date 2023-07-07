@@ -1,4 +1,5 @@
 import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Modal = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
@@ -6,13 +7,15 @@ const Modal = forwardRef((props, ref) => {
 	useImperativeHandle(ref, () => {
 		return { 
 			open: (target) => () => { 
-				if(target.classList.contains('on')) {
+
+				if(target && target.classList.contains('on')) {
 					target.classList.remove('on'); 
 					setOpen(false);
-				} else {
+				} else if(target && !target.classList.contains('on')){
 					target.classList.add('on'); 
 					setOpen(true);
 				}
+				setOpen(true);
 			 } 
 		};
 	});
@@ -38,16 +41,23 @@ const Modal = forwardRef((props, ref) => {
 	}, [Open])
 
 	return (
-		<>
+		// motion.Element  /  initial={}  /  animate={}  /  exit={}  
+		// attr : x, y, rotate, scale
+		<AnimatePresence>
 			{Open && (
-				<aside className={`modal ${props.type}`} ref={ref}>
-					<div className='con'>{props.children}</div>
-					<span className='close' onClick={popClose}>
-						close
-					</span>
-				</aside>
+				<motion.aaside 
+					className={`modal ${props.type}`} 
+					initial={{ opacity: 0 }} 
+					animate={{opacity: 1, transition: { duration: 0.5 } }} 
+					exit={{ opacity: 0 }}
+				>
+					{props.children}
+					<button className='popup_close' onClick={popClose}>
+						<span style={{color: "red"}}>close</span>
+					</button>
+				</motion.aaside>
 			)}
-		</>
+		</AnimatePresence>
 	);
 });
 

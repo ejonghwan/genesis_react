@@ -18,6 +18,11 @@ function Youtube() {
 		setVids(result.data.items);
 	};
 
+	const handlePopOpen = idx => e => {
+		modal.current.open()();
+		setIndex(idx);
+	}
+
 	useEffect(() => fetchYoutube(), []);
 
 	return (
@@ -46,14 +51,7 @@ function Youtube() {
 								{Vids.map((vid, idx) => {
 									return (
 										<article key={idx}>
-											<div
-												className='pic img_box'
-												onClick={() => {
-													modal.current.open();
-													//썸네일 클릭시 현재 클릭한 요소의 순번값으로 Index State값 변경
-													setIndex(idx);
-												}}
-											>
+											<div className='pic img_box' onClick={handlePopOpen(idx)}>
 												<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
 											</div>
 											<div className='txt_box'>
@@ -74,8 +72,7 @@ function Youtube() {
 
 			</Layout>
 
-			<Modal ref={modal}>
-				{/* 첫 렌더링 싸이클에서는 Vids[0]의 객체값 자체가 없으므로 없는 요소의 id값 호출 오류-> 옵셔널체이닝으로 해결 */}
+			<Modal ref={modal} type={"popup_full"}>
 				<iframe title={Vids[Index]?.id} src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}></iframe>
 			</Modal>
 		</Fragment>
