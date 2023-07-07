@@ -1,5 +1,13 @@
 import Menu from '../menu/Menu';
 
+export const navData = [
+    { content: "Gallery", link: "gallery" },
+    { content: "Contact", link: "contact" },
+    { content: "Youtube", link: "youtube" },
+    { content: "Members", link: "member" },
+    { content: "Community", link: "community" },
+]
+
 export const menuData = [
     {
         category: "모델",

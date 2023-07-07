@@ -11,7 +11,7 @@ import Modal from '../common/Modal';
 
 const Gallery = () => {
 
-	const modal = useRef('asdasdasd');
+	const modal = useRef(null);
 
 
 	const [Items, setItems] = useState([]);
@@ -118,9 +118,9 @@ const Gallery = () => {
 					<div class="btnSet">
 						<fieldset>
 							<input id="btnInterest" class="btnInterest" value="user" type="radio" name="select" checked={Gallery["select"] === "user"} onChange={handleCheck} />
-							<label for="btnInterest" onClick={handleUserGall}>User Gallery</label>
+							<label htmlFor="btnInterest" onClick={handleUserGall}>User Gallery</label>
 							<input id="btnMine" class="btnMine" value="genesis" type="radio" name="select" checked={Gallery["select"] === "genesis"} onChange={handleCheck} />
-							<label for="btnMine" onClick={handleGeneGall}>Genesis Gallery</label>
+							<label htmlFor="btnMine" onClick={handleGeneGall}>Genesis Gallery</label>
 						</fieldset>
 					</div>
 

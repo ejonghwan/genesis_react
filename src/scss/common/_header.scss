@@ -101,7 +101,7 @@ body.allmenu #header{
 // }
 
 // all menu
-button.header_all_menu {
+a.header_all_menu {
     width:25px;
     height:13px;
     border:none;
@@ -164,33 +164,59 @@ button.header_all_menu {
                 }
         }
 
-        &.on {
-            &:after {
-                transition: all 0.2s;
-                width:0%;
-                left:0px;
-            }
+        // &.on {
+        //     &:after {
+        //         transition: all 0.2s;
+        //         width:0%;
+        //         left:0px;
+        //     }
 
-            &:before {
-                transition: all 0.2s;
-                width:0%;
-                right:0px;
-            }
+        //     &:before {
+        //         transition: all 0.2s;
+        //         width:0%;
+        //         right:0px;
+        //     }
 
-            span.line {
-                transform:rotate(45deg);
-                transition: 0.3s transform 0.4s ;
-                opacity: 1;
-                    &:before {
-                    transform:rotate(-90deg);
-                    transition: 0.3s transform 0.4s ;
-                    }
-            }
-        }
+        //     span.line {
+        //         transform:rotate(45deg);
+        //         transition: 0.3s transform 0.4s ;
+        //         opacity: 1;
+        //             &:before {
+        //             transform:rotate(-90deg);
+        //             transition: 0.3s transform 0.4s ;
+        //             }
+        //     }
+        // }
     }
-  
 }
 
+body.allmenu {
+    a.header_all_menu {
+        
+        &:after {
+            transition: all 0.2s;
+            width:0%;
+            left:0px;
+        }
+
+        &:before {
+            transition: all 0.2s;
+            width:0%;
+            right:0px;
+        }
+
+        span.line {
+            transform:rotate(45deg);
+            transition: 0.3s transform 0.4s ;
+            opacity: 1;
+                &:before {
+                transform:rotate(-90deg);
+                transition: 0.3s transform 0.4s ;
+                }
+        }
+    
+    }
+}
 
 
 .header_nav_menu {
@@ -412,7 +438,7 @@ button.header_all_menu {
         padding-left: 0;
     }
 
-    button.header_all_menu {
+    a.header_all_menu {
         margin-left: 0px; 
         position: relative;; 
         right: auto; 
@@ -427,7 +453,7 @@ button.header_all_menu {
 
     }
 
-    button.header_all_menu {
+    a.header_all_menu {
         position: absolute;
         right: 50px;
     }
@@ -461,7 +487,7 @@ button.header_all_menu {
         // }
     } 
 
-    button.header_all_menu {
+    a.header_all_menu {
         right: 20px;
     }
     
