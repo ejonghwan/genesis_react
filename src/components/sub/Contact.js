@@ -80,33 +80,44 @@ function Contact() {
 
 	
 	const { kakao } = window;
-	const container = useRef(null);
+	const mapContainerRef = useRef(null);
+	const infoContainerRef = useRef(null);
+	const [TargetLatLng, setTargetLatLng] = useState(null);
 
+	const [MapIns, setMapIns] = useState(null);
+	const [Traffic, setTraffic] = useState(false);
+	
 
 	const createMap = () => {
-		
-		const map_info = MapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
-		console.log('?', map_info[0].letlong.lat)
-		const map = new kakao.maps.Map(container.current, { center: new kakao.maps.LatLng(map_info[0].letlong.lat, map_info[0].letlong.long), level: 3 });
+		const mapInfo = MapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
+		const mapIns = new kakao.maps.Map(mapContainerRef.current, { center: new kakao.maps.LatLng(mapInfo[0].letlong.lat, mapInfo[0].letlong.long), level: 3 });
 
 		// 줌 컨트롤 붙이기
 		const zoomControl = new kakao.maps.ZoomControl();
-		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+		mapIns.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 		// 맵 타입 위성 붙이기
 		const mapTypeControl = new kakao.maps.MapTypeControl();
-		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+		mapIns.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
 		//휠 줌 기능막기
-		map.setZoomable(false) 
+		mapIns.setZoomable(false) 
 
-		map_info.forEach((info, idx) => {
+		mapIns.panTo(new kakao.maps.LatLng(mapInfo[1].letlong.lat, mapInfo[1].letlong.long))
+			
+		createMarker(mapIns, mapInfo);
+		setMapIns(mapIns)
+	}
+
+	const createMarker = (mapIns, info) => {
+		// 인포생성
+		info.forEach((info, idx) => {
 			const marker = new kakao.maps.Marker({ 
 			    position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
 			    image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.svg', new kakao.maps.Size(40, 60), 
 			    { offset: new kakao.maps.Point(20, 60) }) 
 			});
-			marker.setMap(map);
+			marker.setMap(mapIns);
 
 			// 인포윈도우를 생성
 			const infowindow = new kakao.maps.InfoWindow({
@@ -126,93 +137,32 @@ function Contact() {
 				`,
 				removable : true,
 			});
-			
 			// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-			infowindow.open(map, marker); 
-
-
-			// map_move[idx].addEventListener('click', e => {
-			//     map.panTo( new kakao.maps.LatLng(region_info[idx].letlong.lat, region_info[idx].letlong.long) );
-			//     map_idx = idx;
-			//     // console.log(idx)
-			// });
-		
+			infowindow.open(mapIns, marker); 
 		})
-
-	
 	}
 	
 
-
 	useEffect(() => {
-		// console.log(MapData.map(data => data.items.map(item => item.info.map(info => info))))
+		// MapIns?.panTo( new kakao.maps.LatLng(mapInfo[0].letlong.lat,mapInfo[0].letlong.long) );
+		
 		createMap();
-		 
 	}, [])
 
+	useEffect(() => {
+		MapIns?.panTo( new kakao.maps.LatLng(TargetLatLng.lat, TargetLatLng.long) );
+	}, [TargetLatLng])
+
+	// useEffect(() => {
+	// 	Traffic
+	// 		? Location?.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+	// 		: Location?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	// }, [Traffic]);
 
 
 
 
-    // const map_move = document.querySelectorAll('.map_move')
-    // let map_idx = 0;
 
-    // const region_info = []
-    // MapData.map(i => i.items.map(info => info.info.map(item => region_info.push(item))))
-    
-    // //markerInfo의 첫번째 데이터로 기본 지도 인스턴스 생성
-    // const map = new kakao.maps.Map(container, { center: new kakao.maps.LatLng(region_info[0].letlong.lat, region_info[0].letlong.long), level: 3 });
-
-    // // 줌 컨트롤 붙이기
-    // const zoomControl = new kakao.maps.ZoomControl();
-    // map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-    // // 맵 타입 위성 붙이기
-    // const mapTypeControl = new kakao.maps.MapTypeControl();
-    // map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-    // //휠 줌 기능막기
-    // map.setZoomable(false) 
-
-    // 반복
-    // region_info.forEach((info, idx) => {
-        // const marker = new kakao.maps.Marker({ 
-        //     position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
-        //     image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.svg', new kakao.maps.Size(40, 60), 
-        //     { offset: new kakao.maps.Point(20, 60) }) 
-        // });
-        // marker.setMap(map);
-
-        // 인포윈도우를 생성
-        // const infowindow = new kakao.maps.InfoWindow({
-            // position : new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
-            // content : ` 
-            //     <div class="map_inner_info" style="min-height: 140px; padding: 10px 10px;  border-radius: 10px;">
-            //         <div class="info_type">${info.type}</div>
-            //         <span class="map_move">${info.point}</span>
-            //         <div class="info_add">${info.address}</div>
-            //         <div class="info_tel"><a href="tel:${info.tel}" title="매장 전화걸기">${info.tel}</a></div>
-            //         <ul class="cars">
-            //             ${info.car.map(car => `
-            //                 <li>${car}</li>
-            //             `).join('')}
-            //         </ul>
-            //     </div>
-            // `,
-            // removable : true,
-        // });
-        
-        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-        // infowindow.open(map, marker); 
-
-
-        // map_move[idx].addEventListener('click', e => {
-        //     map.panTo( new kakao.maps.LatLng(region_info[idx].letlong.lat, region_info[idx].letlong.long) );
-        //     map_idx = idx;
-        //     // console.log(idx)
-        // });
-       
-    // })
 
     
 
@@ -264,24 +214,24 @@ function Contact() {
 			<Layout name={'contact sub_page'}>
 				<div className='g_inner'>
 					<h2 class="gl_title">전시관 찾기</h2>
-					<div className='center_wrap'>
+					<div className='center_wrap' ref={infoContainerRef}>
 						<div className='region'>
 							<Tab 
 								tabHead={["서울", "경기", "인천", "광주", "충남", "대구"]} 
 								tabBody={[
-									<Showroom data={MapData.filter(map => map.region === "서울")} />, 
-									<Showroom data={MapData.filter(map => map.region === "경기")} />, 
-									<Showroom data={MapData.filter(map => map.region === "인천")} />, 
-									<Showroom data={MapData.filter(map => map.region === "광주")} />, 
-									<Showroom data={MapData.filter(map => map.region === "충남")} />, 
-									<Showroom data={MapData.filter(map => map.region === "대구")} />
+									<Showroom data={MapData.filter(map => map.region === "서울")} setTargetLatLng={setTargetLatLng} />, 
+									<Showroom data={MapData.filter(map => map.region === "경기")} setTargetLatLng={setTargetLatLng} />, 
+									<Showroom data={MapData.filter(map => map.region === "인천")} setTargetLatLng={setTargetLatLng} />, 
+									<Showroom data={MapData.filter(map => map.region === "광주")} setTargetLatLng={setTargetLatLng} />, 
+									<Showroom data={MapData.filter(map => map.region === "충남")} setTargetLatLng={setTargetLatLng} />, 
+									<Showroom data={MapData.filter(map => map.region === "대구")} setTargetLatLng={setTargetLatLng} />
 								]} 
 								id={"map_tab"}
 								className={"info_wrap tab_type3"} 
 							/>
 						</div>
 						<div className='map'>
-							<div id="map" ref={container}></div>
+							<div id="map" ref={mapContainerRef}></div>
 							<div class="btn_traffic_wrap"> 
 							{/* <button onClick={() => setTraffic(!Traffic)}>{Traffic ? '교통량 끄기' : '교통량 보기'}</button> */}
 							</div>

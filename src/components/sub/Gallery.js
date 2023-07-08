@@ -154,7 +154,7 @@ const Gallery = () => {
 			</Layout>
 			<Modal ref={modal} type={"popup_full"}>
 				<div className='gallery_pop_img'>
-					<img className='thumb' src={`https://live.staticflickr.com/${Items[ImgIndex]?.server}/${Items[ImgIndex]?.id}_${Items[ImgIndex]?.secret}_m.jpg`} alt={Items[ImgIndex]?.title} /> 
+					<img className='thumb' src={`https://live.staticflickr.com/${Items[ImgIndex]?.server}/${Items[ImgIndex]?.id}_${Items[ImgIndex]?.secret}_b.jpg`} alt={Items[ImgIndex]?.title} /> 
 				</div> 	
 			</Modal>
 		</Fragment>
