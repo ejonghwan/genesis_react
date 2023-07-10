@@ -12,7 +12,7 @@ const Visual = ({ name }) => {
             <section className="sub_visual">
                 <h2 className="sub_visual_title">GENESIS {name.toUpperCase()}</h2>
                 <figure className="main_visual_slide_video">
-                    <video src={
+                    <video preload="" src={
                         name === 'Gallery' ? gallery_video :
                         name === 'Youtube' ? youtube_video :
                         name === 'Member' ? member_video :

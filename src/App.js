@@ -29,8 +29,8 @@ function App() {
 		<>
 			<Switch>
 				{/* <Route exact path='/' component={Main} /> */}
-				<Route exact path='/' render={() => <Main menu={menu}/>} />
-				<Route path='/' render={() => <Header type={'sub'} menu={menu}/>} />
+				<Route exact path='/' render={() => <Main />} />
+				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
 			<Route path='/department' component={Department} />
