@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useRef } from 'react';
+import { Fragment, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from '../common/Layout';
 import Visual from './Visual';
@@ -8,7 +8,7 @@ const Member = () => {
 	const radioGroup = useRef(null);
 	const checkGroup = useRef(null);
 	const history = useHistory();
-	const initVal = {
+	const initVal = useRef({
 		userid: '',
 		pwd1: '',
 		pwd2: '',
@@ -17,9 +17,9 @@ const Member = () => {
 		interests: [],
 		edu: '',
 		comments: '',
-	};
+	})
 
-	const [Val, setVal] = useState(initVal);
+	const [Val, setVal] = useState(initVal.current);
 	const [Err, setErr] = useState({});
 	const [Submit, setSubmit] = useState(false);
 
@@ -32,9 +32,8 @@ const Member = () => {
 
 	const handleRadio = (e) => {
 		const { name, value } = e.target;
-
 		setVal({ ...Val, [name]: value });
-		console.log(Val)
+		// console.log(Val)
 	};
 
 	const handleCheck = (e) => {
@@ -56,10 +55,6 @@ const Member = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// console.log('현재 스테이트값', Val);
-		//check가 반환하는 인증 메세지가 있으면 해당 메세지를 화면에 출력하고 전송중지
-		//그렇지 않으면 인증 성공
-		// console.log(check(Val));
 		setErr(check(Val));
 		setSubmit(true);
 	};
@@ -97,7 +92,7 @@ const Member = () => {
 		return errs;
 	};
 
-	const resetForm = () => {
+	const resetForm = useCallback(() => {
 		const select = selectEl.current.options[0];
 		const checks = checkGroup.current.querySelectorAll('input');
 		const radios = radioGroup.current.querySelectorAll('input');
@@ -105,7 +100,7 @@ const Member = () => {
 		checks.forEach((el) => (el.checked = false));
 		radios.forEach((el) => (el.checked = false));
 		setVal(initVal);
-	};
+	}, []);
 
 	useEffect(() => {
 		const len = Object.keys(Err).length;
@@ -114,7 +109,7 @@ const Member = () => {
 			//history.push('/');
 			resetForm();
 		}
-	}, [Err]);
+	}, [Err, Submit, resetForm]);
 
 
 

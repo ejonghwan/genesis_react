@@ -11,6 +11,7 @@ import { useEffect, useRef } from 'react'
 
 const Visual = () => {
 
+	console.log('visual')
 	const wrapRef = useRef(null)
 	const prevRef = useRef(null)
 	const nextRef = useRef(null)

@@ -1,8 +1,10 @@
+import { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //common
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
+import Nav from './components/common/nav/Nav';
 
 //main
 
@@ -21,14 +23,14 @@ import './scss/style.scss';
 
 function App() {
 
+	const menu = useRef(null)
 
 	return (
 		<>
-
-
 			<Switch>
-				<Route exact path='/' component={Main} />
-				<Route path='/' render={() => <Header type={'sub'} />} />
+				{/* <Route exact path='/' component={Main} /> */}
+				<Route exact path='/' render={() => <Main menu={menu}/>} />
+				<Route path='/' render={() => <Header type={'sub'} menu={menu}/>} />
 			</Switch>
 
 			<Route path='/department' component={Department} />
@@ -38,6 +40,8 @@ function App() {
 			<Route path='/member' component={Member} />
 			<Route path='/community' component={Community} />
 			<Footer />
+			
+			{/* <AllMenu target={allMenu} navRef={navRef} /> */}
 		</>
 	);
 }
