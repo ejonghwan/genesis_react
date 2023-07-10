@@ -7,7 +7,7 @@ import AllMenu from './AllMenu'
 import Nav from './nav/Nav';
 
 
-function Header({ type, menu}) {
+function Header({ type }) {
 	
 	console.log('header')
 	const allMenu = useRef(null);
@@ -15,13 +15,12 @@ function Header({ type, menu}) {
 
 	useEffect(() => {
 		// console.log(allMenu)
-		console.log(menu)
 	}, [])
 	
 	
 	return (
-		<header id="header" ref={navRef}>
-			<div className="g_inner full">
+		<header id="header" className={type} ref={navRef}>
+			<div className={`g_inner ${type === 'main' ? 'full' : ''}`}>
 				<nav className="header_wrap" >
 					<h1>
 						<Link to='/' ><span className="blind">제네시스 로고</span></Link>

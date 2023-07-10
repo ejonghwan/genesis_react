@@ -15,7 +15,7 @@ import Vids from './Vids';
 import Banner from './Banner';
 import Btns from './Btns';
 
-function Main({ menu }) {
+function Main({  }) {
 
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState(0);
@@ -24,7 +24,7 @@ function Main({ menu }) {
 
 	return (
 		<main>
-			<Header type={'main'} menu={menu}/>
+			<Header type={'main'}/>
 			<Visual />
 			<CarVisual />
 			<OuterDesign />

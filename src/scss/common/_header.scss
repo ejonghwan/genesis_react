@@ -39,6 +39,10 @@
         pointer-events: none;
     }
 
+    &.sub {
+        .header_wrap {padding-left:0;}
+    }
+
 }
 
 
