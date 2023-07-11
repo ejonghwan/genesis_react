@@ -19,8 +19,6 @@ function Main({  }) {
 
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState(0);
-	
-
 
 	return (
 		<main>
