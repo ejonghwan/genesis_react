@@ -15,10 +15,22 @@ const CarVisual = () => {
 
 
     // const useDispatch = 
-    const no = useSelector(state => console.log(state))
+    const no = useSelector(state => state.carReducer)
+    const dispatch = useDispatch()
 
 
-    console.log(no)
+    useEffect(() => {
+        //test 
+        // dispatch({ type: "NO", payload: "zzz" })
+        dispatch({ type: "CAR_DATA_LOAD", payload: '보낼값' })
+
+
+    }, [dispatch])
+
+    useEffect(() => {
+        console.log('useefff   ????', no.car)
+    }, [no])
+
 
 
     return (
@@ -28,6 +40,10 @@ const CarVisual = () => {
                         <h2 className="gl_title">Our Models</h2>
                         <p>역동적이면서도 우아한 디자인과 최첨단 기술을 탑재한 제네시스 브랜드의 라인업을 살펴보세요.</p>
                     </div>
+
+                    <ul>
+                        {no.car.map(item => <li>{item.title}</li>)}
+                    </ul>
                 
                     <Tab 
                         className={"tab_type1"} 
