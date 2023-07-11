@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 import Tab from '../../common/tab/Tab';
@@ -11,7 +12,15 @@ import { CarData } from '../../common/data/CarData';
 
 
 const CarVisual = () => {
-    
+
+
+    // const useDispatch = 
+    const no = useSelector(state => console.log(state))
+
+
+    console.log(no)
+
+
     return (
         <section className="sub_visual">
                 <article className="g_inner">

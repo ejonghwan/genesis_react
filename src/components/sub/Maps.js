@@ -1,4 +1,5 @@
-import React, { Fragment, useRef, useEffect, useState } from 'react';
+import React, { Fragment, useRef, useEffect, useState, useCallback } from 'react';
+import _ from 'lodash';
 
 import Tab from '../common/tab/Tab';
 import Showroom from './showroom/Showroom';
@@ -14,29 +15,7 @@ const Maps = ({ mapData }) => {
 	const [Traffic, setTraffic] = useState(false);
 	
 
-	const createMap = () => {
-		const mapInfo = mapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
-		const mapIns = new kakao.maps.Map(mapContainerRef.current, { center: new kakao.maps.LatLng(mapInfo[0].letlong.lat, mapInfo[0].letlong.long), level: 3 });
-
-		// 줌 컨트롤 붙이기
-		const zoomControl = new kakao.maps.ZoomControl();
-		mapIns.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-		// 맵 타입 위성 붙이기
-		const mapTypeControl = new kakao.maps.MapTypeControl();
-		mapIns.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-		//휠 줌 기능막기
-		mapIns.setZoomable(false) 
-
-		mapIns.panTo(new kakao.maps.LatLng(mapInfo[1].letlong.lat, mapInfo[1].letlong.long))
-		
-		createMarker(mapIns, mapInfo);
-		setMapIns(mapIns)
-		document.querySelector('.map_move')?.click();
-	}
-
-	const createMarker = (mapIns, info) => {
+	const createMarker = useCallback((mapIns, info) => {
 		// 인포생성
 		info.forEach((info, idx) => {
 			const marker = new kakao.maps.Marker({ 
@@ -67,26 +46,57 @@ const Maps = ({ mapData }) => {
 			// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 			infowindow.open(mapIns, marker); 
 		})
-	}
+	}, [kakao])
 	
+	const createMap = useCallback(() => {
+		const mapInfo = mapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
+		const mapIns = new kakao.maps.Map(mapContainerRef.current, { center: new kakao.maps.LatLng(mapInfo[0].letlong.lat, mapInfo[0].letlong.long), level: 3 });
+
+		// 줌 컨트롤 붙이기
+		const zoomControl = new kakao.maps.ZoomControl();
+		mapIns.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+		// 맵 타입 위성 붙이기
+		const mapTypeControl = new kakao.maps.MapTypeControl();
+		mapIns.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+		//휠 줌 기능막기
+		mapIns.setZoomable(false) 
+
+		mapIns.panTo(new kakao.maps.LatLng(mapInfo[1].letlong.lat, mapInfo[1].letlong.long))
+		
+		createMarker(mapIns, mapInfo);
+		setMapIns(mapIns)
+		document.querySelector('.map_move')?.click();
+	} ,[createMarker, kakao, mapData ])
+
 
 	useEffect(() => {
-		// MapIns?.panTo( new kakao.maps.LatLng(mapInfo[0].letlong.lat,mapInfo[0].letlong.long) );
-		
 		createMap();
-		
-	}, [])
+	}, [createMap])
 
 	useEffect(() => {
 		MapIns?.panTo( new kakao.maps.LatLng(TargetLatLng.lat, TargetLatLng.long) );
-	}, [TargetLatLng])
+	}, [MapIns, TargetLatLng, kakao])
 
 	useEffect(() => {
 		Traffic
 			? MapIns?.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
 			: MapIns?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-	}, [Traffic]);
+	}, [MapIns, Traffic, kakao]);
 
+	const mapCenter = e => {
+		console.log('map c??')
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', _.debounce(mapCenter, 500))
+
+		return () => {
+			window.removeEventListener('resize', _.debounce(mapCenter, 500))
+		};
+
+	}, [])
 
 
     // 리사이즈시 센터로
