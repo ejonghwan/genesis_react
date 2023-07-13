@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //common
@@ -26,7 +26,7 @@ function App() {
 	const menu = useRef(null)
 
 	return (
-		<>
+		<Fragment>
 			<Switch>
 				{/* <Route exact path='/' component={Main} /> */}
 				<Route exact path='/' render={() => <Main />} />
@@ -42,7 +42,7 @@ function App() {
 			<Footer />
 			
 			{/* <AllMenu target={allMenu} navRef={navRef} /> */}
-		</>
+		</Fragment>
 	);
 }
 
