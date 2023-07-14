@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef, Fragment } from 'react';
-import axios from 'axios';
-
+import { useSelector, useDispatch } from 'react-redux';
 
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
@@ -10,34 +9,40 @@ import Loading from '../common/loading/Loading';
 
 
 function Youtube() {
-	const modal = useRef(null);
-	const [Vids, setVids] = useState([]);
-	const [Index, setIndex] = useState(0);
-	const [Loader, setLoader] = useState(true)
 
-	const fetchYoutube = async () => {
-		const key = 'AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk'
-        const list = 'PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16'
-		const num = 10;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
-		const result = await axios.get(url);
-		setVids(result.data.items);
-		setLoader(false)
-	};
+	const { youtube, loading } = useSelector(state => state.youtubeReducer)
+	const dispatch = useDispatch();
+	const modal = useRef(null);
+	const [Index, setIndex] = useState(0);
 
 	const handlePopOpen = idx => e => {
 		modal.current.open()();
 		setIndex(idx);
 	}
 
-	useEffect(() => fetchYoutube(), []);
+	useEffect(() => {
+		dispatch({ 
+			type: "YOUTUBE_LOAD_REQUEST", 
+			payload: { 
+				key: "AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk", 
+				list: "PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16", 
+				num: 10,  
+			} 
+		})
+		
+	}, [dispatch]);
+
+	useEffect(() => {
+		// console.log('y?', youtube, loading)
+		// console.log('a', youtube.items["5"])
+	}, [ youtube, loading ])
 
 	return (
 		<Fragment>
 			<Visual name={'youtube'} />
 			<Layout name={'youtube sub_page'} >
 
-			{Loader ? (
+			{loading ? (
 				<Loading />
 			) : (
 				<div class="g_inner">
@@ -57,7 +62,7 @@ function Youtube() {
 							<div class="inner">
 							<div class="wrap">
 								
-								{Vids.map((vid, idx) => {
+								{youtube.items?.map((vid, idx) => {
 									return (
 										<article key={idx}>
 											<div className='pic img_box' onClick={handlePopOpen(idx)}>
@@ -84,7 +89,10 @@ function Youtube() {
 			</Layout>
 
 			<Modal ref={modal} type={"popup_full"}>
-				<iframe title={Vids[Index]?.id} src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}></iframe>
+				<iframe 
+					title={youtube.items?.map(item => item)[Index]?.id} 
+					src={`https://www.youtube.com/embed/${youtube.items?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
+				></iframe>
 			</Modal>
 		</Fragment>
 	);

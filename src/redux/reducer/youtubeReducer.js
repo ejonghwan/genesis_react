@@ -1,7 +1,7 @@
 // initial state
 export const initailState = {
     loading: false,
-    car: [],
+    youtube: {},
     error: '',
 }
 
@@ -10,27 +10,23 @@ export const initailState = {
 // reducer
 const reducer = (state = initailState, action) => {
     switch(action.type) {
-        case "CAR_DATA_LOAD" : 
+        case "YOUTUBE_LOAD_REQUEST" : 
             return {
                 ...state,
                 loading: true,
             }
-        case "CAR_DATA_SUCCESS" : 
+        case "YOUTUBE_LOAD_SUCCESS" : 
             return {
                 ...state,
-                car: state.car.concat(action.payload),
+                youtube: action.payload,
                 loading: false,
             }
-        case "CAR_DATA_FAILUE" : 
+        case "YOUTUBE_LOAD_FAILUE" : 
             return {
                 ...state,
                 error: action.error,
                 loading: false,
             }
-
-
-
-      
 
         default: 
             return { ...state }

@@ -1,6 +1,5 @@
 import {all, call, delay, fork, put, takeLatest, throttle} from 'redux-saga/effects'
 import axios from 'axios';
-console.log('car sagas')
 
 
 
