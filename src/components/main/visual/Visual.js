@@ -81,11 +81,12 @@ const Visual = () => {
 			subTxt_2: "최고급 세단에 걸맞은 품격 있는 실내외 디자인은 물론, 첨단 주행 보조 기술과 이동 시간에 가치를 더하는 다양한 기술이 집약된 G90를 통해 고급차의 새로운 방향성을 제시합니다.",
 			more: "https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90-long-wheel-base/bto/powertrains?code=BBBBBBB&packages=",
 			Learn: "https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g90/design.html",
-			src: G90 ,
+			src: G90,
 			muted: true, 
-			loop: false, 
+			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 		{
 			title: "G70",
@@ -98,6 +99,7 @@ const Visual = () => {
 			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 		{
 			title: "E.G80",
@@ -110,6 +112,7 @@ const Visual = () => {
 			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 		{
 			title: "G80",
@@ -122,6 +125,7 @@ const Visual = () => {
 			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 		{
 			title: "GV70",
@@ -134,6 +138,7 @@ const Visual = () => {
 			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 		{
 			title: "GV60",
@@ -146,6 +151,7 @@ const Visual = () => {
 			loop: true, 
 			playsInline: true,
 			autoPlay: true,
+			preload: "metadata",
 		},
 	
 	]

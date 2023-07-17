@@ -22,7 +22,7 @@ const VisualItem = ({ data }) => {
                     </div>
             </div>
             <figure className="main_visual_slide_video">
-                <video src={src} muted={muted} loop={loop} playsInline={playsInline} ></video>
+                <video src={`${src}#t=0.5`} muted={muted} loop={loop} playsInline={playsInline} ></video>
             </figure>
         </div>
     );
