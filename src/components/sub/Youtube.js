@@ -32,11 +32,6 @@ function Youtube() {
 		
 	}, [dispatch]);
 
-	useEffect(() => {
-		// console.log('y?', youtube, loading)
-		// console.log('a', youtube.items["5"])
-	}, [ youtube, loading ])
-
 	return (
 		<Fragment>
 			<Visual name={'youtube'} />

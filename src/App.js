@@ -10,12 +10,13 @@ import Nav from './components/common/nav/Nav';
 
 //sub
 import Community from './components/sub/Community';
-import Contact from './components/sub/Contact';
-import Department from './components/sub/Department';
+// import Contact from './components/sub/Contact';
 import Gallery from './components/sub/Gallery';
 import Member from './components/sub/Member';
 import Youtube from './components/sub/Youtube';
 import Main from './components/main/Main';
+
+import Contact from './pages/Contact';
 
 
 import './scss/style.scss';
@@ -33,7 +34,6 @@ function App() {
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
-			<Route path='/department' component={Department} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/contact' component={Contact} />
