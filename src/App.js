@@ -4,19 +4,20 @@ import { Route, Switch } from 'react-router-dom';
 //common
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
-import Nav from './components/common/nav/Nav';
-
-//main
 
 //sub
-import Community from './components/sub/Community';
+// import Community from './components/sub/Community';
 // import Contact from './components/sub/Contact';
-import Gallery from './components/sub/Gallery';
-import Member from './components/sub/Member';
-import Youtube from './components/sub/Youtube';
-import Main from './components/main/Main';
+// import Gallery from './components/sub/Gallery';
+// import Member from './components/sub/Member';
+// import Youtube from './components/sub/Youtube';
 
+import Main from './pages/Main';
 import Contact from './pages/Contact';
+import Community from './pages/Community';
+import Gallery from './pages/Gallery';
+import Member from './pages/Member';
+import Youtube from './pages/Youtube';
 
 
 import './scss/style.scss';

@@ -22,13 +22,13 @@ const CarVisual = () => {
     useEffect(() => {
         //test 
         // dispatch({ type: "NO", payload: "zzz" })
-        dispatch({ type: "CAR_DATA_LOAD", payload: '보낼값' })
+        // dispatch({ type: "CAR_DATA_LOAD", payload: '보낼값' })
 
 
     }, [dispatch])
 
     useEffect(() => {
-        console.log('useefff   ????', no.car)
+        // console.log('useefff   ????', no.car)
     }, [no])
 
 
@@ -62,8 +62,6 @@ const CarVisual = () => {
                     /> */}
 
                 </article>
-                
-              
             </section>
     )
 }

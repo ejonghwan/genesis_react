@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import Layout from '../common/Layout';
-import Visual from './Visual';
+import Layout from '../components/common/Layout';
+import Visual from '../components/sub/Visual';
 
 const Member = () => {
 	const selectEl = useRef(null);
