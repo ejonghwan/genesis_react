@@ -4,7 +4,6 @@ const Showroom = ({ data, setTargetLatLng }) => {
 
     const handleMapInfoClick = info => setTargetLatLng(info)
     
-
     return (
         
         <div>

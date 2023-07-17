@@ -9,11 +9,6 @@ import 'swiper/scss/pagination';
 
 const Sedan = ({ data }) => {
 
-    useEffect(() => {
-        
-    console.log('dd?', data)
-    }, [])
-
     return (
         <Fragment>
             <Swiper 

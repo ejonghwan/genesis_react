@@ -5,14 +5,8 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-
-
 const Suv = ({ data }) => {
 
-    useEffect(() => {
-        
-    console.log('dd?', data)
-    }, [])
 
     return (
         <Fragment>

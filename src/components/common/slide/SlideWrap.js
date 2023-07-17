@@ -22,7 +22,7 @@ const SlideWrap = ({ data, defaultText }) => {
     }
 
     return (
-        <div class="g_inner">
+        <div className="g_inner">
             <Swiper 
                 ref={swiperRef}
                 direction={'vertical'} 
@@ -33,9 +33,9 @@ const SlideWrap = ({ data, defaultText }) => {
                 loop={true}
             >
                 {data.map((item, idx) => <SwiperSlide key={idx}><Slide item={item} defaultText={defaultText} /></SwiperSlide>)}
-                <div class="swiper-state">
-                    <button type="button" class={`stop ${!SwiperState && "on"}`} onClick={handleSwiperStop} aria-label="슬라이드 자동 이동 정지"></button>
-                    <button type="button" class={`play ${SwiperState && "on"}`} onClick={handleSwiperPaly} aria-label="슬라이드 자동 이동 시작"></button>
+                <div className="swiper-state">
+                    <button type="button" className={`stop ${!SwiperState && "on"}`} onClick={handleSwiperStop} aria-label="슬라이드 자동 이동 정지"></button>
+                    <button type="button" className={`play ${SwiperState && "on"}`} onClick={handleSwiperPaly} aria-label="슬라이드 자동 이동 시작"></button>
                 </div>
             </Swiper>
         </div>

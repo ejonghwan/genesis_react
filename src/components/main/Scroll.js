@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import Anime from '../../utils/anime';
 
-function Btns({ setScrolled, setPos }) {
+const Scroll = ({ setScrolled, setPos }) => {
 	const btnRef = useRef(null);
 	const pos = useRef([]);
 	const [Num, setNum] = useState(0);
@@ -71,4 +71,4 @@ function Btns({ setScrolled, setPos }) {
 	);
 }
 
-export default Btns;
+export default Scroll;

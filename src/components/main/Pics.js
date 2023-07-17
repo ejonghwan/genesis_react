@@ -1,4 +1,4 @@
-function Pics({ Scrolled, Pos }) {
+const Pics = ({ Scrolled, Pos }) => {
 	
 	const currentPos = Scrolled - Pos[2];
 	const base = window.innerHeight / 2;

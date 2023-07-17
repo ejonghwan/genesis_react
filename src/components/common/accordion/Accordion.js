@@ -13,14 +13,14 @@ const Accordion = ({ data, className, device }) => {
     };
 
     return (
-        <div class={`${className} ${device}`}>
+        <div className={`${className} ${device}`}>
             {data.map((item, idx) => {
                 return (
                     <div key={idx} className='aco_wrap'>
-                         <button type="button" class={`acco_head ${idx === Index && !data.done ? 'on' : ''}`} onClick={handleClick(idx)}>
+                         <button type="button" className={`acco_head ${idx === Index && !data.done ? 'on' : ''}`} onClick={handleClick(idx)}>
                             {item.header}
                          </button>
-                         <div class={`acco_body ${idx === Index && !data.done && 'on'}`}>
+                         <div className={`acco_body ${idx === Index && !data.done && 'on'}`}>
                             {item.body}
                         </div>
                     </div>

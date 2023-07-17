@@ -68,7 +68,7 @@ const Maps = ({ mapData }) => {
 		createMarker(mapIns, mapInfo);
 		setMapIns(mapIns)
 		document.querySelector('.map_move')?.click();
-	} ,[createMarker, kakao, mapData ])
+	} ,[ createMarker, kakao, mapData ])
 
 
 	useEffect(() => {

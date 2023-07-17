@@ -6,14 +6,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
 
-
 const All = ({ data }) => {
-
-    useEffect(() => {
-        
-        console.log('dd?', data)
-    }, [])
-
     return (
         <Fragment>
             <Swiper 
