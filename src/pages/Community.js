@@ -38,39 +38,34 @@ const Community = () => {
 		resetForm()
 	}
 
-	const enablePost = id => {
-		return () => {
+	const enablePost = id => () => {
 			if(Modify) return;
 			dispatch({ type: "COMM_EDIT_REQUEST", payload: { id } })
 			setModiValue(prev => ({ ...prev, title: comm.filter(item => item.id === id )[0].title}) );
 			setModiValue(prev => ({ ...prev, content: comm.filter(item => item.id === id )[0].content }) );
 			setModify(true)
 		}
-	}
 
-	const updatePostCancel = id => {
-		return () => {
+
+	const updatePostCancel = id => () => {
 			dispatch({ type: "COMM_CANCEL_REQUEST", payload: { id } })
 			setModify(false)
 		}
-	}
 
-	const updatePost = id => {
-		return () => {
+	const updatePost = id => () => {
 			console.log('update')
 			dispatch({ type: "COMM_UPDATE_REQUEST", payload: { id, title: ModiValue.title, content: ModiValue.content, comm } })
 			setModify(false)
 		}
-	}
+	
 
-	const deletePost = id => {
-		return () => {
+	const deletePost = id => () => {
 			if( window.confirm('해당 게시물을 삭제할까요 ?') ) {
 				dispatch({ type: "COMM_DELETE_REQUEST", payload: { id, comm } })
 
 			}
 		}
-	}
+
 
 	const handleChange = e => {
 		const { name, value } = e.target;
@@ -82,10 +77,6 @@ const Community = () => {
 		console.log('comm?', comm)
 	}, [])
 
-	useEffect(() => {
-		
-		// localStorage.setItem('post', JSON.stringify(comm) )
-	}, [])
 
 	return (
 		<Fragment>
