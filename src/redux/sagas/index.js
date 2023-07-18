@@ -4,6 +4,7 @@ import axios from 'axios';
 import carSaga from './car';
 import youtubeSaga from './youtube';
 import gallerySaga from './gallery';
+import commSaga from './comm';
 
 
 export default function* rootSaga() {
@@ -11,5 +12,6 @@ export default function* rootSaga() {
         fork(carSaga),
         fork(youtubeSaga),
         fork(gallerySaga),
+        fork(commSaga),
     ])
 } 

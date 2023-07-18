@@ -2,24 +2,28 @@ import { Fragment, useState, useRef, useEffect } from 'react';
 import Layout from '../components/common/Layout';
 import Visual from '../components/sub/Visual';
 
+import { useSelector, useDispatch } from 'react-redux';
 
 const Community = () => {
+	const dispatch = useDispatch();
+	const { comm, loading } = useSelector(state => state.commReducer)
 
-	const getLocalData = () => {
-		const data = localStorage.getItem('post');
-		return data ? JSON.parse(data) : initalPosts;
-	}
+	// const getLocalData = () => {
+	// 	const data = localStorage.getItem('post');
+	// 	console.log(data)
+	// 	return data ? JSON.parse(data) : comm;
+	// }
 
-	const randomId = e => Math.floor(Math.random() * 10000);
-	const initalPosts = [
-		{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
-		{ id: randomId(), title: 'a1', content: 'b1', done: false, modify: false },
-		{ id: randomId(), title: 'a2', content: 'b2', done: false, modify: false },
-		{ id: randomId(), title: 'a3', content: 'b3', done: false, modify: false },
-		{ id: randomId(), title: 'a4', content: 'b4', done: false, modify: false },
-		{ id: randomId(), title: 'a5', content: 'b5', done: false, modify: false },
-	]
-	const [Posts, setPosts] = useState(getLocalData());
+	// const randomId = e => Math.floor(Math.random() * 10000);
+	// const initalPosts = [
+	// 	{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
+	// 	{ id: randomId(), title: 'a1', content: 'b1', done: false, modify: false },
+	// 	{ id: randomId(), title: 'a2', content: 'b2', done: false, modify: false },
+	// 	{ id: randomId(), title: 'a3', content: 'b3', done: false, modify: false },
+	// 	{ id: randomId(), title: 'a4', content: 'b4', done: false, modify: false },
+	// 	{ id: randomId(), title: 'a5', content: 'b5', done: false, modify: false },
+	// ]
+	// const [Posts, setPosts] = useState(getLocalData());
 	const [Modify, setModify] = useState(false);
 	const [ModiValue, setModiValue] = useState({ title: '', content: '' });
 
@@ -35,8 +39,8 @@ const Community = () => {
 
 	const statePost = id => {
 		return () => {
-			const stateChange = Posts.map(item => id === item.id ? { ...item, done: !item.done } : item)
-			setPosts(stateChange)
+			// const stateChange = Posts.map(item => id === item.id ? { ...item, done: !item.done } : item)
+			// setPosts(stateChange)
 		}
 	}
 
@@ -44,44 +48,47 @@ const Community = () => {
 		if(!inputRef.current.value.trim() || !textareaRef.current.value.trim()){
 			return alert('본문과 제목을 모두 입력해주세요')
 		}
-		setPosts([{ id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, }, ...Posts]);
+		// setPosts([{ id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, }, ...Posts]);
 		resetForm();
-		
 	}
 
 	const enablePost = id => {
 		return () => {
 			if(Modify) return;
-			const update = Posts.map(item => id === item.id ? {...item, modify: true} : item);
-			setModiValue(prev => ({ ...prev, title: Posts.filter(item => item.id === id )[0].title}) );
-			setModiValue(prev => ({ ...prev, content: Posts.filter(item => item.id === id )[0].content }) );
-			setPosts(update)
+			// const update = Posts.map(item => id === item.id ? {...item, modify: true} : item);
+			// setModiValue(prev => ({ ...prev, title: Posts.filter(item => item.id === id )[0].title}) );
+			// setModiValue(prev => ({ ...prev, content: Posts.filter(item => item.id === id )[0].content }) );
+			// setPosts(update)
+			console.log('enable')
 			setModify(true)
 		}
 	}
 
 	const updatePostCancel = id => {
 		return () => {
-			const update = Posts.map(item => id === item.id ? {...item, modify: false} : item);
-			setPosts(update)
+			console.log('cansel')
+			// const update = Posts.map(item => id === item.id ? {...item, modify: false} : item);
+			// setPosts(update)
 			setModify(false)
 		}
 	}
 
 	const updatePost = id => {
 		return () => {
-			const update = Posts.map(item => id === item.id ? {...item, title: ModiValue.title, content: ModiValue.content, modify: false} : item);
-			setPosts(update)
+			console.log('update')
+			// const update = Posts.map(item => id === item.id ? {...item, title: ModiValue.title, content: ModiValue.content, modify: false} : item);
+			// setPosts(update)
 			setModify(false)
 		}
 	}
 
 	const deletePost = id => {
 		return () => {
-			if( window.confirm('해당 게시물을 삭제할까요 ?') ) {
-				const delPost = Posts.filter(item => id !== item.id)
-				setPosts(delPost)
-			}
+			console.log('del')
+			// if( window.confirm('해당 게시물을 삭제할까요 ?') ) {
+			// 	const delPost = Posts.filter(item => id !== item.id)
+			// 	setPosts(delPost)
+			// }
 		}
 	}
 
@@ -91,9 +98,10 @@ const Community = () => {
 	}
 
 	useEffect(() => {
-		localStorage.setItem('post', JSON.stringify(Posts))
-		
-	}, [Posts])
+		dispatch({ type: "COMM_LOAD_REQUEST" })
+		console.log('comm?', comm)
+		// localStorage.setItem('post', JSON.stringify([{ id: 123123123, title: 'local', content: 'local', done: false, modify: false  }, { id: 123123, title: 'local2', content: 'local2', done: false, modify: false  }]))
+	}, [])
 
 	return (
 		<Fragment>
@@ -103,7 +111,7 @@ const Community = () => {
 					<div className='inputBox'>
 
 						<ul className='list'>
-							{Posts.map((item, idx) => {
+							{comm.map((item, idx) => {
 								return (
 									<li className={`list_item ${item.done && "active" }`} key={item.id}>
 
