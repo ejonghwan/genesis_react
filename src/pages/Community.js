@@ -15,15 +15,6 @@ const Community = () => {
 	// }
 
 	const randomId = e => Math.floor(Math.random() * 10000);
-	// const initalPosts = [
-	// 	{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
-	// 	{ id: randomId(), title: 'a1', content: 'b1', done: false, modify: false },
-	// 	{ id: randomId(), title: 'a2', content: 'b2', done: false, modify: false },
-	// 	{ id: randomId(), title: 'a3', content: 'b3', done: false, modify: false },
-	// 	{ id: randomId(), title: 'a4', content: 'b4', done: false, modify: false },
-	// 	{ id: randomId(), title: 'a5', content: 'b5', done: false, modify: false },
-	// ]
-	// const [Posts, setPosts] = useState(getLocalData());
 	const [Modify, setModify] = useState(false);
 	const [ModiValue, setModiValue] = useState({ title: '', content: '' });
 
@@ -37,39 +28,29 @@ const Community = () => {
 		textareaRef.current.value = '';
 	}
 
-	const statePost = id => {
-		return () => {
-			// const stateChange = Posts.map(item => id === item.id ? { ...item, done: !item.done } : item)
-			// setPosts(stateChange)
-		}
-	}
+
 
 	const createPost = () => {
 		if(!inputRef.current.value.trim() || !textareaRef.current.value.trim()){
 			return alert('본문과 제목을 모두 입력해주세요')
 		}
 		dispatch({ type: "COMM_ADD_REQUEST", payload: { id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, modify: false } })
-		// setPosts([{ id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, }, ...Posts]);
-		resetForm();
+		resetForm()
 	}
 
 	const enablePost = id => {
 		return () => {
-			// if(Modify) return;
-			// const update = comm.map(item => id === item.id ? {...item, modify: true} : item);
-			// setModiValue(prev => ({ ...prev, title: Posts.filter(item => item.id === id )[0].title}) );
-			// setModiValue(prev => ({ ...prev, content: Posts.filter(item => item.id === id )[0].content }) );
-			// setPosts(update)
-			console.log('enable')
+			if(Modify) return;
+			dispatch({ type: "COMM_EDIT_REQUEST", payload: { id } })
+			setModiValue(prev => ({ ...prev, title: comm.filter(item => item.id === id )[0].title}) );
+			setModiValue(prev => ({ ...prev, content: comm.filter(item => item.id === id )[0].content }) );
 			setModify(true)
 		}
 	}
 
 	const updatePostCancel = id => {
 		return () => {
-			console.log('cansel')
-			// const update = Posts.map(item => id === item.id ? {...item, modify: false} : item);
-			// setPosts(update)
+			dispatch({ type: "COMM_CANCEL_REQUEST", payload: { id } })
 			setModify(false)
 		}
 	}
@@ -77,19 +58,17 @@ const Community = () => {
 	const updatePost = id => {
 		return () => {
 			console.log('update')
-			// const update = Posts.map(item => id === item.id ? {...item, title: ModiValue.title, content: ModiValue.content, modify: false} : item);
-			// setPosts(update)
+			dispatch({ type: "COMM_UPDATE_REQUEST", payload: { id, title: ModiValue.title, content: ModiValue.content, comm } })
 			setModify(false)
 		}
 	}
 
 	const deletePost = id => {
 		return () => {
-			console.log('del')
-			// if( window.confirm('해당 게시물을 삭제할까요 ?') ) {
-			// 	const delPost = Posts.filter(item => id !== item.id)
-			// 	setPosts(delPost)
-			// }
+			if( window.confirm('해당 게시물을 삭제할까요 ?') ) {
+				dispatch({ type: "COMM_DELETE_REQUEST", payload: { id, comm } })
+
+			}
 		}
 	}
 
@@ -99,13 +78,13 @@ const Community = () => {
 	}
 
 	useEffect(() => {
-		
 		dispatch({ type: "COMM_LOAD_REQUEST", payload: comm })
-		// localStorage.setItem('post', JSON.stringify([ ...comm ]) );
-
 		console.log('comm?', comm)
+	}, [])
+
+	useEffect(() => {
 		
-		// localStorage.setItem('post', JSON.stringify([{ id: 123123123, title: 'local', content: 'local', done: false, modify: false  }, { id: 123123, title: 'local2', content: 'local2', done: false, modify: false  }]))
+		// localStorage.setItem('post', JSON.stringify(comm) )
 	}, [])
 
 	return (
@@ -116,6 +95,7 @@ const Community = () => {
 					<div className='inputBox'>
 
 						<ul className='list'>
+							{console.log('list?', comm)}
 							{comm.map((item, idx) => {
 								return (
 									<li className={`list_item ${item.done && "active" }`} key={item.id}>
@@ -133,8 +113,6 @@ const Community = () => {
 												</div>
 											)
 										}
-										
-										
 										{
 											item.modify ? (
 												<div>
@@ -145,7 +123,6 @@ const Community = () => {
 												<div>
 													<button type="button" onClick={deletePost(item.id)}>삭제</button>
 													<button type="button" onClick={enablePost(item.id)}>수정</button>
-													<button type="button" onClick={statePost(item.id)}>완료</button>
 												</div>
 											)
 										}

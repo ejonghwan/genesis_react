@@ -30,7 +30,7 @@ const reducer = (state = initailState, action) => {
             return {
                 ...state,
                 // comm: [...state.comm, ...action.payload],
-                comm: [...state.comm],
+                comm: action.payload,
                 loading: false,
             }
         case "COMM_LOAD_FAILUE" : 
@@ -66,17 +66,70 @@ const reducer = (state = initailState, action) => {
                 loading: true,
             }
         case "COMM_EDIT_SUCCESS" : 
+            // console.log('reducer', action.payload.id)
+            // const sel = state.comm.map(item => item.id === action.payload.id ? { ...item, modify: true } : item)
+            // console.log('reducer', sel)
             return {
                 ...state,
-                comm: [...state.comm, ...action.payload],
+                comm: state.comm.map(item => item.id === action.payload.id ? { ...item, modify: true } : item),
                 loading: false,
             }
+
+            // state.comm.map(item => console.log('item??', item)),
         case "COMM_EDIT_FAILUE" : 
             return {
                 ...state,
                 error: action.error,
                 loading: false,
             }
+
+
+
+         //edit cancel
+         case "COMM_CANCEL_REQUEST" : 
+         return {
+             ...state,
+             loading: true,
+         }
+        case "COMM_CANCEL_SUCCESS" : 
+            // console.log('reducer', action.payload.id)
+            // const sel = state.comm.map(item => item.id === action.payload.id ? { ...item, modify: true } : item)
+            // console.log('reducer', sel)
+            return {
+                ...state,
+                comm: state.comm.map(item => item.id === action.payload.id ? { ...item, modify: false } : item),
+                loading: false,
+            }
+
+        case "COMM_CANCEL_FAILUE" : 
+            return {
+                ...state,
+                error: action.error,
+                loading: false,
+            }
+
+
+         //update
+         case "COMM_UPDATE_REQUEST" : 
+         return {
+             ...state,
+             loading: true,
+         }
+        case "COMM_UPDATE_SUCCESS" : 
+            return {
+                ...state,
+                comm: state.comm.map(item => item.id === action.payload.id ? { ...item, title: action.payload.title, content: action.payload.content, modify: false } : item),
+                loading: false,
+            }
+
+        case "COMM_UPDATE_FAILUE" : 
+            return {
+                ...state,
+                error: action.error,
+                loading: false,
+            }
+
+
 
         //delete
         case "COMM_DELETE_REQUEST" : 
@@ -87,7 +140,7 @@ const reducer = (state = initailState, action) => {
         case "COMM_DELETE_SUCCESS" : 
             return {
                 ...state,
-                comm: [...state.comm, ...action.payload],
+                comm: state.comm.filter(item => item.id !== action.payload.id),
                 loading: false,
             }
         case "COMM_DELETE_FAILUE" : 
@@ -99,6 +152,7 @@ const reducer = (state = initailState, action) => {
 
         
         default: 
+        
             return { ...state }
     }
 }
