@@ -29,7 +29,8 @@ const reducer = (state = initailState, action) => {
         case "COMM_LOAD_SUCCESS" : 
             return {
                 ...state,
-                comm: [...state.comm, ...action.payload],
+                // comm: [...state.comm, ...action.payload],
+                comm: [...state.comm],
                 loading: false,
             }
         case "COMM_LOAD_FAILUE" : 
@@ -40,18 +41,56 @@ const reducer = (state = initailState, action) => {
             }
 
         //create
-        case "COMM_UPDATE_REQUEST" : 
+        case "COMM_ADD_REQUEST" : 
             return {
                 ...state,
                 loading: true,
             }
-        case "COMM_LOAD_SUCCESS" : 
+        case "COMM_ADD_SUCCESS" : 
+            return {
+                ...state,
+                comm: [action.payload, ...state.comm],
+                loading: false,
+            }
+        case "COMM_ADD_FAILUE" : 
+            return {
+                ...state,
+                error: action.error,
+                loading: false,
+            }
+
+        //edit
+        case "COMM_EDIT_REQUEST" : 
+            return {
+                ...state,
+                loading: true,
+            }
+        case "COMM_EDIT_SUCCESS" : 
             return {
                 ...state,
                 comm: [...state.comm, ...action.payload],
                 loading: false,
             }
-        case "COMM_LOAD_FAILUE" : 
+        case "COMM_EDIT_FAILUE" : 
+            return {
+                ...state,
+                error: action.error,
+                loading: false,
+            }
+
+        //delete
+        case "COMM_DELETE_REQUEST" : 
+            return {
+                ...state,
+                loading: true,
+            }
+        case "COMM_DELETE_SUCCESS" : 
+            return {
+                ...state,
+                comm: [...state.comm, ...action.payload],
+                loading: false,
+            }
+        case "COMM_DELETE_FAILUE" : 
             return {
                 ...state,
                 error: action.error,

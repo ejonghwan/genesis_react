@@ -14,7 +14,7 @@ const Community = () => {
 	// 	return data ? JSON.parse(data) : comm;
 	// }
 
-	// const randomId = e => Math.floor(Math.random() * 10000);
+	const randomId = e => Math.floor(Math.random() * 10000);
 	// const initalPosts = [
 	// 	{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
 	// 	{ id: randomId(), title: 'a1', content: 'b1', done: false, modify: false },
@@ -48,14 +48,15 @@ const Community = () => {
 		if(!inputRef.current.value.trim() || !textareaRef.current.value.trim()){
 			return alert('본문과 제목을 모두 입력해주세요')
 		}
+		dispatch({ type: "COMM_ADD_REQUEST", payload: { id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, modify: false } })
 		// setPosts([{ id: randomId(), title: inputRef.current.value, content: textareaRef.current.value, done: false, }, ...Posts]);
 		resetForm();
 	}
 
 	const enablePost = id => {
 		return () => {
-			if(Modify) return;
-			// const update = Posts.map(item => id === item.id ? {...item, modify: true} : item);
+			// if(Modify) return;
+			// const update = comm.map(item => id === item.id ? {...item, modify: true} : item);
 			// setModiValue(prev => ({ ...prev, title: Posts.filter(item => item.id === id )[0].title}) );
 			// setModiValue(prev => ({ ...prev, content: Posts.filter(item => item.id === id )[0].content }) );
 			// setPosts(update)
@@ -98,8 +99,12 @@ const Community = () => {
 	}
 
 	useEffect(() => {
-		dispatch({ type: "COMM_LOAD_REQUEST" })
+		
+		dispatch({ type: "COMM_LOAD_REQUEST", payload: comm })
+		// localStorage.setItem('post', JSON.stringify([ ...comm ]) );
+
 		console.log('comm?', comm)
+		
 		// localStorage.setItem('post', JSON.stringify([{ id: 123123123, title: 'local', content: 'local', done: false, modify: false  }, { id: 123123, title: 'local2', content: 'local2', done: false, modify: false  }]))
 	}, [])
 
