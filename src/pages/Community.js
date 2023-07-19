@@ -74,8 +74,7 @@ const Community = () => {
 
 	useEffect(() => {
 		dispatch({ type: "COMM_LOAD_REQUEST", payload: comm })
-		console.log('comm?', comm)
-	}, [])
+	}, [dispatch])
 
 
 	return (
