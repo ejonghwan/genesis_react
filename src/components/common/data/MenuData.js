@@ -81,7 +81,7 @@ export const menuData = [
 export const accData = [
     {   
         id:0,
-        header: <strong class="tit">모델</strong>, 
+        header: <strong className="tit">모델</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '모델' )[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />
@@ -90,7 +90,7 @@ export const accData = [
     },
     {
         id:1,
-        header: <strong class="tit">구매</strong>, 
+        header: <strong className="tit">구매</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '구매' )[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />
@@ -100,7 +100,7 @@ export const accData = [
     },
     {
         id:2,
-        header: <strong class="tit">체험</strong>, 
+        header: <strong className="tit">체험</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '체험')[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />
@@ -110,7 +110,7 @@ export const accData = [
     },
     {
         id:3,
-        header: <strong class="tit">멤버스</strong>, 
+        header: <strong className="tit">멤버스</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '멤버스')[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />
@@ -120,7 +120,7 @@ export const accData = [
     },
     {
         id:4,
-        header: <strong class="tit">제네시스</strong>, 
+        header: <strong className="tit">제네시스</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '제네시스' )[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />
@@ -130,7 +130,7 @@ export const accData = [
     },
     {
         id:5,
-        header: <strong class="tit">고객센터</strong>, 
+        header: <strong className="tit">고객센터</strong>, 
         body: (() => {
             let d = menuData.filter((item, idx) => item.category === '고객센터')[0];
             return <Menu conts={d.conts} key={d.idx} type={"item"} />

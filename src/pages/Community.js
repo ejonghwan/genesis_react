@@ -85,7 +85,6 @@ const Community = () => {
 					<div className='inputBox'>
 
 						<ul className='list'>
-							{console.log('list?', comm)}
 							{comm.map((item, idx) => {
 								return (
 									<li className={`list_item ${item.done && "active" }`} key={item.id}>

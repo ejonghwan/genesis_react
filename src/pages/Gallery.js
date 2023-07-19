@@ -70,19 +70,19 @@ const Gallery = () => {
 			<Layout name={'gallery sub_page'}>
 
 				<div className="g_inner">
-					<div class="searchBox">
+					<div className="searchBox">
 						<input type="text" id="search" placeholder="제네시스를 입력해보세요" onChange={handleSearchChange} onKeyPress={e => e.key === 'Enter' && handleSearch()}/>
-						<button class="btnSearch" onClick={handleSearch}>
+						<button className="btnSearch" onClick={handleSearch}>
 							검색
-							<i class="fa-solid fa-magnifying-glass"></i>
+							<i className="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
 
-					<div class="btnSet">
+					<div className="btnSet">
 						<fieldset>
-							<input id="btnInterest" class="btnInterest" value="user" type="radio" name="select" checked={Gallery["select"] === "user"} onChange={handleCheck} />
+							<input id="btnInterest" className="btnInterest" value="user" type="radio" name="select" checked={Gallery["select"] === "user"} onChange={handleCheck} />
 							<label htmlFor="btnInterest" onClick={handleUserGall}>User Gallery</label>
-							<input id="btnMine" class="btnMine" value="genesis" type="radio" name="select" checked={Gallery["select"] === "genesis"} onChange={handleCheck} />
+							<input id="btnMine" className="btnMine" value="genesis" type="radio" name="select" checked={Gallery["select"] === "genesis"} onChange={handleCheck} />
 							<label htmlFor="btnMine" onClick={handleGeneGall}>Genesis Gallery</label>
 						</fieldset>
 					</div>
@@ -96,15 +96,15 @@ const Gallery = () => {
 								{gallery.photos?.photo.map((item, idx) => {
 									return <li className='item' key={idx}>
 										<div>
-											<div class="img_box">        
+											<div className="img_box">        
 												<button type="button" className='img_box_btn' onClick={handlePopOpen(idx)}>
 													<img className='thumb' src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />  	
 												</button>   
 											</div>
-											<div class="txt_box">
-												<article class="profile">	
+											<div className="txt_box">
+												<article className="profile">	
 													<img src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`} alt={''} onError={ e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif') } />				
-													<button type="button" class="userid" onClick={handleSelectUser(item.owner)}>{item.owner}</button>
+													<button type="button" className="userid" onClick={handleSelectUser(item.owner)}>{item.owner}</button>
 												</article>
 												<p>{item.title}</p>
 											</div>

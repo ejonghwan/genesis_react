@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-
 const Accordion = ({ data, className, device }) => {
-    
-
-    const [Active, setActive] = useState(false);
-    const [Data, setData] = useState(data);
-  
     const [Index, setIndex] = useState(false);
     const handleClick = idx => e => {
         setIndex(idx);

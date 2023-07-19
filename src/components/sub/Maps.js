@@ -109,7 +109,7 @@ const Maps = ({ mapData }) => {
 
 	return (
         <div className='g_inner'>
-            <h2 class="gl_title">전시관 찾기</h2>
+            <h2 className="gl_title">전시관 찾기</h2>
             <div className='center_wrap' ref={infoContainerRef}>
                 <div className='region'>
                     <Tab 
@@ -128,7 +128,7 @@ const Maps = ({ mapData }) => {
                 </div>
                 <div className='map'>
                     <div id="map" ref={mapContainerRef}></div>
-                    <div class="btn_traffic_wrap"> 
+                    <div className="btn_traffic_wrap"> 
                     <button onClick={() => setTraffic(!Traffic)}>{Traffic ? '교통량 끄기' : '교통량 보기'}</button>
                     </div>
                 </div>
