@@ -12,27 +12,6 @@ import { CarData } from '../../common/data/CarData';
 
 
 const CarVisual = () => {
-
-
-    // const useDispatch = 
-    const no = useSelector(state => state.carReducer)
-    const dispatch = useDispatch()
-
-
-    useEffect(() => {
-        //test 
-        // dispatch({ type: "NO", payload: "zzz" })
-        // dispatch({ type: "CAR_DATA_LOAD", payload: '보낼값' })
-
-
-    }, [dispatch])
-
-    useEffect(() => {
-        // console.log('useefff   ????', no.car)
-    }, [no])
-
-
-
     return (
         <section className="sub_visual">
                 <article className="g_inner">
@@ -40,11 +19,6 @@ const CarVisual = () => {
                         <h2 className="gl_title">Our Models</h2>
                         <p>역동적이면서도 우아한 디자인과 최첨단 기술을 탑재한 제네시스 브랜드의 라인업을 살펴보세요.</p>
                     </div>
-
-                    <ul>
-                        {no.car.map(item => <li>{item.title}</li>)}
-                    </ul>
-                
                     <Tab 
                         className={"tab_type1"} 
                         tabHead={["ALL", "SEDAN", "SUV"].map((item, idx) => <Fragment key={idx}>{item}</Fragment>)} 
@@ -54,13 +28,6 @@ const CarVisual = () => {
                             <Suv  data={CarData.filter(item => item.type === "SUV" )} />].map((item, idx) => <Fragment key={idx}>{item}</Fragment>
                             )}
                     />
-
-                    {/* <Tab 
-                        className={"tab_type1"} 
-                        tabHead={["ALL", "SEDAN", "SUV"]} 
-                        tabBody={[<All  data={CarData} />, <Sedan  data={CarData} />, <Suv  data={CarData} />]}
-                    /> */}
-
                 </article>
             </section>
     )

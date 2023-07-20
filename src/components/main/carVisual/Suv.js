@@ -53,7 +53,7 @@ const Suv = ({ data }) => {
                                                 <div className="car_wrap">
                                                     {color.value.map((value, idx) => {
                                                         return (
-                                                            <div  className={`car ${idx === 0 && 'on'}`} data-car={`${car.carName}_${color.type}_${idx}`} key={idx}>
+                                                            <div  className={`car ${idx === 0 && color.type === 'u' && 'on'}`} data-car={`${car.carName}_${color.type}_${idx}`} key={idx}>
                                                                 <img className="car_img" src={require(`../../../assets/images/car/${car.carName}/${value.car}`)} alt={`${car.carName} ${value.colorName} 색 차량 이미지`} loading="lazy" />
                                                             </div>
                                                         )
@@ -72,9 +72,9 @@ const Suv = ({ data }) => {
                                                     {color.value.map((value, idx) => {
                                                         return (
                                                             <div key={idx}>
-                                                                <a role="button"  className={`color ${idx === 0 && 'on'}`} data-color={`${car.carName}_${color.type}_${idx}`} onClick={handleColorClick(`${car.carName}_${color.type}_${idx}`)}>
+                                                                <button type="button"  className={`color ${idx === 0 && 'on'}`} data-color={`${car.carName}_${color.type}_${idx}`} onClick={handleColorClick(`${car.carName}_${color.type}_${idx}`)}>
                                                                     <img src={require(`../../../assets/images/car/${car.carName}/${value.color}`)} alt={value.colorName} loading="lazy" />
-                                                                </a>
+                                                                </button>
                                                             </div>
                                                         )
                                                     } )}
@@ -82,7 +82,7 @@ const Suv = ({ data }) => {
                                                 <div className="color_name_wrap">
                                                     {color.value.map((value, idx) => {
                                                         return (
-                                                            <span className={`color_name ${idx === 0 && 'on'}`} data-colorname={`${car.carName}_${color.type}_${idx}`} key={idx}>
+                                                            <span className={`color_name ${idx === 0 && color.type === 'u' &&  'on'}`} data-colorname={`${car.carName}_${color.type}_${idx}`} key={idx}>
                                                                 {value.colorName}
                                                             </span>
                                                         )
