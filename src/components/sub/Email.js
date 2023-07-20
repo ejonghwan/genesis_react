@@ -21,6 +21,7 @@ const Email = () => {
 
         return (
            <div className='g_inner'>
+            <h2 className="gl_title">문의하기</h2>
                 <div className='form'>
                     <form ref={form} onSubmit={sendEmail}>
                         <label>Name</label>

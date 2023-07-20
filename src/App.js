@@ -1,4 +1,4 @@
-import { Fragment, useRef } from 'react';
+import { Fragment, useRef, lazy, Suspense, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //common
@@ -22,13 +22,13 @@ import Youtube from './pages/Youtube';
 
 import './scss/style.scss';
 
-
 function App() {
 
 	const menu = useRef(null)
+	const [Te, setTe] = useState(false);
 
 	return (
-		<Fragment>
+		<Fragment>	
 			<Switch>
 				{/* <Route exact path='/' component={Main} /> */}
 				<Route exact path='/' render={() => <Main />} />

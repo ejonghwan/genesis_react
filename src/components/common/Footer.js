@@ -4,7 +4,8 @@ import SlideWrap from './slide/SlideWrap';
 import { accData } from './data/MenuData';
 import { NoticeData } from '../common/data/NoticeData';
 import { useSelector } from 'react-redux';
-
+import { faSquareFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
 
@@ -19,17 +20,14 @@ const Footer = () => {
                 <ul>
                     <li className="txt">Share</li>
                     <li><a href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.genesis.com%2Fkr%2Fko%2Fmain.html" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-brands fa-square-facebook"></i>
+                        <FontAwesomeIcon icon={faSquareFacebook} />
                         <span className="blind">페이스북</span>
                     </a></li>
                     <li><a href="https://twitter.com/i/flow/login" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-brands fa-twitter"></i>
+                         <FontAwesomeIcon icon={faTwitter} />
                         <span className="blind">트위터</span>
                     </a></li>
-                    <li><a href="#" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-solid fa-link"></i>
-                        <span className="blind">링크복사</span>
-                    </a></li>
+                   
                 </ul>
             </div>
         </section>

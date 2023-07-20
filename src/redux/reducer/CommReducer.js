@@ -1,15 +1,16 @@
 const randomId = e => Math.floor(Math.random() * 10000);
 
+ 
 // initial state
 export const initailState = {
     loading: false,
     comm: [
-		{ id: randomId(), title: 'a0', content: 'b0', done: false, modify: false },
-		{ id: randomId(), title: 'a1', content: 'b1', done: false, modify: false },
-		{ id: randomId(), title: 'a2', content: 'b2', done: false, modify: false },
-		{ id: randomId(), title: 'a3', content: 'b3', done: false, modify: false },
-		{ id: randomId(), title: 'a4', content: 'b4', done: false, modify: false },
-		{ id: randomId(), title: 'a5', content: 'b5', done: false, modify: false },
+		{ id: randomId(), title: 'Quisquam reiciendis', content: 'Quisquam reiciendis cumque iusto eius quo modi dolorum eveniet quos, qui explicabo nemo in molestiae totam, ullam quod.', done: false, modify: false },
+		{ id: randomId(), title: 'Earum suscipit quo', content: 'Earum suscipit quo consequuntur inventore nihil corrupti quas necessitatibus ipsum itaque iste eum, libero dolores nemo laborum at fugit consectetur veniam tempora aliquam sequi natus aut.', done: false, modify: false },
+		{ id: randomId(), title: 'adipisicing elit. ', content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ', done: false, modify: false },
+		{ id: randomId(), title: 'Sit autem, temporibus aliquid ipsam', content: 'Sit autem, temporibus aliquid ipsam beatae ab vero quam similique sunt repellendus libero rem illum, optio, accusantium inventore deleniti nihil fuga iusto! Dolorem deleniti iure recusandae culpa atque molestiae consequuntur ducimus repellendus temporibus, eius esse neque. Cupiditate vel eos dolor!', done: false, modify: false },
+		{ id: randomId(), title: 'Sunt debitis itaque iste voluptates,', content: 'Sunt debitis itaque iste voluptates, tempora corporis ratione tenetur magni provident similique ut sequi unde neque harum quos rerum eaque tempore! Consequatur dolor molestias similique ', done: false, modify: false },
+		{ id: randomId(), title: 'Laborum, similique.', content: 'Laborum, similique. Nam tempore, at ducimus iste neque exercitationem porro commodi! Illo, cumque aspernatur quos quaerat ipsam nisi quisquam ducimus eos laboriosam ex veritatis magnam itaque sapiente ea qui, iste molestiae porro nam non fugit? ', done: false, modify: false },
 	],
     error: '',
 }

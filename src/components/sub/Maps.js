@@ -4,6 +4,8 @@ import _ from 'lodash';
 import Tab from '../common/tab/Tab';
 import Showroom from './showroom/Showroom';
 
+import markerImg from '../../assets/images/common/marker.svg'
+
 const Maps = ({ mapData }) => {
 
 	const { kakao } = window;
@@ -20,7 +22,7 @@ const Maps = ({ mapData }) => {
 		info.forEach((info, idx) => {
 			const marker = new kakao.maps.Marker({ 
 			    position: new kakao.maps.LatLng(info.letlong.lat, info.letlong.long), 
-			    image: new kakao.maps.MarkerImage('../src/assets/images/common/marker.svg', new kakao.maps.Size(40, 60), 
+			    image: new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(40, 60), 
 			    { offset: new kakao.maps.Point(20, 60) }) 
 			});
 			marker.setMap(mapIns);

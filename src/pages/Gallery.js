@@ -1,6 +1,8 @@
 import { Fragment, useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Masonry from 'react-masonry-component';
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -73,8 +75,8 @@ const Gallery = () => {
 					<div className="searchBox">
 						<input type="text" id="search" placeholder="제네시스를 입력해보세요" onChange={handleSearchChange} onKeyPress={e => e.key === 'Enter' && handleSearch()}/>
 						<button className="btnSearch" onClick={handleSearch}>
-							검색
-							<i className="fa-solid fa-magnifying-glass"></i>
+							<FontAwesomeIcon icon={faMagnifyingGlass} />
+							<span className='blind'>검색</span>
 						</button>
 					</div>
 

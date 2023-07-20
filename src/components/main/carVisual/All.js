@@ -8,56 +8,56 @@ import 'swiper/scss/pagination';
 import ClipAni from '../../../utils/ClipAni';
 
 
-const All = ({ data, handleColorClick, handleSelectRef }) => {
+const All = ({ data }) => {
 
-    const wrapRef = useRef(null);
+    // const wrapRef = useRef(null);
+
+    // useEffect(() => {
+    //     console.log('all tab open')
+    //     handleSelectRef(wrapRef.current)
+    // }, [handleSelectRef])
+
+    const carWrapRef = useRef(null);
+    let cars = useRef(null);
+    let carImgs = useRef(null);
+    let colors = useRef(null);
+    let color_names = useRef(null);
+    let prev_el = useRef(null);
+  
+    const handleColorClick = (carData) => () => {
+        // if(prev_el) { prev_el.current.style.zIndex = 1; }
+        for(let i = 0; i < cars.current.length; i++) {
+            cars.current[i].classList.remove('on')
+            colors.current[i].classList.remove('on')
+            color_names.current[i].classList.remove('on')
+
+            if(carData === cars.current[i].dataset.car) {
+                cars.current[i].classList.add('on')
+                colors.current[i].classList.add('on')
+                color_names.current[i].classList.add('on')
+                
+                new ClipAni(carImgs.current[i], {
+                    limit: window.innerWidth,
+                    els: carImgs.current,
+                    prev_el: prev_el.current,
+                    duration: 300,
+                    callback: () => {
+                        prev_el.current = carImgs.current[i];
+                        // console.log('prevel?', prev_el.current)
+                    }
+                })
+                
+            }
+        }
+    } 
 
     useEffect(() => {
-        console.log('all tab open')
-        handleSelectRef(wrapRef.current)
-    }, [handleSelectRef])
-
-    // const carWrapRef = useRef(null);
-    // let cars = useRef(null);
-    // let carImgs = useRef(null);
-    // let colors = useRef(null);
-    // let color_names = useRef(null);
-    // let prev_el = useRef(null);
-    // useEffect(() => {
-    //     cars.current = carWrapRef.current?.querySelectorAll('.car')
-    //     carImgs.current = carWrapRef.current.querySelectorAll('.car_img')
-    //     colors.current = carWrapRef.current.querySelectorAll('.color')
-    //     color_names.current = carWrapRef.current.querySelectorAll('.color_name')
-    //     prev_el.current = carImgs.current[0];
-    // }, [])
-
-    // const handleColorClick = (carData) => () => {
-    //     // if(prev_el) { prev_el.current.style.zIndex = 1; }
-    //     for(let i = 0; i < cars.current.length; i++) {
-    //         cars.current[i].classList.remove('on')
-    //         colors.current[i].classList.remove('on')
-    //         color_names.current[i].classList.remove('on')
-
-    //         if(carData === cars.current[i].dataset.car) {
-    //             cars.current[i].classList.add('on')
-    //             colors.current[i].classList.add('on')
-    //             color_names.current[i].classList.add('on')
-                
-    //             new ClipAni(carImgs.current[i], {
-    //                 limit: window.innerWidth,
-    //                 els: carImgs.current,
-    //                 prev_el: prev_el.current,
-    //                 duration: 300,
-    //                 callback: () => {
-    //                     prev_el.current = carImgs.current[i];
-    //                     // console.log('prevel?', prev_el.current)
-    //                 }
-    //             })
-                
-    //         }
-    //     }
-    // } 
-
+        cars.current = carWrapRef.current?.querySelectorAll('.car')
+        carImgs.current = carWrapRef.current.querySelectorAll('.car_img')
+        colors.current = carWrapRef.current.querySelectorAll('.color')
+        color_names.current = carWrapRef.current.querySelectorAll('.color_name')
+        prev_el.current = carImgs.current[0];
+    }, [])
 
     
 
@@ -72,7 +72,7 @@ const All = ({ data, handleColorClick, handleSelectRef }) => {
                 observeParents={true}
                 // autoplay={{ delay: 1500, disableOnInteraction: false }}
                 // loop={true}
-                ref={wrapRef}
+                ref={carWrapRef}
             >
 
                 {data.map((car, idx) => {

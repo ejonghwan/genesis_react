@@ -60,9 +60,9 @@ const Youtube = () => {
 								{youtube.items?.map((vid, idx) => {
 									return (
 										<article key={idx}>
-											<div className='pic img_box' onClick={handlePopOpen(idx)}>
+											<button type="button" className='pic img_box' onClick={handlePopOpen(idx)}>
 												<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
-											</div>
+											</button>
 											<div className='txt_box'>
 												<h2>{vid.snippet.title.length > 50 ? vid.snippet.title.substr(0, 50) + '...' : vid.snippet.title}</h2>
 												<div className='txt'>
@@ -84,7 +84,7 @@ const Youtube = () => {
 			</Layout>
 
 			<Modal ref={modal} type={"popup_full"}>
-				<iframe 
+				<iframe
 					title={youtube.items?.map(item => item)[Index]?.id} 
 					src={`https://www.youtube.com/embed/${youtube.items?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
 				></iframe>

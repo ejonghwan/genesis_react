@@ -44,8 +44,8 @@ const Modal = forwardRef((props, ref) => {
 					exit={{ opacity: 0, transition: { delay: 0 }, transform: "translateY(-100px)" }}
 				>
 					{props.children}
-					<button className='popup_close' onClick={popClose}>
-						<span style={{color: "red"}}>close</span>
+					<button className='popup_close' type='button' onClick={popClose}>
+						<span>닫기</span>
 					</button>
 				</motion.aside>
 			)}
