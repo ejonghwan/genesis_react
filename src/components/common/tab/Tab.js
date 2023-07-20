@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import TabHead from './TabHead';
 import TabBody from './TabBody';
 
@@ -11,7 +11,7 @@ const Tab = ({ tabHead, tabBody, id, className }) => {
             <div className="tab_wrap">
                 <TabHead heads={tabHead} setIndex={setIndex} Index={Index} />
                 <TabBody Index={Index}>
-                    {tabBody}
+                        {tabBody}
                 </TabBody>
             </div>
         </article>

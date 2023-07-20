@@ -1,73 +1,15 @@
 import ImgList from '../common/list/ImgList';
-import g00 from '../../assets/images/main/main_g01.jpg'
-import g01 from '../../assets/images/main/main_g02.jpg'
-import g02 from '../../assets/images/main/main_g03.jpg'
-import g03 from '../../assets/images/main/main_g04.jpg'
-import g04 from '../../assets/images/main/main_g05.jpg'
-import g05 from '../../assets/images/main/main_g06.jpg'
-
+import { outerDesignData } from '../common/data/OuterDesignData';
 
 const OuterDesign = () => {
-
-    const list = [
-        {
-            itemClassName: "cont1 type1",
-            src: g00, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-        {
-            itemClassName: "cont1 type1",
-            src: g01, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-        {
-            itemClassName: "cont1 type1",
-            src: g02, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-        {
-            itemClassName: "cont1 type1",
-            src: g03, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-        {
-            itemClassName: "cont1 type1",
-            src: g04, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-        {
-            itemClassName: "cont1 type1",
-            src: g05, 
-            alt: " ", 
-            href: "#", 
-            pointEvt: "none", 
-            loading: "lazy"
-        },
-    ]    
-
-
+    
     return (
         <article className="g_inner exper ani mo_full ani_type2 show">
             <h2 className="gl_title">Genesis Design</h2>
             <p className="gl_subtxt">크레스트 그릴과 날렵한 두 줄 램프로 제네시스 엠블럼을 형상화한 전면부, <br className="mo_none" />슬릭하게 이어지는 파라볼릭 라인의 측면부와 당당하고 안정감 있는 모습의 후면부가 어우러져 럭셔리 디자인을 재정의합니다.<br /><br />
             제네시스 윙로고에서 영감을 받은 ‘크레스트 그릴’과 날개 형상을 닮은 두 줄의 ‘쿼드램프’가 적용되어 당당하고 대범한 G70 고유의 캐릭터를 표현합니다. <br className="mo_none"/>또한 크레스트 그릴 높이를 쿼드램프보다 낮게 구성하여 당장에라도 뛰쳐나갈 듯한 역동적 캐릭터를 표현하였습니다.</p>
 
-            <ImgList data={list} className={"g_list type2"} />
+            <ImgList data={outerDesignData} className={"g_list type2"} />
         </article>
     )
 }

@@ -5,27 +5,14 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-const Suv = ({ data }) => {
+const Suv = ({ data, handleColorClick, handleSelectRef }) => {
 
-    const carWrapRef = useRef();
+    const wrapRef = useRef(null);
 
-    const handleColorClick = (idx) => () => {
-        const cars = carWrapRef.current.querySelectorAll('.car')
-        const colors = carWrapRef.current.querySelectorAll('.color')
-        const color_names = carWrapRef.current.querySelectorAll('.color_name')
-        for(let i = 0; i < cars.length; i++) {
-            cars[i].classList.remove('on')
-            colors[i].classList.remove('on')
-            color_names[i].classList.remove('on')
-            if(idx === cars[i].dataset.car) {
-                console.log('??', cars[i])
-                cars[i].classList.add('on')
-                colors[i].classList.add('on')
-                color_names[i].classList.add('on')
-            }
-        }
-    } 
-
+    useEffect(() => {
+        console.log('suv tab open')
+        handleSelectRef(wrapRef.current)
+    }, [handleSelectRef])
 
     return (
         <Fragment>
@@ -36,9 +23,9 @@ const Suv = ({ data }) => {
                 effect={"fade"}
                 observer={true}
                 observeParents={true}
-                ref={carWrapRef}
                 // autoplay={{ delay: 1500, disableOnInteraction: false }}
                 // loop={true}
+                ref={wrapRef}
             >
 
                 {data.map((car, idx) => {
