@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/genesis_react/static/css/main.1cfa1a8c.css",
-    "main.js": "/genesis_react/static/js/main.99f907a5.js",
+    "main.css": "/genesis_react/static/css/main.c99abb46.css",
+    "main.js": "/genesis_react/static/js/main.659363e7.js",
     "static/js/428.15d499d2.chunk.js": "/genesis_react/static/js/428.15d499d2.chunk.js",
     "static/js/97.cc0d3d9c.chunk.js": "/genesis_react/static/js/97.cc0d3d9c.chunk.js",
     "static/media/comm.mp4": "/genesis_react/static/media/comm.36bcb69322915f6277df.mp4",
@@ -189,10 +189,13 @@
     "static/media/gv70.png": "/genesis_react/static/media/gv70.dbf826d9ace93af8ca37.png",
     "static/media/m04.jpg": "/genesis_react/static/media/m04.a264098e7e68fa45159b.jpg",
     "static/media/inner1.jpg": "/genesis_react/static/media/inner1.0c0fe441b1d9d2282ee4.jpg",
+    "static/media/poster06.jpg": "/genesis_react/static/media/poster06.1d3a8dac4723e326bf6d.jpg",
     "static/media/m02.jpg": "/genesis_react/static/media/m02.4a1ce242a05b370024c2.jpg",
     "static/media/genesis-kr-busan-motor-show-genesisbusan-12-desktop-mobile-1220x600-ko.jpg": "/genesis_react/static/media/genesis-kr-busan-motor-show-genesisbusan-12-desktop-mobile-1220x600-ko.296c2395f613f38405a3.jpg",
+    "static/media/poster01.jpg": "/genesis_react/static/media/poster01.7931215dd15f8733c160.jpg",
     "static/media/genesis-kr-gallery-g80-sport-IT2A-01-desktop-1220xflexible.jpg": "/genesis_react/static/media/genesis-kr-gallery-g80-sport-IT2A-01-desktop-1220xflexible.622469bd647177e3d7f7.jpg",
     "static/media/m01.jpg": "/genesis_react/static/media/m01.3274fc3fc684a664c2b8.jpg",
+    "static/media/poster03.jpg": "/genesis_react/static/media/poster03.9a17431ac6426f6bb8f0.jpg",
     "static/media/genesis-kr-models-gv80-23my-bto-package-driving-assistance1-01-desktop-960x540.jpg": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-package-driving-assistance1-01-desktop-960x540.516e95bb4bbcb40aca88.jpg",
     "static/media/m06.jpg": "/genesis_react/static/media/m06.62189833b947429f459d.jpg",
     "static/media/gv60-23my-bto-popluar-driving-assistance-package1-960x540.jpg": "/genesis_react/static/media/gv60-23my-bto-popluar-driving-assistance-package1-960x540.3350d19c7356d9641d6b.jpg",
@@ -213,6 +216,8 @@
     "static/media/gv70-22my-bto-options-head-up-display-960x540.jpg": "/genesis_react/static/media/gv70-22my-bto-options-head-up-display-960x540.07eca344bd91338b6303.jpg",
     "static/media/g70-23my-bto-popluar-convenience-package-960x540.jpg": "/genesis_react/static/media/g70-23my-bto-popluar-convenience-package-960x540.0ec7153c9f7ffd3c2118.jpg",
     "static/media/g70-23my-bto-popluar-high-tech-package-960x540.jpg": "/genesis_react/static/media/g70-23my-bto-popluar-high-tech-package-960x540.2dc030785e69e6e6983f.jpg",
+    "static/media/poster02.jpg": "/genesis_react/static/media/poster02.9bb01f62056b35261806.jpg",
+    "static/media/poster04.jpg": "/genesis_react/static/media/poster04.c23b25e866af2f48502c.jpg",
     "static/media/option5.jpg": "/genesis_react/static/media/option5.028919800c7bd959e61f.jpg",
     "static/media/genesis-kr-models-gv80-23my-bto-package-high-tech-01-desktop-960x540.jpg": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-package-high-tech-01-desktop-960x540.c8068d100fda8cc230d0.jpg",
     "static/media/03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr.png": "/genesis_react/static/media/03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr.6b80e7886357a6d9037b.png",
@@ -229,6 +234,7 @@
     "static/media/05_g80-23my-bto-exterior-tasman-blue-colorchip-160x160-kr.png": "/genesis_react/static/media/05_g80-23my-bto-exterior-tasman-blue-colorchip-160x160-kr.8d03dd5bd04f3d604046.png",
     "static/media/08_g80-23my-bto-exterior-capri-blue-colorchip-160x160-kr.png": "/genesis_react/static/media/08_g80-23my-bto-exterior-capri-blue-colorchip-160x160-kr.05ae796c4d2ab5787fef.png",
     "static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ncm-desktop-160x160.png": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ncm-desktop-160x160.91dab24fcb96ca7b0520.png",
+    "static/media/poster05.jpg": "/genesis_react/static/media/poster05.4ca634a71f37be5679e1.jpg",
     "static/media/02_g80-23my-bto-exterior-savile-silver-colorchip-160x160-kr.png": "/genesis_react/static/media/02_g80-23my-bto-exterior-savile-silver-colorchip-160x160-kr.450a45f097ec7f7620a1.png",
     "static/media/option1.jpg": "/genesis_react/static/media/option1.d83d00b62dcbfa3cc912.jpg",
     "static/media/g90-23my-bto-exterior-makalu-gray-color-chip-160x160.png": "/genesis_react/static/media/g90-23my-bto-exterior-makalu-gray-color-chip-160x160.25d3ebf371b9594b31b0.png",
@@ -308,13 +314,13 @@
     "index.html": "/genesis_react/index.html",
     "static/media/info.txt": "/genesis_react/static/media/info.4c895e42605b24eaa2c0.txt",
     "static/media/marker.svg": "/genesis_react/static/media/marker.2e0ef750ef3975644482ba424ba65ae0.svg",
-    "main.1cfa1a8c.css.map": "/genesis_react/static/css/main.1cfa1a8c.css.map",
-    "main.99f907a5.js.map": "/genesis_react/static/js/main.99f907a5.js.map",
+    "main.c99abb46.css.map": "/genesis_react/static/css/main.c99abb46.css.map",
+    "main.659363e7.js.map": "/genesis_react/static/js/main.659363e7.js.map",
     "428.15d499d2.chunk.js.map": "/genesis_react/static/js/428.15d499d2.chunk.js.map",
     "97.cc0d3d9c.chunk.js.map": "/genesis_react/static/js/97.cc0d3d9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cfa1a8c.css",
-    "static/js/main.99f907a5.js"
+    "static/css/main.c99abb46.css",
+    "static/js/main.659363e7.js"
   ]
 }
