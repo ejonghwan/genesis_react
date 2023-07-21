@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/genesis_react/static/css/main.3afff998.css",
-    "main.js": "/genesis_react/static/js/main.988e581d.js",
+    "main.css": "/genesis_react/static/css/main.1cfa1a8c.css",
+    "main.js": "/genesis_react/static/js/main.6247ab1b.js",
     "static/js/428.15d499d2.chunk.js": "/genesis_react/static/js/428.15d499d2.chunk.js",
     "static/js/97.cc0d3d9c.chunk.js": "/genesis_react/static/js/97.cc0d3d9c.chunk.js",
     "static/media/comm.mp4": "/genesis_react/static/media/comm.36bcb69322915f6277df.mp4",
@@ -305,16 +305,16 @@
     "static/media/g70-sb-23my-exterior-verbier-white-color-chip-160x160.png": "/genesis_react/static/media/g70-sb-23my-exterior-verbier-white-color-chip-160x160.e56f1a7f52ad084929f9.png",
     "static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-sss-desktop-160x160.png": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-sss-desktop-160x160.21d92bebd6e8d8797314.png",
     "static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ph3-desktop-160x160.png": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ph3-desktop-160x160.074ded43bd9481bb70dc.png",
-    "static/media/info.txt": "/genesis_react/static/media/info.4c895e42605b24eaa2c0.txt",
     "index.html": "/genesis_react/index.html",
+    "static/media/info.txt": "/genesis_react/static/media/info.4c895e42605b24eaa2c0.txt",
     "static/media/marker.svg": "/genesis_react/static/media/marker.2e0ef750ef3975644482ba424ba65ae0.svg",
-    "main.3afff998.css.map": "/genesis_react/static/css/main.3afff998.css.map",
-    "main.988e581d.js.map": "/genesis_react/static/js/main.988e581d.js.map",
+    "main.1cfa1a8c.css.map": "/genesis_react/static/css/main.1cfa1a8c.css.map",
+    "main.6247ab1b.js.map": "/genesis_react/static/js/main.6247ab1b.js.map",
     "428.15d499d2.chunk.js.map": "/genesis_react/static/js/428.15d499d2.chunk.js.map",
     "97.cc0d3d9c.chunk.js.map": "/genesis_react/static/js/97.cc0d3d9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3afff998.css",
-    "static/js/main.988e581d.js"
+    "static/css/main.1cfa1a8c.css",
+    "static/js/main.6247ab1b.js"
   ]
 }
