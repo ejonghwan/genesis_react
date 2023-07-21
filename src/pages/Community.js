@@ -8,27 +8,17 @@ const Community = () => {
 	const dispatch = useDispatch();
 	const { comm, loading } = useSelector(state => state.commReducer)
 
-	// const getLocalData = () => {
-	// 	const data = localStorage.getItem('post');
-	// 	console.log(data)
-	// 	return data ? JSON.parse(data) : comm;
-	// }
-
 	const randomId = e => Math.floor(Math.random() * 10000);
 	const [Modify, setModify] = useState(false);
 	const [ModiValue, setModiValue] = useState({ title: '', content: '' });
 
-
 	const inputRef = useRef(null);
 	const textareaRef = useRef(null)
 
-	
 	const resetForm = () => {
 		inputRef.current.value = '';
 		textareaRef.current.value = '';
 	}
-
-
 
 	const createPost = () => {
 		if(!inputRef.current.value.trim() || !textareaRef.current.value.trim()){
@@ -66,7 +56,6 @@ const Community = () => {
 			}
 		}
 
-
 	const handleChange = e => {
 		const { name, value } = e.target;
 		setModiValue({...ModiValue, [name]: value})
@@ -82,6 +71,7 @@ const Community = () => {
 			<Visual name={'community'} />
 			<Layout name={'community sub_page'}>
 				<div className='g_inner'>
+					<h2 className='g_title'>방명록</h2>
 					<div className='inputBox'>
 
 						<ul className='list'>
@@ -92,26 +82,26 @@ const Community = () => {
 										{
 											item.modify ? (
 												<div>
-													<div>제목: <input type="text" value={ModiValue.title} name="title" onChange={handleChange} /></div>
-													<div>본문: <input type="text" value={ModiValue.content} name="content" onChange={handleChange} /></div>
+													<div><input type="text" value={ModiValue.title} name="title" onChange={handleChange} /></div>
+													<div><input type="text" value={ModiValue.content} name="content" onChange={handleChange} /></div>
 												</div>
 											) : (
 												<div>
-													<strong>제목: {item.title}</strong>
-													<p>본문: {item.content}</p>
+													<strong className='list_tit'>{item.title}</strong>
+													<p className='list_conts'>{item.content}</p>
 												</div>
 											)
 										}
 										{
 											item.modify ? (
-												<div>
-													<button type="button" onClick={updatePostCancel(item.id)}>취소</button>
-													<button type="button" onClick={updatePost(item.id)}>완료</button>
+												<div className='btn_wrap'>
+													<button type="button" className='canc btn gray'  onClick={updatePostCancel(item.id)}>취소</button>
+													<button type="button" className='comp btn gray' onClick={updatePost(item.id)}>완료</button>
 												</div>
 											) : (
-												<div>
-													<button type="button" onClick={deletePost(item.id)}>삭제</button>
-													<button type="button" onClick={enablePost(item.id)}>수정</button>
+												<div className='btn_wrap'>
+													<button type="button" className='modi btn gray' onClick={enablePost(item.id)}>수정</button>
+													<button type="button" className='del btn gray' onClick={deletePost(item.id)}>삭제</button>
 												</div>
 											)
 										}
@@ -119,12 +109,23 @@ const Community = () => {
 								)
 							})}
 						</ul>
+					</div>
+				</div>
 
-						<input type="text" placeholder="제목을 입력해주세요" ref={inputRef} /> <br />
-						<textarea cols="30" rows="3" placeholder="본문을 입력해주세요" ref={textareaRef} />
-						
-						<button type="button">cancel</button>
-						<button type="button" onClick={createPost}>write</button>
+				<div className='g_inner'>
+					<h2 className='g_title'>방명록 작성</h2>
+					<div className='write_wrap'>
+						<div className='input_wrap'>
+							<label htmlFor="in_title"><strong>제목</strong></label>
+							<input type="text" id="in_title" placeholder="제목을 입력해주세요" ref={inputRef} />
+						</div>
+						<div className="input_wrap">
+							<label htmlFor="in_content"><strong>내용</strong></label>
+							<textarea id="in_content" cols="30" rows="3" placeholder="내용을 입력해주세요" ref={textareaRef} />
+						</div>
+						<div className='btn_wrap align_c'>
+							<button className='btn blue' type="button" onClick={createPost}>글쓰기</button>
+						</div>
 					</div>
 				</div>
 			</Layout>

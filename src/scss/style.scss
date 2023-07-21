@@ -7,7 +7,7 @@ $black: #222;
 $white: #fff;
 $gray: #ddd;
 $dark_gray: #666;
-$light_gray: #efefef;
+$light_gray: #f6f6f6;
 $point: rgb(217, 24, 24);
 $point2:rgb(251, 95, 33);
 $btn_radius: 56px;
@@ -74,6 +74,7 @@ $disabled: #999;
 @import "sub/pages/members";
 @import "sub/pages/location";
 @import "sub/pages/community";
+@import "sub/pages/contact";
 
 
 

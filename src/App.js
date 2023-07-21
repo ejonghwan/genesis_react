@@ -16,16 +16,16 @@ import Main from './pages/Main';
 import Contact from './pages/Contact';
 import Community from './pages/Community';
 import Gallery from './pages/Gallery';
-import Member from './pages/Member';
+// import Member from './pages/Member';
 import Youtube from './pages/Youtube';
 
 
 import './scss/style.scss';
 
+import Test from './Test'
+
 function App() {
 
-	const menu = useRef(null)
-	const [Te, setTe] = useState(false);
 
 	return (
 		<Fragment>	
@@ -38,8 +38,9 @@ function App() {
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/contact' component={Contact} />
-			<Route path='/member' component={Member} />
+			{/* <Route path='/member' component={Member} /> */}
 			<Route path='/community' component={Community} />
+			<Route path='/test/:userName' component={Test} />
 			<Footer />
 			
 			{/* <AllMenu target={allMenu} navRef={navRef} /> */}
