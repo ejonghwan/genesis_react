@@ -6,7 +6,7 @@ import All from './All';
 // import Suv from './Suv';
 import { CarData } from '../../common/data/CarData';
 import ClipAni from '../../../utils/ClipAni';
-import Loading from '../../common/loading/Loading';
+import Loading from '../../common/loading/Loading_inner';
 
 
 const CarVisual = () => {
@@ -27,10 +27,10 @@ const CarVisual = () => {
                         tabHead={["ALL", "SEDAN", "SUV"].map((item, idx) => <Fragment key={idx}>{item}</Fragment>)} 
                         tabBody={[
                             <All data={CarData} />, 
-                            <Suspense fallback={<div style={{background: "#080911", height: "100%"}}><Loading /></div>}>
+                            <Suspense fallback={<Loading />}>
                                 <Sedan data={CarData.filter(item => item.type === "SEDAN" )} />
                             </Suspense>, 
-                            <Suspense fallback={<div style={{background: "#080911", height: "100%"}}><Loading /></div>}>
+                            <Suspense fallback={<Loading />}>
                                 <Suv data={CarData.filter(item => item.type === "SUV" )} />
                             </Suspense>
                             ].map((item, idx) => <Fragment key={idx}>{item}</Fragment>

@@ -94,12 +94,12 @@ const Community = () => {
 										}
 										{
 											item.modify ? (
-												<div className='btn_wrap'>
+												<div className='btn_wrap align_r'>
 													<button type="button" className='canc btn gray'  onClick={updatePostCancel(item.id)}>취소</button>
 													<button type="button" className='comp btn gray' onClick={updatePost(item.id)}>완료</button>
 												</div>
 											) : (
-												<div className='btn_wrap'>
+												<div className='btn_wrap align_r'>
 													<button type="button" className='modi btn gray' onClick={enablePost(item.id)}>수정</button>
 													<button type="button" className='del btn gray' onClick={deletePost(item.id)}>삭제</button>
 												</div>

@@ -13,7 +13,7 @@
       top: -9999px;
     }
     .mask {
-      /* width: 100%;;
+      width: 100%;;
       height: 100vh;
       background-color: #111;
       position: fixed;
@@ -26,7 +26,7 @@
       justify-content: center;
       align-items: center;
       font-size: 20px;
-      color: #fff; */
+      color: #fff;
     }
     .mask.off {
       opacity: 0;
@@ -37,83 +37,91 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <!-- <div class="defaults"></div> -->
-  <!-- <div class="mask g_sans">...G E N E S I S</div> -->
+  <div class="defaults"></div>
+  <div class="mask g_sans">...G E N E S I S</div>
 
   <script>
-    // const defaults = document.querySelector('.defaults');
-    // const mask = document.querySelector('.mask');
-    // let tags = '';
-    // const baseURL = '';
-    // const imgs = [
-    //   // baseURL + '/img/~~',
-    //   // baseURL + '/img/~~',
-    //   // baseURL + '/img/~~',
-    // ]
-    // const vids = [
-    //   // baseURL + '/img/~~'
-    // ]
+    const defaults = document.querySelector('.defaults');
+    const mask = document.querySelector('.mask');
+    let tags = '';
+    const baseURL = 'https://ejonghwan.github.io/genesis_react';
+    const imgs = [
+      // baseURL + '/img/~~',
+      // baseURL + '/img/~~',
+      // baseURL + '/img/~~',
+    ]
+    const vids = [
+      baseURL + './g70.mp4',
+      baseURL + './g80.mp4',
+      baseURL + './g80e.mp4',
+      baseURL + './gv60.mp4',
+      baseURL + './gv70.mp4',
+      baseURL + './testv.mp4',
+    ]
 
-    // const lenImg = imgs.length;
-    // const lenVids = vids.length;
+    const lenImg = imgs.length;
+    const lenVids = vids.length;
 
-    // function createDOM() {
-    //   imgs.forEach(src => {
-    //     tags += `
-    //       <img src=${src} />
-    //     `
-    //   })
+    function createDOM() {
+      imgs.forEach(src => {
+        tags += `
+          <img src=${src} />
+        `
+      })
 
-    //   vids.forEach(src => {
-    //     tags += `
-    //       <video ${src}></video>
-    //     `
-    //   })
+      vids.forEach(src => {
+        tags += `
+          <video ${src}></video>
+        `
+      })
 
-    //   defaults.innerHTML = tags;
-    // }
+      defaults.innerHTML = tags;
+    }
 
-    // function loadImg() {
-    //   return new Promise((res, rej) => {
-    //     let count = 0;
-    //     const imgDOM = defaults.querySelectorAll('img');
+    function loadImg() {
+      return new Promise((res, rej) => {
+        let count = 0;
+        const imgDOM = defaults.querySelectorAll('img');
 
-    //     imgDOM.forEach(img => {
-    //       img.onload = () => {
-    //         count++;
-    //         console.log('img loaded', count);
-    //         if(count === lenImg) { res(true) }
-    //       }
-    //     })
-    //   }) 
-    // }
+        imgDOM.forEach(img => {
+          img.onload = () => {
+            count++;
+            console.log('img loaded', count);
+            if(count === lenImg) { res(true) }
+          }
+        })
+      }) 
+    }
 
-    // function loadVid() {
-    //   return new Promise((res, rej) => {
-    //     let count = 0;
-    //     const imgDOM = defaults.querySelectorAll('video');
+    function loadVid() {
+      return new Promise((res, rej) => {
+        let countVid = 0;
+        const vidDOM = defaults.querySelectorAll('video');
 
-    //     vidDOM.forEach(vid => {
-    //       vid.onloadeddata = () => {
-    //         count++;
-    //         console.log('vid loaded', count);
-    //         if(count === lenVids) { res(true) }
-    //       }
-    //     })
-    //   }) 
-    // }
+        vidDOM.forEach(vid => {
+          vid.onloadeddata = () => {
+            countVid++;
+            console.log('vid loaded..', countVid);
 
-    // // promise.all vs promise.race
-    // // promise.all : 전달받은 모든 promise가 완료되어야 동기처리 
-    // // promise.race : 전달받은 모든 promise 중 하나만 완료되면 동기처리
+            if (countVid === lenVid) {
+              res(true);
+            }
+          }
+        })
+      })
+    }
 
-    // Promise.all([loadImg(), loadVid()]).then(() => {
-    //   mask.classList.add('off')
-    //   setTimeout(() => {
-    //     mask.remove();
-    //     defaults.remove();
-    //   }, 2000)
-    // })
+    // promise.all vs promise.race
+    // promise.all : 전달받은 모든 promise가 완료되어야 동기처리 
+    // promise.race : 전달받은 모든 promise 중 하나만 완료되면 동기처리
+
+    Promise.all([loadVid()]).then(() => {
+      mask.classList.add('off')
+      setTimeout(() => {
+        mask.remove();
+        defaults.remove();
+      }, 2000)
+    })
 
   </script>
 </body>

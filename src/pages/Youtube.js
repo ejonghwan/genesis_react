@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Layout from '../components/common/Layout';
 import Modal from '../components/common/Modal';
-import Loading from '../components/common/loading/Loading';
+import Loading from '../components/common/loading/Loading_inner';
 import Visual from '../components/sub/Visual';
 
 
@@ -36,7 +36,6 @@ const Youtube = () => {
 		<Fragment>
 			<Visual name={'youtube'} />
 			<Layout name={'youtube sub_page'} >
-
 			{loading ? (
 				<Loading />
 			) : (
@@ -82,6 +81,7 @@ const Youtube = () => {
 				
 
 			</Layout>
+
 
 			<Modal ref={modal} type={"popup_full"}>
 				<iframe
