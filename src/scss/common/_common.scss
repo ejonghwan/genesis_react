@@ -4,6 +4,10 @@ html {
     font-size: 10px;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 *::-webkit-scrollbar  { 
     width: 7px; 
 }

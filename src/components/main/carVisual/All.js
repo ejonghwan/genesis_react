@@ -73,6 +73,9 @@ const All = ({ data }) => {
                 // autoplay={{ delay: 1500, disableOnInteraction: false }}
                 // loop={true}
                 ref={carWrapRef}
+                onSlideChange={(swi) => {
+                    swi.slides[swi.activeIndex].querySelector('.color_name').classList.add('on')
+                }}
             >
 
                 {data.map((car, idx) => {

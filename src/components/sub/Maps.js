@@ -123,7 +123,7 @@ const Maps = ({ mapData }) => {
                             <Showroom data={mapData.filter(map => map.region === "광주")} setTargetLatLng={setTargetLatLng} />, 
                             <Showroom data={mapData.filter(map => map.region === "충남")} setTargetLatLng={setTargetLatLng} />, 
                             <Showroom data={mapData.filter(map => map.region === "대구")} setTargetLatLng={setTargetLatLng} />
-                        ]} 
+                        ].map((item, idx) => <Fragment key={idx}>{item}</Fragment>)} 
                         id={"map_tab"}
                         className={"info_wrap tab_type3"} 
                     />

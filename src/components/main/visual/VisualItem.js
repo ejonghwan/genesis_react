@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 
+
 const VisualItem = ({ data }) => {
 
-    const {title, subTxt_1, subTxt_2, more, Learn, src, muted, loop, playsInline } = data
+    const {title, subTxt_1, subTxt_2, more, Learn, src, muted, loop, playsInline, preload, poster } = data
  
     return (
         <div className="inner">
@@ -22,7 +23,8 @@ const VisualItem = ({ data }) => {
                     </div>
             </div>
             <figure className="main_visual_slide_video">
-                <video src={`${src}#t=0.5`} muted={muted} loop={loop} playsInline={playsInline} ></video>
+                <video src={`${src}`} preload={preload} poster={poster}  muted={muted} loop={loop} playsInline={playsInline} ></video>
+                {/* {`${src}#t=0.5`} */}
             </figure>
 
             

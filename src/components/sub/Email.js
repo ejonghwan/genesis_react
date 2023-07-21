@@ -25,15 +25,15 @@ const Email = () => {
                 <div className='form'>
                     <form ref={form} onSubmit={sendEmail}>
                         <div className='input_wrap'>
-                            <label for="user_info_name"><strong>이름</strong></label>
-                            <input type="text" name="name" for="user_info_name" />
+                            <label htmlFor="user_info_name"><strong>이름</strong></label>
+                            <input type="text" name="name" id="user_info_name" />
                         </div>
                         <div className='input_wrap'>
-                            <label for="user_info_email"><strong>메일</strong></label>
+                            <label htmlFor="user_info_email"><strong>메일</strong></label>
                             <input type="email" name="email" id="user_info_email" />
                         </div>
                         <div className='input_wrap'>
-                            <label for="user_info_message"><strong>메시지</strong></label>
+                            <label htmlFor="user_info_message"><strong>메시지</strong></label>
                             <textarea name="message" id="user_info_message"></textarea>
                         </div>
                         <div className='btn_wrap align_c'>

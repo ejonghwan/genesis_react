@@ -7,14 +7,14 @@ const Showroom = ({ data, setTargetLatLng }) => {
     return (
         
         <div>
-            {data[0].items.map(item => {
+            {data[0].items.map((item, idx) => {
                 return (
-                    <Fragment>
+                    <Fragment key={idx}>
                         <strong className="info_gu">{item.name}</strong>
                         <div>
-                            {item.info.map((info, idx) => {
+                            {item.info.map((info, k) => {
                                 return (
-                                    <Fragment key={idx}>
+                                    <Fragment key={k}>
                                         <div className="info_type">{info.type}</div>
                                         <button 
                                             type="button" 

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const Accordion = ({ data, className, device }) => {
-    const [Index, setIndex] = useState(false);
-    const handleClick = idx => e => {
-        setIndex(idx);
-    };
+    const [Index, setIndex] = useState(null);
+    const handleClick = idx => e => idx === Index ? setIndex(null) : setIndex(idx);
 
     return (
         <div className={`${className} ${device}`}>
