@@ -1,9 +1,16 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.adb09c6a.css",
-    "main.js": "/genesis_react/static/js/main.1af2e197.js",
+    "main.js": "/genesis_react/static/js/main.f944f23d.js",
+    "static/js/347.fb6f2cd9.chunk.js": "/genesis_react/static/js/347.fb6f2cd9.chunk.js",
+    "static/js/435.15961815.chunk.js": "/genesis_react/static/js/435.15961815.chunk.js",
+    "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
+    "static/js/443.56048be9.chunk.js": "/genesis_react/static/js/443.56048be9.chunk.js",
+    "static/js/83.d332e50b.chunk.js": "/genesis_react/static/js/83.d332e50b.chunk.js",
     "static/js/428.d7e615fc.chunk.js": "/genesis_react/static/js/428.d7e615fc.chunk.js",
     "static/js/97.73ddb88e.chunk.js": "/genesis_react/static/js/97.73ddb88e.chunk.js",
+    "static/js/163.a0b7ecb8.chunk.js": "/genesis_react/static/js/163.a0b7ecb8.chunk.js",
+    "static/js/628.47b2ccb4.chunk.js": "/genesis_react/static/js/628.47b2ccb4.chunk.js",
     "static/media/comm.mp4": "/genesis_react/static/media/comm.36bcb69322915f6277df.mp4",
     "static/media/g70.mp4": "/genesis_react/static/media/g70.4fe29c37e8d76aaf9480.mp4",
     "static/media/g80.mp4": "/genesis_react/static/media/g80.487f5f99e24a25085fb4.mp4",
@@ -390,12 +397,19 @@
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "main.adb09c6a.css.map": "/genesis_react/static/css/main.adb09c6a.css.map",
-    "main.1af2e197.js.map": "/genesis_react/static/js/main.1af2e197.js.map",
+    "main.f944f23d.js.map": "/genesis_react/static/js/main.f944f23d.js.map",
+    "347.fb6f2cd9.chunk.js.map": "/genesis_react/static/js/347.fb6f2cd9.chunk.js.map",
+    "435.15961815.chunk.js.map": "/genesis_react/static/js/435.15961815.chunk.js.map",
+    "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
+    "443.56048be9.chunk.js.map": "/genesis_react/static/js/443.56048be9.chunk.js.map",
+    "83.d332e50b.chunk.js.map": "/genesis_react/static/js/83.d332e50b.chunk.js.map",
     "428.d7e615fc.chunk.js.map": "/genesis_react/static/js/428.d7e615fc.chunk.js.map",
-    "97.73ddb88e.chunk.js.map": "/genesis_react/static/js/97.73ddb88e.chunk.js.map"
+    "97.73ddb88e.chunk.js.map": "/genesis_react/static/js/97.73ddb88e.chunk.js.map",
+    "163.a0b7ecb8.chunk.js.map": "/genesis_react/static/js/163.a0b7ecb8.chunk.js.map",
+    "628.47b2ccb4.chunk.js.map": "/genesis_react/static/js/628.47b2ccb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.adb09c6a.css",
-    "static/js/main.1af2e197.js"
+    "static/js/main.f944f23d.js"
   ]
 }
