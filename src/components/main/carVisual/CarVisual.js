@@ -5,7 +5,6 @@ import All from './All';
 // import Sedan from './Sedan';
 // import Suv from './Suv';
 import { CarData } from '../../common/data/CarData';
-import ClipAni from '../../../utils/ClipAni';
 import Loading from '../../common/loading/Loading_inner';
 
 

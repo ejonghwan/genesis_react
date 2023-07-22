@@ -5,6 +5,8 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import ClipAni from '../../../utils/ClipAni';
+import Img from '../../common/image/Img';
+
 
 const Suv = ({ data }) => {
 
@@ -83,7 +85,12 @@ const Suv = ({ data }) => {
                                                     {color.value.map((value, idx) => {
                                                         return (
                                                             <div  className={`car ${idx === 0 && color.type === 'u' && 'on'}`} data-car={`${car.carName}_${color.type}_${idx}`} key={idx}>
-                                                                <img className="car_img" src={require(`../../../assets/images/car/${car.carName}/${value.car}`)} alt={`${car.carName} ${value.colorName} 색 차량 이미지`} loading="lazy" />
+                                                                <Img 
+                                                                    className="car_img"
+                                                                    webpSrc={require(`../../../assets/images/car/${car.carName}/${value.car}.webp`)} 
+                                                                    imageSrc={require(`../../../assets/images/car/${car.carName}/${value.car}.png`)} 
+                                                                    alt={`${car.carName} ${value.colorName} 색 차량 이미지`}
+                                                                />
                                                             </div>
                                                         )
                                                     })}
@@ -102,7 +109,11 @@ const Suv = ({ data }) => {
                                                         return (
                                                             <div key={idx}>
                                                                 <button type="button"  className={`color ${idx === 0 && 'on'}`} data-color={`${car.carName}_${color.type}_${idx}`} onClick={handleColorClick(`${car.carName}_${color.type}_${idx}`)}>
-                                                                    <img src={require(`../../../assets/images/car/${car.carName}/${value.color}`)} alt={value.colorName} loading="lazy" />
+                                                                <Img 
+                                                                    webpSrc={require(`../../../assets/images/car/${car.carName}/${value.color}.webp`)} 
+                                                                    imageSrc={require(`../../../assets/images/car/${car.carName}/${value.color}.png`)} 
+                                                                    alt={value.colorName} 
+                                                                />
                                                                 </button>
                                                             </div>
                                                         )

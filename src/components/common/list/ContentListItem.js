@@ -1,13 +1,18 @@
 import { Fragment } from 'react';
+import Img from '../../common/image/Img';
 
 const ContentListItem = ({ data }) => {
 
-    const { src, alt, title, content, href, isBtn } = data;
+    const { src, webp, alt, title, content, href, isBtn } = data;
 
     return (
         <Fragment>
             <div className="g_content_img">
-                <img src={src} alt={alt} loading="lazy" />
+                <Img 
+                    webpSrc={webp} 
+                    imageSrc={src}
+                    alt={alt}
+                />
             </div>
             <div className="g_content_txt">
                 <strong>{title}</strong>
