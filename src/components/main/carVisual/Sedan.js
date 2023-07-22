@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide, useSwiper  } from 'swiper/react';
-import { Navigation, Autoplay, EffectFade  } from 'swiper/modules';
+import { Swiper, SwiperSlide  } from 'swiper/react';
+import { Navigation, Autoplay, EffectFade, Pagination  } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
@@ -57,8 +57,11 @@ const Sedan = ({ data }) => {
         <Fragment>
             <Swiper 
                 className="tab_sedan" 
-                modules={[ Navigation, Autoplay, EffectFade ]} 
+                modules={[ Navigation, Autoplay, EffectFade, Pagination ]} 
                 navigation={true}
+                pagination={{
+                    type: 'progressbar',
+                  }}
                 effect={"fade"}
                 observer={true}
                 observeParents={true}
