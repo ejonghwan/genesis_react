@@ -30,10 +30,7 @@ const App = () => {
 		<Fragment>	
 			<Switch>
 				{/* <Route exact path='/' component={Main} /> */}
-			
-				<Suspense fallback={Loading}>
-					<Route exact path='/' render={() => <Main />} /> 
-				</Suspense>
+				<Route exact path='/' render={() => <Main />} /> 
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
