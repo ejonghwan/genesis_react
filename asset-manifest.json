@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.adb09c6a.css",
-    "main.js": "/genesis_react/static/js/main.f944f23d.js",
+    "main.js": "/genesis_react/static/js/main.a2479e9c.js",
     "static/js/347.fb6f2cd9.chunk.js": "/genesis_react/static/js/347.fb6f2cd9.chunk.js",
     "static/js/435.15961815.chunk.js": "/genesis_react/static/js/435.15961815.chunk.js",
     "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
@@ -397,7 +397,7 @@
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "main.adb09c6a.css.map": "/genesis_react/static/css/main.adb09c6a.css.map",
-    "main.f944f23d.js.map": "/genesis_react/static/js/main.f944f23d.js.map",
+    "main.a2479e9c.js.map": "/genesis_react/static/js/main.a2479e9c.js.map",
     "347.fb6f2cd9.chunk.js.map": "/genesis_react/static/js/347.fb6f2cd9.chunk.js.map",
     "435.15961815.chunk.js.map": "/genesis_react/static/js/435.15961815.chunk.js.map",
     "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
@@ -410,6 +410,6 @@
   },
   "entrypoints": [
     "static/css/main.adb09c6a.css",
-    "static/js/main.f944f23d.js"
+    "static/js/main.a2479e9c.js"
   ]
 }
