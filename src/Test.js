@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const Test = () => {
+const Test = ({ href }) => {
 
     const params = useParams()
 
@@ -9,6 +9,7 @@ const Test = () => {
     
     return (
         <div style={{ height: "1000px", background: "black", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <a href={href} >aaaaaaaaaaaaaaaa</a>
             <p style={{ color: "#fff", fontSize: "50px" }}>asdasd {params.userName}</p>
         </div>
     );

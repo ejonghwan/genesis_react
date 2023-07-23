@@ -5,18 +5,11 @@ import { Route, Switch } from 'react-router-dom';
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
 
-
-// import Main from './pages/Main';
-// import Contact from './pages/Contact';
-// import Community from './pages/Community';
-// import Gallery from './pages/Gallery';
-// import Member from './pages/Member';
-// import Youtube from './pages/Youtube';
+import Main from './pages/Main';
 import Loading from './components/common/loading/Loading';
 import './scss/style.scss';
 import Test from './Test'
 
-const Main = lazy(() => import('./pages/Main'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Community = lazy(() => import('./pages/Community'));
 const Gallery = lazy(() => import('./pages/Gallery'));
@@ -28,6 +21,7 @@ const App = () => {
 
 	return (
 		<Fragment>	
+
 			<Switch>
 				{/* <Route exact path='/' component={Main} /> */}
 				<Route exact path='/' render={() => <Main />} /> 
