@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.adb09c6a.css",
-    "main.js": "/genesis_react/static/js/main.fbfd9068.js",
+    "main.js": "/genesis_react/static/js/main.66ed1357.js",
     "static/js/435.156acd93.chunk.js": "/genesis_react/static/js/435.156acd93.chunk.js",
     "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
     "static/js/443.56048be9.chunk.js": "/genesis_react/static/js/443.56048be9.chunk.js",
@@ -341,9 +341,9 @@
     "static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr.webp": "/genesis_react/static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr.141ade3a0bbe2ad555bc.webp",
     "static/media/gv60-23my-bto-exterior-mpe-makalu-gray-matt-colorchip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-exterior-mpe-makalu-gray-matt-colorchip-160x160.141ade3a0bbe2ad555bc.webp",
     "static/media/gv70-22my-bto-exterior-makalu-gray-matt-color-chip-160x160.webp": "/genesis_react/static/media/gv70-22my-bto-exterior-makalu-gray-matt-color-chip-160x160.141ade3a0bbe2ad555bc.webp",
+    "index.html": "/genesis_react/index.html",
     "static/media/g90-23my-bto-exterior-bariloche-brown-color-chip-160x160.webp": "/genesis_react/static/media/g90-23my-bto-exterior-bariloche-brown-color-chip-160x160.7de5839214dd6a69bafe.webp",
     "static/media/g70-23my-bto-exterior-hallasan-green-color-chip-160x160.webp": "/genesis_react/static/media/g70-23my-bto-exterior-hallasan-green-color-chip-160x160.07d9647aee353e7f7d3a.webp",
-    "index.html": "/genesis_react/index.html",
     "static/media/g90-23my-bto-exterior-hallasan-green-color-chip-160x160.webp": "/genesis_react/static/media/g90-23my-bto-exterior-hallasan-green-color-chip-160x160.515a6bcbe248fc2cc651.webp",
     "static/media/gv60-23my-bto-exterior-cpr-atacama-copper-colorchip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-exterior-cpr-atacama-copper-colorchip-160x160.83108ff4a91bc9300c37.webp",
     "static/media/g70-23my-bto-exterior-makalu-gray-color-chip-160x160.webp": "/genesis_react/static/media/g70-23my-bto-exterior-makalu-gray-color-chip-160x160.db865c65f9330322522e.webp",
@@ -396,7 +396,7 @@
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "main.adb09c6a.css.map": "/genesis_react/static/css/main.adb09c6a.css.map",
-    "main.fbfd9068.js.map": "/genesis_react/static/js/main.fbfd9068.js.map",
+    "main.66ed1357.js.map": "/genesis_react/static/js/main.66ed1357.js.map",
     "435.156acd93.chunk.js.map": "/genesis_react/static/js/435.156acd93.chunk.js.map",
     "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
     "443.56048be9.chunk.js.map": "/genesis_react/static/js/443.56048be9.chunk.js.map",
@@ -408,6 +408,6 @@
   },
   "entrypoints": [
     "static/css/main.adb09c6a.css",
-    "static/js/main.fbfd9068.js"
+    "static/js/main.66ed1357.js"
   ]
 }
