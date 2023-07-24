@@ -4,7 +4,7 @@ import SlideWrap from './slide/SlideWrap';
 import { accData } from './data/MenuData';
 import { NoticeData } from '../common/data/NoticeData';
 import { useSelector } from 'react-redux';
-import { faSquareFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
@@ -64,15 +64,15 @@ const Footer = () => {
                 </ul>
                 <ul className="item sns">
                     <li><a href="https://www.facebook.com/GenesisWorldwide" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-brands fa-square-facebook"></i>
+                        <FontAwesomeIcon icon={faSquareFacebook} />
                         <span className="blind">페이스북</span>
                     </a></li>
                     <li><a href="https://www.instagram.com/genesis_worldwide/" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-brands fa-instagram"></i>
+                         <FontAwesomeIcon icon={faInstagram} />
                         <span className="blind">인스타그램</span>
                     </a></li>
                     <li><a href="https://www.youtube.com/genesisworldwide" role="button" target="_blank" title="새창" rel="noreferrer">
-                        <i className="fa-brands fa-youtube"></i>
+                        <FontAwesomeIcon icon={faYoutube} />
                         <span className="blind">유튜브</span>
                     </a></li>
                 </ul>
