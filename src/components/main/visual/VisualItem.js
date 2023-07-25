@@ -8,13 +8,13 @@ const VisualItem = ({ data }) => {
     return (
         <div className="inner">
             <div className="main_visual_txt">
-                <strong className="g_sans thum" aria-hidden="true">
+                <strong className=" thum" aria-hidden="true">
                     {title}
                     <br />
                     <span className='mo_none'>{subTxt_1}</span>
                 </strong>
                 <div className="pos_txt">
-                    <h2 className="g_sans">{title}</h2>
+                    <h2 className="">{title}</h2>
                     <span className="pc_none pos_txt_sub" style={{ whiteSpace:"pre-line" }}>{subTxt_1}</span>
                     <p className="pos_txt_sub mo_none">{subTxt_2}</p>
                 </div>
