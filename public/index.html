@@ -8,6 +8,15 @@
   <title>Genesis</title>
   <link rel="preload" href="https://ejonghwan.github.io/genesis_react/img/g70.mp4" as="video" type="video/mp4" >
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea8078a1c1485e3ccb93d793f3372e51"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (navigator.userAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || navigator.userAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+        document.body.classList.add('mobile')
+    } else {
+        document.body.classList.add('pc')
+    }
+    })
+  </script>
   <style>
     /* .default {
       position: absolute;
@@ -136,6 +145,8 @@
     // })
 
   </script>
+
+ 
 </body>
 
 
