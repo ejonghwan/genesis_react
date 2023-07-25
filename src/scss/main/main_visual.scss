@@ -1,8 +1,10 @@
 
+
 $initPos: 60%;
 $topPos: 30%;
 $wid: 15vw;
-$height: 35vh;
+$height: 30vh;
+$margin: 10px;
 
 // $initPos: 80%;
 // $topPos: 20%;
@@ -31,9 +33,20 @@ $height: 35vh;
         pointer-events: none;
     }
 
-
+	
 
 	.list {
+
+		li.active {
+			.pos_txt {
+			   display: block;
+			}
+
+			.pos_btn {
+				display: flex; 
+			}
+		}
+
 		li {
 			width: $wid;
 			height: $height;
@@ -104,6 +117,7 @@ $height: 35vh;
                         transform: translate(-50%, -50%);
                         font-size: 3.2rem;
 						font-weight: 400;
+
                         & > span {
                             font-size: 1.3rem;
                             width: 100px;
@@ -118,9 +132,10 @@ $height: 35vh;
 				h2 {
 					color: #888;
 					letter-spacing: 1px;
-					transition: .5s 0.5s;
+					// transition: .5s 0.5s;
+					// transition-delay: .5s;
                     opacity: 0;
-                    font-size: 8rem;
+					font-size: 8rem;
                     transform: translateY(10px);
 				
 				}
@@ -138,6 +153,7 @@ $height: 35vh;
                         opacity: 0;
                         transform: translateY(-10px);
                         transition: opacity 1s .3s, transform 1s .3s ;
+						// transition-delay: .5s;
                         width: 300px;
                         margin-top: 20px;
                         height: auto;
@@ -154,6 +170,7 @@ $height: 35vh;
                     opacity: 0;
                     transform: translateY(10px);
                     transition: opacity 1s .5s, transform 1s .5s ;
+					// transition-delay: .5s;
                     left: 80px;
 
                     a:first-child {
@@ -208,6 +225,7 @@ $height: 35vh;
 
 
 			.inner {
+				
 				box-shadow: none;
 				border-radius: 0px;
 				// padding: 5vw;
@@ -262,13 +280,20 @@ $height: 35vh;
 		@for $i from 0 through 5 {
 			li:nth-of-type(#{$i + 3}) {
 				// top: calc($topPos + $wid * $i);
-				left: calc($initPos + $wid * $i);
+				left: calc($initPos + ($wid + $margin) * $i);
 				transition-delay: 0.1s * $i;
-                border: 10px solid transparent;
-                // box-shadow: 10px 5px 5px rgb(0, 0, 0);;
                 border-radius: 12px;
-				// overflow: hidden;
-				// opacity: .9;
+
+				.pos_txt {
+					 .pos_txt_sub {
+						font-size: 0px;
+					 }
+				 }
+ 
+				 .pos_btn {
+					 font-size: 0px;
+				 }
+
 				.main_visual_slide_video::before {
 					content: none;
 				}
@@ -281,10 +306,9 @@ $height: 35vh;
 
 	.navi {
         position: absolute;
-        top: calc($height - 80px);
+        top: calc(30vh - 50px);
         left: 60%;
         z-index: 3;
-        padding-left:10px;
 
 		.prev, 
 		.next {
@@ -514,7 +538,8 @@ $height: 35vh;
 	$initPos: 65%;
 	$topPos: 30%;
 	$wid: 20vw;
-	$height: 35vh;
+	$height: 30vh;
+	$margin: 10px;
 
 
 	.main_visual {
@@ -528,19 +553,17 @@ $height: 35vh;
 
 			@for $i from 0 through 5 {
 				li:nth-of-type(#{$i + 3}) {
-					left: calc($initPos + $wid * $i);
+					left: calc($initPos + ($wid + $margin) * $i);
 					transition-delay: 0.1s * $i;
-					border: 10px solid transparent;
-					// box-shadow: 10px 5px 5px rgb(0, 0, 0);;
+					// border: 10px solid transparent;
 					border-radius: 12px;
-					// overflow: hidden;
-					// opacity: .9;
 				}
 			}
 		}
 
 		.navi {
 			left: $initPos;
+			top: calc($topPos - 50px);
 		}
 
 		
@@ -592,6 +615,7 @@ $height: 35vh;
 	$topPos: 70%;
 	$wid: 32vw;
 	$height: 25vh;
+	$margin: 10px;
 
 
 
@@ -660,9 +684,8 @@ $height: 35vh;
 			//목록 순서별 위치 설정
 			@for $i from 0 through 5 {
 				li:nth-of-type(#{$i + 3}) {
-					left: calc($initPos + $wid * $i);
+					left: calc($initPos + ($wid + $margin) * $i);
 					transition-delay: 0.1s * $i;
-					border: 5px solid transparent;
 				}
 			}
 			
@@ -670,8 +693,7 @@ $height: 35vh;
 
 		.navi {
 			left: $initPos;
-			top: 64%;
-			padding-left: 5px;
+			top: calc($topPos - 50px);
 		}
 	}
 
@@ -709,6 +731,8 @@ $height: 35vh;
         }
     }
 }
+
+
 
 
 
