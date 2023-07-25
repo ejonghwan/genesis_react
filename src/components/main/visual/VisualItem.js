@@ -19,8 +19,8 @@ const VisualItem = ({ data }) => {
                     <p className="pos_txt_sub mo_none">{subTxt_2}</p>
                 </div>
                 <div className="pos_btn">
-                    <a href={more} role="button" className="arrow_btn" target="_blank" title="새창" rel="noreferrer">견적내기</a>
-                    <a href={Learn} role="button" className="arrow_btn">더 알아보기</a>
+                    <a href={more} role="button" target="_blank" title="새창" rel="noreferrer">견적내기</a>
+                    <a href={Learn} role="button">더 알아보기</a>
                     </div>
             </div>
             <picture className="main_visual_slide_img device_pc_none">
@@ -30,6 +30,7 @@ const VisualItem = ({ data }) => {
             <figure className="main_visual_slide_video device_mo_none">
                 <video src={`${src}`} preload={preload} poster={poster}  muted={muted} loop={loop} playsInline={playsInline} ></video>
                 {/* {`${src}#t=0.5`} */}
+                <figcaption>배경용으로 사용한 {title} 차량 주행 영상 비디오입니다</figcaption>
             </figure>
 
             
