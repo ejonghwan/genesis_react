@@ -1,5 +1,4 @@
 
-
 $initPos: 60%;
 $topPos: 30%;
 $wid: 15vw;
@@ -132,7 +131,7 @@ $margin: 10px;
 				h2 {
 					color: #888;
 					letter-spacing: 1px;
-					// transition: .5s 0.5s;
+					transition: .5s 0.5s;
 					// transition-delay: .5s;
                     opacity: 0;
 					font-size: 8rem;
@@ -218,7 +217,7 @@ $margin: 10px;
 			padding: 0;
 			z-index: 2;
 			transform: scale(1);
-
+			
             &::before {
                 content: none;
             }
@@ -285,6 +284,7 @@ $margin: 10px;
                 border-radius: 12px;
 
 				.pos_txt {
+					overflow: hidden;
 					 .pos_txt_sub {
 						font-size: 0px;
 					 }
@@ -731,8 +731,6 @@ $margin: 10px;
         }
     }
 }
-
-
 
 
 
