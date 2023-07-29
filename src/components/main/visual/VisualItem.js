@@ -28,9 +28,8 @@ const VisualItem = ({ data }) => {
                 <img src={img} alt={`${title} 차량 이미지`} />
             </picture>
             <figure className="main_visual_slide_video device_mo_none">
-                <video src={`${src}`} preload={preload} poster={poster}  muted={muted} loop={loop} playsInline={playsInline} ></video>
+                <video src={`${src}`} preload={preload} poster={poster}  muted={muted} loop={loop} playsInline={playsInline} aria-label={`배경용으로 사용한 ${title} 차량 주행 영상 비디오`}></video>
                 {/* {`${src}#t=0.5`} */}
-                <figcaption>배경용으로 사용한 {title} 차량 주행 영상 비디오입니다</figcaption>
             </figure>
 
             
