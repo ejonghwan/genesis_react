@@ -1,5 +1,6 @@
-import { Fragment, lazy, Suspense } from 'react';
+import { Fragment, lazy, Suspense, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 //common
 import Footer from './components/common/Footer';
@@ -8,7 +9,9 @@ import Header from './components/common/Header';
 import Main from './pages/Main';
 import Loading from './components/common/loading/Loading';
 import './scss/style.scss';
-import Test from './Test'
+
+import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchFlickr } from './redux/flickrSlice';
 
 const Contact = lazy(() => import('./pages/Contact'));
 const Community = lazy(() => import('./pages/Community'));
@@ -18,6 +21,13 @@ const Youtube = lazy(() => import('./pages/Youtube'));
 
 
 const App = () => {
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchYoutube());
+		dispatch(fetchFlickr({ type: 'user', user: '164021883@N04' }));
+	}, [dispatch]);
 
 	return (
 		<Fragment>	
@@ -32,9 +42,7 @@ const App = () => {
 				<Route path='/gallery' component={Gallery} />
 				<Route path='/youtube' component={Youtube} />
 				<Route path='/contact' component={Contact} />
-				{/* <Route path='/member' component={Member} /> */}
 				<Route path='/community' component={Community} />
-				<Route path='/test/:userName' component={Test} />
 			</Suspense>
 			<Footer />
 			

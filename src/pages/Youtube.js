@@ -6,12 +6,9 @@ import Modal from '../components/common/Modal';
 import Loading from '../components/common/loading/Loading_inner';
 import Visual from '../components/sub/Visual';
 
-
-
 const Youtube = () => {
 
-	const { youtube, loading } = useSelector(state => state.youtubeReducer)
-	const dispatch = useDispatch();
+	const youtube = useSelector(state => state.youtube)
 	const modal = useRef(null);
 	const [Index, setIndex] = useState(0);
 
@@ -20,23 +17,11 @@ const Youtube = () => {
 		setIndex(idx);
 	}
 
-	useEffect(() => {
-		dispatch({ 
-			type: "YOUTUBE_LOAD_REQUEST", 
-			payload: { 
-				key: "AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk", 
-				list: "PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16", 
-				num: 10,  
-			} 
-		})
-		
-	}, [dispatch]);
-
 	return (
 		<Fragment>
 			<Visual name={'youtube'} />
 			<Layout name={'youtube sub_page'} >
-			{loading ? (
+			{youtube.isLoading ? (
 				<Loading />
 			) : (
 				<div className="g_inner">
@@ -56,7 +41,7 @@ const Youtube = () => {
 							<div className="inner">
 							<div className="wrap">
 								
-								{youtube.items?.map((vid, idx) => {
+								{youtube.data?.map((vid, idx) => {
 									return (
 										<article key={idx}>
 											<button type="button" className='pic img_box' onClick={handlePopOpen(idx)}>
@@ -85,8 +70,8 @@ const Youtube = () => {
 
 			<Modal ref={modal} type={"popup_full"}>
 				<iframe
-					title={youtube.items?.map(item => item)[Index]?.id} 
-					src={`https://www.youtube.com/embed/${youtube.items?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
+					title={youtube.data?.map(item => item)[Index]?.id} 
+					src={`https://www.youtube.com/embed/${youtube.data?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
 				></iframe>
 			</Modal>
 		</Fragment>

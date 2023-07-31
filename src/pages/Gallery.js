@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-component';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector, useDispatch } from 'react-redux';
-
+import { fetchFlickr } from '../redux/flickrSlice';
 
 import Layout from '../components/common/Layout';
 import Loading from '../components/common/loading/Loading';
@@ -16,7 +16,7 @@ import Visual from '../components/sub/Visual';
 
 const Gallery = () => {
 
-	const { gallery, loading } = useSelector(state => state.galleryReducer);
+	const gallery = useSelector(state => state.flickr);
 	const dispatch = useDispatch();
 
 	const [Search, setSearch] = useState('');
@@ -31,8 +31,8 @@ const Gallery = () => {
 		modal.current?.open()()
 	}
 
-	const handleUserGall = e => dispatch({ type: 'GALLERY_SEARCH_REQUEST', payload: { key: '034beefa27c4791e6e792d0e7e8d6873', num: 50, tags: 'landscape' } })
-	const handleGeneGall = e => dispatch({ type: 'GALLERY_USER_REQUEST', payload: { key: '034beefa27c4791e6e792d0e7e8d6873', num: 50, userId: '191030940@N02' } })
+	const handleUserGall = e => dispatch(fetchFlickr({ type: 'search', tags: 'landscape' }))
+	const handleGeneGall = e => dispatch(fetchFlickr({ type: 'user', user: '191030940@N02' }));
 
 	const handleSelectUser = userId => e => {
 		if(userId === isUserRef.current) return alert('이미 검색한 유저입니다')
@@ -47,7 +47,7 @@ const Gallery = () => {
 
 	const handleSearch = e => {
 		if(Search === '') return alert('검색어를 입력해주세요')
-		dispatch({ type: 'GALLERY_SEARCH_REQUEST', payload: { key: '034beefa27c4791e6e792d0e7e8d6873', num: 50, tags: Search } })
+		dispatch(fetchFlickr({ type: 'search', tags: Search }));
 	}
 
 	const handleSearchChange = e => {
@@ -55,13 +55,14 @@ const Gallery = () => {
 		setSearch(value)
 	}
 
-	useEffect(() => {
-		dispatch({ type: 'GALLERY_LOAD_REQUEST', payload: { key: '034beefa27c4791e6e792d0e7e8d6873', num: 50 } })
-	}, [dispatch])
+	// useEffect(() => {
+	// 	dispatch(fetchFlickr({ type: 'interest' }));
+	// }, [dispatch])
 
 	useEffect(() => {
-		wrapRef.current.classList.add('on')
+		wrapRef.current?.classList.add('on')
 	}, [wrapRef, gallery])
+
 
 
 
@@ -90,12 +91,12 @@ const Gallery = () => {
 					</div>
 
 					
-						{loading ? ( 
+						{gallery.isLoading ? ( 
 							<Loading /> 
 							) : (
 							<ul className='wrap' ref={wrapRef}> 
 								<Masonry elementType={'div'} options={ {transitionDuration: ".5s"} } >
-								{gallery.photos?.photo.map((item, idx) => {
+								{gallery.data.map((item, idx) => {
 									return <li className='item' key={idx}>
 										<div>
 											<div className="img_box">        
@@ -123,8 +124,8 @@ const Gallery = () => {
 				<div className='gallery_pop_img'>
 					<img 
 						className='thumb' 
-						src={`https://live.staticflickr.com/${gallery.photos?.photo[ImgIndex]?.server}/${gallery.photos?.photo[ImgIndex]?.id}_${gallery.photos?.photo[ImgIndex]?.secret}_b.jpg`} 
-						alt={gallery.photos?.photo[ImgIndex]?.title} 
+						src={`https://live.staticflickr.com/${gallery.data[ImgIndex]?.server}/${gallery.data[ImgIndex]?.id}_${gallery.data[ImgIndex]?.secret}_b.jpg`} 
+						alt={gallery.data[ImgIndex]?.title} 
 					/> 
 				</div> 	
 			</Modal>
