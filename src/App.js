@@ -28,7 +28,7 @@ const App = () => {
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
 
-			<Suspense fallback={Loading}>
+			<Suspense fallback={<Loading />}>
 				<Route path='/gallery' component={Gallery} />
 				<Route path='/youtube' component={Youtube} />
 				<Route path='/contact' component={Contact} />
