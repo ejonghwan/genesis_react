@@ -8,12 +8,6 @@ import SpaceRoad from '../components/main/SpaceRoad';
 import Contents from '../components/main/Contents';
 
 
-// import News from './News';
-// import Pics from './Pics';
-// import Vids from './Vids';
-// import Banner from './Banner';
-// import Btns from './Btns';
-
 const Main = () => {
 
 	return (
@@ -26,13 +20,6 @@ const Main = () => {
 			<InnerDesign />
 			<SpaceRoad />
 			<Contents />
-
-
-			{/* <News /> */}
-			{/* <Pics Scrolled={Scrolled} Pos={Pos}/> */}
-			{/* <Vids /> */}
-			{/* <Banner /> */}
-			{/* <Btns setScrolled={setScrolled} setPos={setPos}/> */}
 		</main>
 	);
 }

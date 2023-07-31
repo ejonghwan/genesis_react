@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef, Fragment } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useState, useRef, Fragment } from 'react';
+import { useYoutubeQuery } from '../hooks/useYoutubeQuery';
 
 import Layout from '../components/common/Layout';
 import Modal from '../components/common/Modal';
@@ -10,33 +10,20 @@ import Visual from '../components/sub/Visual';
 
 const Youtube = () => {
 
-	const { youtube, loading } = useSelector(state => state.youtubeReducer)
-	const dispatch = useDispatch();
 	const modal = useRef(null);
 	const [Index, setIndex] = useState(0);
+	const { data: youtube, isSuccess, isLoading } = useYoutubeQuery();
 
 	const handlePopOpen = idx => e => {
 		modal.current.open()();
 		setIndex(idx);
 	}
 
-	useEffect(() => {
-		dispatch({ 
-			type: "YOUTUBE_LOAD_REQUEST", 
-			payload: { 
-				key: "AIzaSyChzicx_fRjO6YQhLL-C8tDxCq0E46sxtk", 
-				list: "PLQytOX-GQNjpnWvXUwth7PTdoEA2kZX16", 
-				num: 10,  
-			} 
-		})
-		
-	}, [dispatch]);
-
 	return (
 		<Fragment>
 			<Visual name={'youtube'} />
 			<Layout name={'youtube sub_page'} >
-			{loading ? (
+			{isLoading ? (
 				<Loading />
 			) : (
 				<div className="g_inner">
@@ -56,7 +43,7 @@ const Youtube = () => {
 							<div className="inner">
 							<div className="wrap">
 								
-								{youtube.items?.map((vid, idx) => {
+								{youtube?.map((vid, idx) => {
 									return (
 										<article key={idx}>
 											<button type="button" className='pic img_box' onClick={handlePopOpen(idx)}>
@@ -78,15 +65,11 @@ const Youtube = () => {
 					</article>
 				</div>
 			)}
-				
-
 			</Layout>
-
-
 			<Modal ref={modal} type={"popup_full"}>
 				<iframe
-					title={youtube.items?.map(item => item)[Index]?.id} 
-					src={`https://www.youtube.com/embed/${youtube.items?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
+					title={youtube?.map(item => item)[Index]?.id} 
+					src={`https://www.youtube.com/embed/${youtube?.map(item => item)[Index]?.snippet.resourceId.videoId}`}
 				></iframe>
 			</Modal>
 		</Fragment>

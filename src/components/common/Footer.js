@@ -3,13 +3,34 @@ import Accordion from "./accordion/Accordion";
 import SlideWrap from './slide/SlideWrap';
 import { accData } from './data/MenuData';
 import { NoticeData } from '../common/data/NoticeData';
-import { useSelector } from 'react-redux';
 import { faSquareFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
 
-    const { comm, loading } = useSelector(state => state.commReducer)
+     // comm
+     const randomId = e => Math.floor(Math.random() * 10000);
+     const initalPosts = [
+        { id: randomId(), title: 'Quisquam reiciendis', content: 'Quisquam reiciendis cumque iusto eius quo modi dolorum eveniet quos, qui explicabo nemo in molestiae totam, ullam quod.', done: false, modify: false },
+		{ id: randomId(), title: 'Earum suscipit quo', content: 'Earum suscipit quo consequuntur inventore nihil corrupti quas necessitatibus ipsum itaque iste eum, libero dolores nemo laborum at fugit consectetur veniam tempora aliquam sequi natus aut.', done: false, modify: false },
+		{ id: randomId(), title: 'adipisicing elit. ', content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ', done: false, modify: false },
+		{ id: randomId(), title: 'Sit autem, temporibus aliquid ipsam', content: 'Sit autem, temporibus aliquid ipsam beatae ab vero quam similique sunt repellendus libero rem illum, optio, accusantium inventore deleniti nihil fuga iusto! Dolorem deleniti iure recusandae culpa atque molestiae consequuntur ducimus repellendus temporibus, eius esse neque. Cupiditate vel eos dolor!', done: false, modify: false },
+		{ id: randomId(), title: 'Sunt debitis itaque iste voluptates,', content: 'Sunt debitis itaque iste voluptates, tempora corporis ratione tenetur magni provident similique ut sequi unde neque harum quos rerum eaque tempore! Consequatur dolor molestias similique ', done: false, modify: false },
+		{ id: randomId(), title: 'Laborum, similique.', content: 'Laborum, similique. Nam tempore, at ducimus iste neque exercitationem porro commodi! Illo, cumque aspernatur quos quaerat ipsam nisi quisquam ducimus eos laboriosam ex veritatis magnam itaque sapiente ea qui, iste molestiae porro nam non fugit? ', done: false, modify: false },
+     ]
+ 
+     const [Posts, setPosts] = useState(initalPosts);
+     const getLocalData = () => {
+         const data = localStorage.getItem('post');
+         const obj = JSON.parse(data)
+         return data ? setPosts( obj ) : initalPosts
+     }
+ 
+     useEffect(() => {
+         getLocalData();
+         // console.log('pos?', Posts)
+     }, [])
+ 
     
 	return (
 		<footer id="footer">
@@ -34,7 +55,7 @@ const Footer = () => {
      
         {/* 커뮤니티 */}
         <section className="footer_sec notice">
-            <SlideWrap data={comm} defaultText={"[커뮤니티]"} />
+            <SlideWrap data={Posts} defaultText={"[커뮤니티]"} />
         </section>
 
 

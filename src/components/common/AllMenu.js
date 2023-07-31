@@ -33,7 +33,6 @@ const AllMenu = ({ target, navRef }) => {
                         device={"accordion_mo"}
                     />
                 </article>
-            
             </div>
         </Modal>
     )
