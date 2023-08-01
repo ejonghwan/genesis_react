@@ -1,3 +1,4 @@
+import { memo } from 'react';
 
 const TabBody = ({ children, Index }) => {
     return (
@@ -6,4 +7,4 @@ const TabBody = ({ children, Index }) => {
         </ul>
     )
 }
-export default TabBody;
+export default memo(TabBody);

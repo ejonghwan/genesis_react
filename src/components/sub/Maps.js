@@ -87,25 +87,16 @@ const Maps = ({ mapData }) => {
 			: MapIns?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 	}, [MapIns, Traffic, kakao]);
 
-	const mapCenter = e => {
-		console.log('map c??')
-	}
+	const mapCenter = e => MapIns?.panTo( new kakao.maps.LatLng(TargetLatLng.lat, TargetLatLng.long) );
+		
 
 	useEffect(() => {
 		window.addEventListener('resize', _.debounce(mapCenter, 500))
-
+		
 		return () => {
 			window.removeEventListener('resize', _.debounce(mapCenter, 500))
 		};
-
-	}, [])
-
-
-    // 리사이즈시 센터로
-    // window.addEventListener('resize', ui.lastCallDebounce(
-    //         () => handleResize(map, new kakao.maps.LatLng(region_info[map_idx].letlong.lat, region_info[map_idx].letlong.long)), 
-    //         300 
-    //     ))
+	}, [MapIns])
 
 
 
