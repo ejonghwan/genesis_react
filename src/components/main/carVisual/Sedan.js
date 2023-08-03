@@ -116,6 +116,8 @@ const Sedan = ({ data }) => {
                                                                     webpSrc={require(`../../../assets/images/car/${car.carName}/${value.color}.webp`)} 
                                                                     imageSrc={require(`../../../assets/images/car/${car.carName}/${value.color}.png`)} 
                                                                     alt={value.colorName} 
+                                                                    width={700}
+                                                                    height={248}
                                                                 />
                                                                 </button>
                                                             </div>

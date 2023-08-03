@@ -94,6 +94,8 @@ const All = ({ data }) => {
                                                                     webpSrc={require(`../../../assets/images/car/${car.carName}/${value.car}.webp`)} 
                                                                     imageSrc={require(`../../../assets/images/car/${car.carName}/${value.car}.png`)} 
                                                                     alt={`${car.carName} ${value.colorName} 색 차량 이미지`}
+                                                                    width={700}
+                                                                    height={248}
                                                                 />
 
                                                             </div>

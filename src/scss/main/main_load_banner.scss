@@ -19,7 +19,10 @@
         width: 50%;
         color: #fff;
         padding: 30px 30px 30px 50px;
-        background: url('../../assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg') no-repeat center/cover;
+        // background: url('../../assets/images/main/genesis-motorshow-guangzhou-ectrified-gv70-1920x960.jpg') no-repeat center/cover;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         strong {
             font-size: 2.5rem;
             max-width: 300px;
@@ -39,7 +42,10 @@
         width: 50%;
         color: #fff;
         padding: 30px 30px 30px 50px;
-        background: url('../../assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg') no-repeat center/cover;
+        // background: url('../../assets/images/main/genesis-kr-main-genesis-events-17-desktop-1920x960-ko-2.jpg') no-repeat center/cover;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         strong {
             font-size: 2.5rem;
             max-width: 300px;
