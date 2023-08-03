@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.5a7c568b.css",
-    "main.js": "/genesis_react/static/js/main.0ea440ec.js",
+    "main.js": "/genesis_react/static/js/main.7bf5e6ec.js",
     "static/js/435.aceb0c22.chunk.js": "/genesis_react/static/js/435.aceb0c22.chunk.js",
     "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
     "static/js/443.56048be9.chunk.js": "/genesis_react/static/js/443.56048be9.chunk.js",
@@ -328,6 +328,7 @@
     "static/media/gv70-22my-bto-exterior-makalu-gray-color-chip-160x160.webp": "/genesis_react/static/media/gv70-22my-bto-exterior-makalu-gray-color-chip-160x160.07f8c713b7d6b1972b18.webp",
     "static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr (1).cab3e2e90b978880788f.webp",
     "static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr.webp": "/genesis_react/static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr.cab3e2e90b978880788f.webp",
+    "index.html": "/genesis_react/index.html",
     "static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr (1).51f80a68124cc78be7fd.webp",
     "static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr.webp": "/genesis_react/static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr.51f80a68124cc78be7fd.webp",
     "static/media/10_g80-23my-bto-exterior-bariloche-brown-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/10_g80-23my-bto-exterior-bariloche-brown-colorchip-160x160-kr (1).176ec39cbe69375354bc.webp",
@@ -349,7 +350,6 @@
     "static/media/g70-23my-bto-exterior-bond-silver-matt-color-chip-160x160.webp": "/genesis_react/static/media/g70-23my-bto-exterior-bond-silver-matt-color-chip-160x160.704931cfd270c72e5e4b.webp",
     "static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-bjk-desktop-160x160.webp": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-bjk-desktop-160x160.d15c15fbbb2ee0206029.webp",
     "static/media/g90-23my-bto-exterior-valencia-gold-color-chip-160x160.webp": "/genesis_react/static/media/g90-23my-bto-exterior-valencia-gold-color-chip-160x160.a7e7fc4d766dd5ef26b9.webp",
-    "index.html": "/genesis_react/index.html",
     "static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr (1).141ade3a0bbe2ad555bc.webp",
     "static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr.webp": "/genesis_react/static/media/g80-23my-bto-exterior-makalu-gray-matt-colorchip-160x160-kr.141ade3a0bbe2ad555bc.webp",
     "static/media/gv60-23my-bto-exterior-mpe-makalu-gray-matt-colorchip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-exterior-mpe-makalu-gray-matt-colorchip-160x160.141ade3a0bbe2ad555bc.webp",
@@ -408,7 +408,7 @@
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "main.5a7c568b.css.map": "/genesis_react/static/css/main.5a7c568b.css.map",
-    "main.0ea440ec.js.map": "/genesis_react/static/js/main.0ea440ec.js.map",
+    "main.7bf5e6ec.js.map": "/genesis_react/static/js/main.7bf5e6ec.js.map",
     "435.aceb0c22.chunk.js.map": "/genesis_react/static/js/435.aceb0c22.chunk.js.map",
     "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
     "443.56048be9.chunk.js.map": "/genesis_react/static/js/443.56048be9.chunk.js.map",
@@ -420,6 +420,6 @@
   },
   "entrypoints": [
     "static/css/main.5a7c568b.css",
-    "static/js/main.0ea440ec.js"
+    "static/js/main.7bf5e6ec.js"
   ]
 }
