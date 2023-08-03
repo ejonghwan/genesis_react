@@ -17,7 +17,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g00,
         webp: g00_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"
@@ -26,7 +26,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g01, 
         webp: g01_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"
@@ -35,7 +35,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g02, 
         webp: g02_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"
@@ -44,7 +44,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g03, 
         webp: g03_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"
@@ -53,7 +53,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g04, 
         webp: g04_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"
@@ -62,7 +62,7 @@ export const innerDesignData = [
         itemClassName: "cont1 type1",
         src: g05, 
         webp: g05_webp, 
-        alt: "", 
+        alt: "제네시스 차 내부 디자인 이미지", 
         href: "#", 
         pointEvt: "none", 
         loading: "lazy"

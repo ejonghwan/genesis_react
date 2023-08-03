@@ -6,11 +6,11 @@ const TabHead = ({ heads, setIndex, Index }) => {
     const handleTabClick = useCallback(idx => e => setIndex(idx), [setIndex])
 
     return (
-        <ul className="tab_header" aria-labelledby="tab_type1_tit" role="tablist" ref={tabHeaderRef}>
+        <ul className="tab_header" role="tablist" ref={tabHeaderRef}>
             {heads.map((item, idx) => (
-            <li className={`tab_header_item ${ Index === idx && 'active' }`} onClick={handleTabClick(idx)} key={idx} >
-                <button type="button">{item}</button>
-            </li>
+                <li id={`tab_type1_${idx}`} role="tab" aria-controls={`tab_type1_con_${idx}`} aria-selected={`${ Index === idx && true }`} className={`tab_header_item ${ Index === idx && 'active' }`} onClick={handleTabClick(idx)} key={idx} >
+                    <button type="button">{item}</button>
+                </li>
             ))}
         </ul>
 )
