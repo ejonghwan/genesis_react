@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/genesis_react/static/css/main.81ae5adc.css",
-    "main.js": "/genesis_react/static/js/main.ee82f570.js",
+    "main.css": "/genesis_react/static/css/main.574113fb.css",
+    "main.js": "/genesis_react/static/js/main.940e2671.js",
     "static/js/435.aceb0c22.chunk.js": "/genesis_react/static/js/435.aceb0c22.chunk.js",
     "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
     "static/js/443.56048be9.chunk.js": "/genesis_react/static/js/443.56048be9.chunk.js",
     "static/js/83.ad19df7f.chunk.js": "/genesis_react/static/js/83.ad19df7f.chunk.js",
-    "static/js/428.d7e615fc.chunk.js": "/genesis_react/static/js/428.d7e615fc.chunk.js",
-    "static/js/97.73ddb88e.chunk.js": "/genesis_react/static/js/97.73ddb88e.chunk.js",
+    "static/js/428.5e0a72b2.chunk.js": "/genesis_react/static/js/428.5e0a72b2.chunk.js",
+    "static/js/97.5adb4d3a.chunk.js": "/genesis_react/static/js/97.5adb4d3a.chunk.js",
     "static/js/163.a0b7ecb8.chunk.js": "/genesis_react/static/js/163.a0b7ecb8.chunk.js",
     "static/js/628.47b2ccb4.chunk.js": "/genesis_react/static/js/628.47b2ccb4.chunk.js",
     "static/media/comm.mp4": "/genesis_react/static/media/comm.36bcb69322915f6277df.mp4",
@@ -326,9 +326,9 @@
     "static/media/03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr.webp": "/genesis_react/static/media/03_g80-23my-bto-exterior-makalu-gray-colorchip-160x160-kr.07f8c713b7d6b1972b18.webp",
     "static/media/gv60-23my-bto-exterior-ncm-makalu-gray-colorchip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-exterior-ncm-makalu-gray-colorchip-160x160.07f8c713b7d6b1972b18.webp",
     "static/media/gv70-22my-bto-exterior-makalu-gray-color-chip-160x160.webp": "/genesis_react/static/media/gv70-22my-bto-exterior-makalu-gray-color-chip-160x160.07f8c713b7d6b1972b18.webp",
+    "index.html": "/genesis_react/index.html",
     "static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr (1).cab3e2e90b978880788f.webp",
     "static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr.webp": "/genesis_react/static/media/g80-23my-bto-exterior-bond-silver-matt-colorchip-160x160-kr.cab3e2e90b978880788f.webp",
-    "index.html": "/genesis_react/index.html",
     "static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr (1).51f80a68124cc78be7fd.webp",
     "static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr.webp": "/genesis_react/static/media/09_g80-23my-bto-exterior-valencia-gold-colorchip-160x160-kr.51f80a68124cc78be7fd.webp",
     "static/media/10_g80-23my-bto-exterior-bariloche-brown-colorchip-160x160-kr (1).webp": "/genesis_react/static/media/10_g80-23my-bto-exterior-bariloche-brown-colorchip-160x160-kr (1).176ec39cbe69375354bc.webp",
@@ -407,19 +407,19 @@
     "static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ft7-desktop-160x160.webp": "/genesis_react/static/media/genesis-kr-models-gv80-23my-bto-exterior-colorchip-ft7-desktop-160x160.036bf6c948acdde0a85b.webp",
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
-    "main.81ae5adc.css.map": "/genesis_react/static/css/main.81ae5adc.css.map",
-    "main.ee82f570.js.map": "/genesis_react/static/js/main.ee82f570.js.map",
+    "main.574113fb.css.map": "/genesis_react/static/css/main.574113fb.css.map",
+    "main.940e2671.js.map": "/genesis_react/static/js/main.940e2671.js.map",
     "435.aceb0c22.chunk.js.map": "/genesis_react/static/js/435.aceb0c22.chunk.js.map",
     "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
     "443.56048be9.chunk.js.map": "/genesis_react/static/js/443.56048be9.chunk.js.map",
     "83.ad19df7f.chunk.js.map": "/genesis_react/static/js/83.ad19df7f.chunk.js.map",
-    "428.d7e615fc.chunk.js.map": "/genesis_react/static/js/428.d7e615fc.chunk.js.map",
-    "97.73ddb88e.chunk.js.map": "/genesis_react/static/js/97.73ddb88e.chunk.js.map",
+    "428.5e0a72b2.chunk.js.map": "/genesis_react/static/js/428.5e0a72b2.chunk.js.map",
+    "97.5adb4d3a.chunk.js.map": "/genesis_react/static/js/97.5adb4d3a.chunk.js.map",
     "163.a0b7ecb8.chunk.js.map": "/genesis_react/static/js/163.a0b7ecb8.chunk.js.map",
     "628.47b2ccb4.chunk.js.map": "/genesis_react/static/js/628.47b2ccb4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81ae5adc.css",
-    "static/js/main.ee82f570.js"
+    "static/css/main.574113fb.css",
+    "static/js/main.940e2671.js"
   ]
 }
