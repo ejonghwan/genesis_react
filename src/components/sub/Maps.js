@@ -17,6 +17,8 @@ const Maps = ({ mapData }) => {
 	const [Traffic, setTraffic] = useState(false);
 	
 
+
+
 	const createMarker = useCallback((mapIns, info) => {
 		// 인포생성
 		info.forEach((info, idx) => {
@@ -50,6 +52,8 @@ const Maps = ({ mapData }) => {
 		})
 	}, [kakao])
 	
+
+
 	const createMap = useCallback(() => {
 		const mapInfo = mapData.map(data => data.items.map(item => item.info.map(info => info))).flat(Infinity)
 		const mapIns = new kakao.maps.Map(mapContainerRef.current, { center: new kakao.maps.LatLng(mapInfo[0].letlong.lat, mapInfo[0].letlong.long), level: 3 });
@@ -73,14 +77,19 @@ const Maps = ({ mapData }) => {
 	} ,[ createMarker, kakao, mapData ])
 
 
+
 	useEffect(() => {
 		createMap();
 	}, [createMap])
+
+
 
 	useEffect(() => {
 		MapIns?.panTo( new kakao.maps.LatLng(TargetLatLng.lat, TargetLatLng.long) );
 	}, [MapIns, TargetLatLng, kakao])
 
+
+	
 	useEffect(() => {
 		Traffic
 			? MapIns?.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)

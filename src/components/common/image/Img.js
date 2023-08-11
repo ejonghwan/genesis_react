@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { useEffect, useRef } from 'react'
 
 
-const Img = ({ webpSrc, imageSrc, alt, className, width, height }) => {
+const Img = ({ webpSrc, imageSrc, alt, className, width, height, isSkeleton = false }) => {
 
     const imgRef = useRef(null) 
 
@@ -34,7 +34,7 @@ const Img = ({ webpSrc, imageSrc, alt, className, width, height }) => {
         <Fragment>
             <picture>
                 <source data-srcset={webpSrc} type="image/webp" />
-                <img data-src={imageSrc} ref={imgRef} alt={alt} className={className} width={width} height={height}/>
+                <img data-src={imageSrc} ref={imgRef} src={isSkeleton ? require('../../../assets/images/common/loading.gif') : ""} alt={alt} className={className} width={width} height={height}/>
             </picture>
         </Fragment>
     )

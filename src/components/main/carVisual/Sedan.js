@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useCallback, memo } from 'react';
 import { Swiper, SwiperSlide  } from 'swiper/react';
 import { Navigation, Autoplay, EffectFade, Pagination  } from 'swiper/modules';
 import 'swiper/scss';
@@ -19,7 +19,7 @@ const Sedan = ({ data }) => {
     let color_names = useRef(null);
     let prev_el = useRef(null);
   
-    const handleColorClick = (carData) => () => {
+    const handleColorClick = useCallback((carData) => () => {
         // if(prev_el) { prev_el.current.style.zIndex = 1; }
         for(let i = 0; i < cars.current.length; i++) {
             cars.current[i].classList.remove('on')
@@ -44,7 +44,7 @@ const Sedan = ({ data }) => {
                 
             }
         }
-    } 
+    }, [])
 
     useEffect(() => {
         cars.current = carWrapRef.current?.querySelectorAll('.car')
@@ -150,4 +150,4 @@ const Sedan = ({ data }) => {
     );
 };
 
-export default Sedan;
+export default memo(Sedan);

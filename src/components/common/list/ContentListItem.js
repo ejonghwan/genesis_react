@@ -12,6 +12,7 @@ const ContentListItem = ({ data }) => {
                     webpSrc={webp} 
                     imageSrc={src}
                     alt={alt}
+                    isSkeleton={true}
                 />
             </div>
             <div className="g_content_txt">

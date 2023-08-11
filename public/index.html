@@ -15,7 +15,7 @@
   <!-- <link rel="preload" href="https://ejonghwan.github.io/genesis_react/img/g70.mp4" as="video" type="video/mp4" > -->
   <link rel="preload" href="https://ejonghwan.github.io/genesis_react/static/media/poster01.671adaf200d18eb977df.webp" as="image" >
   <link rel="preload" href="https://ejonghwan.github.io/genesis_react/static/media/poster02.989f748a3b604a154fa3.webp" as="image" >
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea8078a1c1485e3ccb93d793f3372e51" defer></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea8078a1c1485e3ccb93d793f3372e51"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       if (navigator.userAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || navigator.userAgent.match(/LG|SAMSUNG|Samsung/) != null) {
@@ -26,33 +26,6 @@
     })
   </script>
   <style>
-    /* .default {
-      position: absolute;
-      top: -99999px;
-    }
-
-    .mask {
-      font-weight: 300;
-      width: 100%;
-      height: 100vh;
-      background: #111;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      opacity: 1;
-      transition: opacity 2s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font: 20px/1 'arial';
-      color: #fff;
-    }
-
-    .mask.off {
-      opacity: 0;
-    } */
-
     .seo {
       position: absolute;
       width: 1px;
@@ -96,104 +69,5 @@
           제네시스 오너분들께만 주어지는 특별한 혜택과 이상적인 경험을 선사합니다.</p>
 
   </div>
-  <!-- <div class="defaults"></div>
-  <div class="mask">
-    <div class="loading">
-        <div class="loading_text">
-          <span class="loading_text_word">G E N E S I S</span>
-        </div>
-    </div>
-  </div> -->
-
-  <script>
-    // const defaults = document.querySelector('.defaults');
-    // const mask = document.querySelector('.mask');
-    // let tags = '';
-    // const baseURL = 'https://ejonghwan.github.io/genesis_react';
-    // const imgs = [
-    //   baseURL + '/img/poster01.jpg',
-    //   baseURL + '/img/poster02.jpg',
-    //   baseURL + '/img/poster03.jpg',
-    //   baseURL + '/img/poster04.jpg',
-    //   baseURL + '/img/poster05.jpg',
-    //   baseURL + '/img/poster06.jpg'
-    // ]
-    // const vids = [
-    //   baseURL + '/img/g70.mp4',
-    //   // baseURL + '/img/g80.mp4',
-    //   // baseURL + '/img/g80e.mp4',
-    //   // baseURL + '/img/gv60.mp4',
-    //   // baseURL + '/img/gv70.mp4',
-    //   // baseURL + '/img/testv.mp4',
-      
-    // ]
-
-    // const lenImg = imgs.length;
-    // const lenVids = vids.length;
-
-    // createDOM();
-
-    // function createDOM() {
-    //   imgs.forEach(src => {
-    //     tags += `<img src = ${src} />`
-    //   })
-    //   vids.forEach(src => {
-    //     tags += `<video src=${src}></video>`
-    //   })
-    //   defaults.innerHTML = tags;
-    // }
-
-    // function loadImg() {
-    //   return new Promise((res, rej) => {
-    //     let countImg = 0;
-    //     const imgDOM = defaults.querySelectorAll('img');
-
-    //     imgDOM.forEach(img => {
-    //       img.onload = () => {
-    //         countImg++;
-    //         console.log('img loaded..', countImg);
-
-    //         if (countImg === lenImg) {
-    //           res(true);
-    //         }
-    //       }
-    //     })
-    //   })
-    // }
-
-    // function loadVid() {
-    //   return new Promise((res, rej) => {
-    //     let countVid = 0;
-    //     const vidDOM = defaults.querySelectorAll('video');
-
-    //     vidDOM.forEach(vid => {
-    //       vid.onloadeddata = () => {
-    //         countVid++;
-    //         console.log('vid loaded..', countVid);
-
-    //         if (countVid === lenVids) {
-    //           res(true);
-    //         }
-    //       }
-    //     })
-    //   })
-    // }
-
-
-    // Promise.all([loadVid()]).then(result => {
-    //   console.log(result);
-    //   mask.classList.add('off');
-
-    //   setTimeout(() => {
-    //     mask.remove();
-    //     defaults.remove();
-    //   }, 2000)
-    // })
-
-  </script>
-
- 
 </body>
-
-
 </html>

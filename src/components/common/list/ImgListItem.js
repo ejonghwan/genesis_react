@@ -8,6 +8,7 @@ const ImgListItem = ({ data }) => {
                 webpSrc={webp}
                 imageSrc={src}
                 alt={alt}
+                isSkeleton={true}
             />
         </div>
     );
