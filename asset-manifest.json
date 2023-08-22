@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/genesis_react/static/css/main.c42b58c4.css",
-    "main.js": "/genesis_react/static/js/main.86c5be99.js",
+    "main.js": "/genesis_react/static/js/main.d7886986.js",
     "static/js/435.aceb0c22.chunk.js": "/genesis_react/static/js/435.aceb0c22.chunk.js",
     "static/js/373.93a71f07.chunk.js": "/genesis_react/static/js/373.93a71f07.chunk.js",
     "static/js/443.56048be9.chunk.js": "/genesis_react/static/js/443.56048be9.chunk.js",
     "static/js/83.ad19df7f.chunk.js": "/genesis_react/static/js/83.ad19df7f.chunk.js",
-    "static/js/428.5e0a72b2.chunk.js": "/genesis_react/static/js/428.5e0a72b2.chunk.js",
-    "static/js/97.5adb4d3a.chunk.js": "/genesis_react/static/js/97.5adb4d3a.chunk.js",
+    "static/js/428.810d5d53.chunk.js": "/genesis_react/static/js/428.810d5d53.chunk.js",
+    "static/js/97.61188995.chunk.js": "/genesis_react/static/js/97.61188995.chunk.js",
     "static/js/163.a0b7ecb8.chunk.js": "/genesis_react/static/js/163.a0b7ecb8.chunk.js",
     "static/js/628.47b2ccb4.chunk.js": "/genesis_react/static/js/628.47b2ccb4.chunk.js",
     "static/media/comm.mp4": "/genesis_react/static/media/comm.36bcb69322915f6277df.mp4",
@@ -307,6 +307,7 @@
     "static/media/genesis-related-contents-banner-members-desktop-630x404-kr.webp": "/genesis_react/static/media/genesis-related-contents-banner-members-desktop-630x404-kr.ac58269ae281361a7993.webp",
     "static/media/gv60-23my-bto-exterior-uyh-uyuni-white-colorchip-160x160.png": "/genesis_react/static/media/gv60-23my-bto-exterior-uyh-uyuni-white-colorchip-160x160.c6ee7556f6c8d8f1e93a.png",
     "static/media/gv70-22my-bto-exterior-matterhorn-white-matt-color-chip-160x160.png": "/genesis_react/static/media/gv70-22my-bto-exterior-matterhorn-white-matt-color-chip-160x160.7a45237818123b19c1d5.png",
+    "static/media/loading.gif": "/genesis_react/static/media/loading.cd2b2e52d223e827c89a.gif",
     "static/media/g90-23my-bto-exterior-uyuni-white-color-chip-160x160.png": "/genesis_react/static/media/g90-23my-bto-exterior-uyuni-white-color-chip-160x160.a32ba3b07c2f197ad5cb.png",
     "static/media/g90-23my-bto-exterior-verbier-white-matte-color-chip-160x160.png": "/genesis_react/static/media/g90-23my-bto-exterior-verbier-white-matte-color-chip-160x160.a59cbdabddf18b9abcec.png",
     "static/media/g70-23my-bto-exterior-uyuni-white-color-chip-160x160.png": "/genesis_react/static/media/g70-23my-bto-exterior-uyuni-white-color-chip-160x160.736f4fa421efa6b841cd.png",
@@ -403,18 +404,18 @@
     "static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-sds-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.webp": "/genesis_react/static/media/gv60-23my-bto-interior-performance-std-navy-mono-tone-color-chip-160x160.fae048e55ecf8c0cb171.webp",
     "main.c42b58c4.css.map": "/genesis_react/static/css/main.c42b58c4.css.map",
-    "main.86c5be99.js.map": "/genesis_react/static/js/main.86c5be99.js.map",
+    "main.d7886986.js.map": "/genesis_react/static/js/main.d7886986.js.map",
     "435.aceb0c22.chunk.js.map": "/genesis_react/static/js/435.aceb0c22.chunk.js.map",
     "373.93a71f07.chunk.js.map": "/genesis_react/static/js/373.93a71f07.chunk.js.map",
     "443.56048be9.chunk.js.map": "/genesis_react/static/js/443.56048be9.chunk.js.map",
     "83.ad19df7f.chunk.js.map": "/genesis_react/static/js/83.ad19df7f.chunk.js.map",
-    "428.5e0a72b2.chunk.js.map": "/genesis_react/static/js/428.5e0a72b2.chunk.js.map",
-    "97.5adb4d3a.chunk.js.map": "/genesis_react/static/js/97.5adb4d3a.chunk.js.map",
+    "428.810d5d53.chunk.js.map": "/genesis_react/static/js/428.810d5d53.chunk.js.map",
+    "97.61188995.chunk.js.map": "/genesis_react/static/js/97.61188995.chunk.js.map",
     "163.a0b7ecb8.chunk.js.map": "/genesis_react/static/js/163.a0b7ecb8.chunk.js.map",
     "628.47b2ccb4.chunk.js.map": "/genesis_react/static/js/628.47b2ccb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c42b58c4.css",
-    "static/js/main.86c5be99.js"
+    "static/js/main.d7886986.js"
   ]
 }
