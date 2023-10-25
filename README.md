@@ -35,9 +35,9 @@ React, Redux, Redux-saga, Redux-toolkit, React-query, SASS, Javascript, 카카�
 ## 4. 폴더 구조
 
 ### 4-1. 전체
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/dc048483-c822-4de4-aa62-472ac7b85ea1" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/dc048483-c822-4de4-aa62-472ac7b85ea1" width="80%" height="auto"></img>
 ### 4-2. 컴포넌트
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/9071f667-de6d-4b10-b85a-c4f4e96f8d5a" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/9071f667-de6d-4b10-b85a-c4f4e96f8d5a" width="80%" height="auto"></img>
    
 &nbsp;
 &nbsp;
@@ -53,19 +53,19 @@ React, Redux, Redux-saga, Redux-toolkit, React-query, SASS, Javascript, 카카�
 Redux, Redux-saga 적용하면서 하나의 요청 응답을 만들면서도 Reducer 상태와   
    REQUEST / SUCCESS / FAILUE 액션타입과 케이스, Redux-saga의  watch함수 put 함수 api 요청함수를 만들며   
    이런 몇가지의 요청기능에 많은 소스가 불필요하다고 생각했습니다.
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/a3b00999-5a1f-447b-9ac5-5b9ddd93b43c" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/a3b00999-5a1f-447b-9ac5-5b9ddd93b43c" width="80%" height="auto"></img>
 
 * Redux-toolkit    
 	Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일이 너무 많았지만 toolkit에서는 액션도 자동으로 생성해주고   
   사가를 쓰지 않고 비동기 데이터를 pending fulfilled, rejected로 관리할 수 있기도 하고 상태들을 Slice에서   
   볼 수 있는 것도 코드 가독성면에서 좋다고 생각했습니다. 
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/7378488b-ecb2-4c70-b0ba-9d728aa4ea19" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/7378488b-ecb2-4c70-b0ba-9d728aa4ea19" width="80%" height="auto"></img>
 
 * React-query   
 	서버 데이터를 클라이언트 스토어에서 관리할 필요도 없었고 몇개 안되는 API 요청인데 Redux-toolkit도 너무 번잡해보였습니다.   
   그래서 클라이언트 상태는 Context API로, 서버 데이터는 React-query를 커스텀 훅으로 만들어   
   간단하게 처리해보고 query에서 지원해주는 데이터 캐시도 적용해봤습니다.
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/c1a9da59-e86c-4066-a6d8-c5af9ae6cab1" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/c1a9da59-e86c-4066-a6d8-c5af9ae6cab1" width="80%" height="auto"></img>
 
    
 &nbsp;
@@ -173,9 +173,9 @@ Redux, Redux-saga 적용하면서 하나의 요청 응답을 만들면서도 Red
 ## UI Component 제작 예시 2개 
 UI Component는 접근성과 사용성을 고려해서 아래 처럼 제작했습니다. 
 ### 탭 UI
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/50e4bff4-4b02-4b22-9502-282a0224fc03" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/50e4bff4-4b02-4b22-9502-282a0224fc03" width="80%" height="auto"></img>
 
 ### 아코디언 UI 
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/f07c4014-e6d7-4ab8-8aa7-2cc77ca0db4c" width="70%" height="auto"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/f07c4014-e6d7-4ab8-8aa7-2cc77ca0db4c" width="80%" height="auto"></img>
 
 
