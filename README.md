@@ -3,7 +3,7 @@
 ## 1. 소개
 제네시스 사이트의 프로모션 사이트를 가상으로 생각하고 작업했으며, 기존에 HTML, CSS, JS만 사용해서 제작한 사이트를 React로 추가 제작했습니다.
    
-이 사이트를 제작하기 위해 React, 
+이 사이트를 제작하기 위해 React, Redux, Redux-saga, Redux-toolkit, React-query와 외부 API를 사용하는 방법을 학습했습니다.
 &nbsp;
 &nbsp;
 ****
