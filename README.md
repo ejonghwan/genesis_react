@@ -16,23 +16,23 @@ React, Redux, Redux-saga, Redux-toolkit, React-query, SASS, Javascript, 카카�
 
 ## 폴더구조 
 ### 전체
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/dc048483-c822-4de4-aa62-472ac7b85ea1" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/dc048483-c822-4de4-aa62-472ac7b85ea1" width="70%" height="auto"></img>
 ### 컴포넌트
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/9071f667-de6d-4b10-b85a-c4f4e96f8d5a" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/9071f667-de6d-4b10-b85a-c4f4e96f8d5a" width="70%" height="auto"></img>
 
 ## 상태관리
 * Redux, Redux-saga
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/a3b00999-5a1f-447b-9ac5-5b9ddd93b43c" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/a3b00999-5a1f-447b-9ac5-5b9ddd93b43c" width="70%" height="auto"></img>
 Redux, Redux-saga 적용하면서 하나의 요청 응답을 만들면서도 Reducer 상태와  REQUEST / SUCCESS / FAILUE 액션타입과 케이스, Redux-saga의  watch함수 put 함수 api 요청함수를 만들며 이런 몇가지의 요청기능에 많은 소스가 불필요하다고 생각했습니다.
 
 
 * Redux-toolkit 
-* <img src="https://github.com/ejonghwan/genesis_react/assets/53946298/7378488b-ecb2-4c70-b0ba-9d728aa4ea19" width="auto" height="500px"></img>
+* <img src="https://github.com/ejonghwan/genesis_react/assets/53946298/7378488b-ecb2-4c70-b0ba-9d728aa4ea19" width="70%" height="auto"></img>
 Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일이 너무 많았지만 toolkit에서는 액션도 자동으로 생성해주고 사가를 쓰지 않고 비동기 데이터를 pending fulfilled, rejected로 관리할 수 있기도 하고 상태들을 Slice에서  볼 수 있는 것도 코드 가독성면에서 좋다고 생각했습니다. 
 
 
 * React-query
-* <img src="https://github.com/ejonghwan/genesis_react/assets/53946298/c1a9da59-e86c-4066-a6d8-c5af9ae6cab1" width="auto" height="500px"></img>
+* <img src="https://github.com/ejonghwan/genesis_react/assets/53946298/c1a9da59-e86c-4066-a6d8-c5af9ae6cab1" width="70%" height="auto"></img>
 서버 데이터를 클라이언트 스토어에서 관리할 필요도 없었고 몇개 안되는 API 요청인데 Redux-toolkit도 너무 번잡해보였습니다.   
 그래서 클라이언트 상태는 Context API로, 서버 데이터는 React-query를 커스텀 훅으로 만들어 간단하게 처리해보고 query에서 지원해주는 데이터 캐시도 적용해봤습니다.
 
@@ -43,7 +43,7 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 ![반응형](https://github.com/ejonghwan/genesis/assets/53946298/9b7ddc73-225e-4f99-93dc-d0f54f8e8a1a)
 
 ### 2. 최적화 작업
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/962dca6e-05da-4611-a0db-c559b2d6975b" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/962dca6e-05da-4611-a0db-c559b2d6975b" width="70%" height="auto"></img>
 #### 성능 개선을 위해 고민한 부분들
 사이트 특성상 동영상, 이미지의 퀄리티를 포기할 수 없는데 그대로 쓰기에는 너무 무겁고 양도 많아서 아래 사항들을 개선   
 * 첫 로딩 시 화면에 필요한 리소스만 가져올 수 있을까 ?  (Performance 20% 가량 개선) 
@@ -72,7 +72,7 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 
 
 ### 3. 메인
-<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/f376f636-ee92-4117-a694-ecaf90b0abae" width="500" muted  autoplay loop></video>
+<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/f376f636-ee92-4117-a694-ecaf90b0abae" width="500" muted  70%play loop></video>
 ##### 기능 설명
 * 메인은 풀 사이즈 동영상 리소스를 활용했습니다.
 * 첫 번째 DOM 요소는 이전 요소로 숨겨져 있고 다음 버튼을 누르면 DOM 순서 변경됩니다.
@@ -83,7 +83,7 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 
 
 ### 4. 갤러리
-<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/a252af15-98b9-4232-adc6-4df3ee8076b6" width="500" muted  autoplay loop></video>
+<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/a252af15-98b9-4232-adc6-4df3ee8076b6" width="500" muted  70%play loop></video>
 ##### 기능 설명
 * 플리커 API를 활용하여 내 갤러리에 제네시스 IMG를 등록 후 제네시스 갤러리를 만들었습니다.
 * 검색 기능에서 제네시스를 검색하면 다른 유저들이 올린 제네시스 IMG를 볼 수 있습니다.
@@ -91,7 +91,7 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 
 
 ### 5. 콘택
-<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/644d5498-89df-4baf-a644-fe3ce533195d" width="500" muted  autoplay loop></video>
+<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/644d5498-89df-4baf-a644-fe3ce533195d" width="500" muted  70%play loop></video>
 ##### 기능 설명
 * map info json의 데이터를 받아 동적으로 지점, 주소, 전화, 보유차량 등을 뿌려주는데 Kakao API와 연결하는데 순서 주의하며 작업했습니다.
 * Data를 JSON파일로 관리하며 각 지점 클릭시 맵을 이동 시킵니다.
@@ -100,14 +100,14 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 
 
 ### 6. 유튜브
-<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/09496ce9-4026-4d58-b102-c6df840e6c61" width="500" muted  autoplay loop></video>
+<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/09496ce9-4026-4d58-b102-c6df840e6c61" width="500" muted  70%play loop></video>
 ##### 기능 설명
 * Youtube API를 활용하여 특정 목록을 화면에 노출시켰습니다.
 * 동영상 썸네일을 클릭하면 팝업이 뜨고 유튜브 영상을 볼 수 있습니다.
 
 
 ### 7. 커뮤니티
-<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/7ce20593-ccd6-4e86-b2fd-9ede3516d431" width="500" muted  autoplay loop></video>
+<video src="https://github.com/ejonghwan/genesis_react/assets/53946298/7ce20593-ccd6-4e86-b2fd-9ede3516d431" width="500" muted  70%play loop></video>
 ##### 기능 설명
 * 스크롤에 반응하여 인터렉션을 넣었습니다. 
 * 많은 스크롤과 위치 정보량을 한곳에서 관리하게끔 작업했고 특정 계산을 하는 함수를 재사용하여 작업했습니다. 
@@ -116,9 +116,9 @@ Redux, Saga에서는 액션과 사가파일들이 너무 많아 소스 + 파일�
 
 ## UI Component는 접근성과 사용성을 고려해서 아래 처럼 제작했습니다. 
 ### 탭 UI
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/50e4bff4-4b02-4b22-9502-282a0224fc03" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/50e4bff4-4b02-4b22-9502-282a0224fc03" width="70%" height="auto"></img>
 
 ### 아코디언 UI 
-<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/f07c4014-e6d7-4ab8-8aa7-2cc77ca0db4c" width="auto" height="500px"></img>
+<img src="https://github.com/ejonghwan/genesis_react/assets/53946298/f07c4014-e6d7-4ab8-8aa7-2cc77ca0db4c" width="70%" height="auto"></img>
 
 
