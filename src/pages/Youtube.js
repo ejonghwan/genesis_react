@@ -57,10 +57,11 @@ const Youtube = () => {
 							<div className="wrap">
 								
 								{youtube.items?.map((vid, idx) => {
+									if(!vid.snippet.thumbnails.standard) return;
 									return (
 										<article key={idx}>
 											<button type="button" className='pic img_box' onClick={handlePopOpen(idx)}>
-												<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
+												<img src={vid.snippet.thumbnails.standard?.url} alt={vid.snippet.title} />
 											</button>
 											<div className='txt_box'>
 												<h2>{vid.snippet.title.length > 50 ? vid.snippet.title.substr(0, 50) + '...' : vid.snippet.title}</h2>
